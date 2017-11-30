@@ -1,5 +1,5 @@
 CREATE DATABASE projetofinal;
-
+USE projetofinal;
 
 /*  CRIAÇÃO DA TABELA DOS USUÁRIOS */
 CREATE TABLE clientes (

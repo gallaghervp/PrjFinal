@@ -1,0 +1,246 @@
+<html lang="pt-br">
+
+<head>
+    <title>ChipJobs - Cadastro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/contrast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Alternar Navegação</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">ChipJobs</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="index.html">INÍCIO</a></li>
+                </ul>
+                <div class="col-sm-3">
+                    <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#logincadastro" id="nav-btn-login">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="logincadastro" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modalLogin">
+                <div class="modal-header">
+                    <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form action="index-logado.html">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                        </div>
+                        <button type="submit" class="btn btn-form btn-block">ENTRAR</button>
+                    </form>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <p>Não é cadastrado? <a class="login-link" href="cadastro_profissional.html">Clique aqui!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container" id="parallaxHead" data-speed="6" data-type="background">
+        <div class="container">
+            <div class="row">
+                <i class="fa fa-edit"></i>
+                <h2 class="page-heading">CADASTRAR</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Login & Cadastro</a></li>
+                    <li class="active-breadcrumb">Página de Cadastro</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container form-container">
+        <div class="row">
+            <div class="form-block">
+                <form action="#" method="post" class="form-horizontal" style="margin-right:40px;">
+                    <h2 class="form-heading">Cadastrar</h2>
+                    <hr>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtNome">Nome</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtNome" placeholder="Nome">
+                            <i class="fa fa-pencil form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtCpf">CPF</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtCpf" maxlength="11" placeholder="xxx.xxx.xxx-xx">
+                            <i class="fa fa-pencil form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtRg">RG</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtRg" maxlength="11" placeholder="xxxxxxxx-x">
+                            <i class="fa fa-pencil form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtTel">Telefone</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtTel" maxlength="10" placeholder="(xx) xxxx-xxxx">
+                            <i class="fa fa-phone form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtEndereco">Endereço</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtEndereco" placeholder="Endereço">
+                            <i class="fa fa-address-card form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtComplemento">Complemento</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtComplemento" placeholder="Complemento">
+                            <i class="fa fa-address-card form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtBairro">Bairro</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtBairro" placeholder="Bairro">
+                            <i class="fa fa-address-card form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtCidade">Cidade</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" id="txtCidade" placeholder="Cidade">
+                            <i class="fa fa-address-card form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idSelEstado">Estado </label>
+                        <div class="col-sm-9 has-feedback">
+                            <select id="idSelAssunto" class="form-control form-page" name="selEstado">
+                                    <option>Selecione</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtEmail">Email</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="email" class="form-control form-page" id="TxtEmail" placeholder="E-mail">
+                            <i class="fa fa-envelope form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idpswSenha">Senha</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="password" class="form-control form-page" id="pswSenha" placeholder="Senha">
+                            <i class="fa fa-lock form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group" style="position:relative;">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-block btn-form">ENVIAR</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="col-sm-4">
+                <div class="row">
+                    <h3>Acesso rápido</h3>
+                    <ul class="footerAccess">
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="index.html" class="footer-link"> Inicio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <h3>Social</h3>
+                    <div class="footerSocial">
+                        <a href="https://www.facebook.com/boladavezbr/"><i class="fa fa-facebook fa-2x icon-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google-plus fa-2x icon-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-2x icon-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-2x icon-square" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <h3>Curta nossa página</h3>
+                    <div class="fb-page" data-href="https://www.facebook.com/ChipJobs-507113656303453/" data-tabs="timeline" data-width="450" data-height="100" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/ChipJobs-507113656303453/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/ChipJobs-507113656303453/">
+                                <h1 class="fb">Curta nossa página</h1>ChipJobs</a>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div style="padding:10px;background-color: black;color:lightgray;font-family:Aldrich;">
+        <p style="margin:0;">© Copyright 2017 <a style="color:white;font-family:Aldrich;" href="chipjobs@chipjobs.com.br">ChipJobs</a></p>
+    </div>
+</body>
+
+</html>

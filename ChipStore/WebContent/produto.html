@@ -1,0 +1,190 @@
+<html lang="pt-br">
+
+<head>
+    <title>ChipJobs - Formação Acadêmica</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/contrast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
+</head>
+
+<body style="padding-top: 240px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Alternar Navegação</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="index.html">ChipJobs</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="col-sm-3">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="index-logado.html">INÍCIO</a></li>
+                        <li class="fa fa-user fa-2x nav-login" aria-hidden="true"></li>
+                        <li><a href="index.html" class="a-login">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-container" id="parallaxUser" data-speed="6" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <i class="fa fa-edit"></i>
+                    <h2 class="page-heading">MEUS DADOS</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Login Administrativo</a></li>
+                        <li><a href="#">Cadastro Produto</a></li>
+                        <li class="active-breadcrumb">Dados</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- INCLUIR modal_login.php -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a class="sidebar-brand" href="#">Olá, ADM! <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Registro</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 main">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="fabricante.html">Cadastro Fabricante</a></li>
+                    <li role="presentation" class="active"><a href="#">Cadastro Produto</a></li>
+                    <li role="presentation"><a href="categoria.html">Cadasatro Categoria</a></li>
+                    <li role="presentation"><a href="cadastro_adm.html">Cadastro ADM</a></li>
+                </ul>
+
+
+
+                <!--------------- CADASTRO PRODUTO -------------------->
+
+                <div class="card-dados-container">
+                    <form action="#" method="post" class="form-horizontal" style="margin-right:40px;">
+                        <h2 class="form-heading">Produto</h2>
+                        <hr>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idTxtCodigoB">Código de Barra</label>
+                            <div class="col-sm-9 has-feedback">
+                                <input type="text" class="form-control form-page" id="txtCodigoB" maxlength="11" placeholder="xxxxxxxxxxxxxxxxxxxx">
+                                <i class="fa fa-pencil form-control-feedback"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idTxtNomeP">Nome</label>
+                            <div class="col-sm-9 has-feedback">
+                                <input type="text" class="form-control form-page" id="txtNomeP" placeholder="Nome">
+                                <i class="fa fa-pencil form-control-feedback"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idCategoriaP">Categoria</label>
+                            <div class="col-sm-9 has-feedback">
+                                <select id="idSelCategoriaP" class="form-control form-page" name="categoria">
+                                                                <option></option>
+                                                                <option value="computador">Computador</option>
+                                                                <option value="notebook">Notebook</option>
+                                                                <option value="monitor">Monitor</option>
+                                                                <option value="cpu">CPU</option>
+                                                                <option value="fonte">Fonte</option>
+                                                                <option value="placamae">Placa Mãe</option>
+                                                                <option value="placadevideo">Placa de Video</option>
+                                                                <option value="placaderede">Placa de Rede</option>
+                                                                <option value="hdexterno">HD Externo</option>
+                                                                <option value="memoria">Memória</option>
+                                                                <option value="dvd">DVD</option>
+                                                                <option value="impressora">Impressora</option>
+                                                                <option value="mouse">Mouse</option>
+                                                                <option value="teclado">Teclado</option>
+                                                                <option value="headphones">Headphones</option>
+                                                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idTxtPreco">Preço</label>
+                            <div class="col-sm-9 has-feedback">
+                                <input type="text" class="form-control form-page" id="txtPreco" maxlength="11" placeholder="R$">
+                                <i class="fa fa-pencil form-control-feedback"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idDisponibilidade">Disponibilidade</label>
+                            <div class="col-sm-9 has-feedback">
+                                <select id="idSelDisponibilidade" class="form-control form-page" name="disponibilidade">
+                                                                <option></option>
+                                                                <option value="nivel1">Sim</option>
+                                                                <option value="nivel2">Não</option>
+                                                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idTxtImagem">Imagem</label>
+                            <div class="col-sm-9 has-feedback">
+                                <input id="txtImagem" name="imagem" type="file" size="30">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idQuantidade">Quantidade</label>
+                            <div class="col-sm-9 has-feedback">
+                                <select id="idSelQuantidade" class="form-control form-page" name="quantidade">
+                                                                <option></option>
+                                                                <option value="nivel1">Nível 1</option>
+                                                                <option value="nivel2">Nível 2</option>
+                                                                <option value="nivel3">Nível 3</option>
+                                                                <option value="nivel1">Nível 4</option>
+                                                                <option value="nivel2">Nível 5</option>
+                                                                <option value="nivel3">Nível 6</option>
+                                                                <option value="nivel1">Nível 7</option>
+                                                                <option value="nivel2">Nível 8</option>
+                                                                <option value="nivel3">Nível 9</option>
+                                                                <option value="nivel1">Nível 10</option>
+                                                                <option value="nivel2">Nível 20</option>
+                                                                <option value="nivel3">Nível 30</option>
+                                                                <option value="nivel2">Nível 40</option>
+                                                                <option value="nivel3">Nível 50</option>
+                                                                <option value="nivel3">Nível 70</option>
+                                                                <option value="nivel3">Nível 100</option>
+                                                            </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" style="position:relative;">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-block btn-form">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<html lang="pt-br">
+
+<head>
+    <title>ChipJobs - Meus Dados</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/contrast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
+</head>
+
+<body style="padding-top: 240px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Alternar Navegação</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">ChipJobs</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="col-sm-3">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="index-logado.html">INÍCIO</a></li>
+                        <li class="fa fa-user fa-2x nav-login" aria-hidden="true"></li>
+                        <li><a href="index.html" class="a-login">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-container" id="parallaxUser" data-speed="6" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <i class="fa fa-edit"></i>
+                    <h2 class="page-heading">MEUS DADOS</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Login Administrativo</a></li>
+                        <li><a href="#">Cadastro Fabricante</a></li>
+                        <li class="active-breadcrumb">Dados</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a class="sidebar-brand" href="#">Olá, ADM! <span class="sr-only">(current)</span></a></li>
+                    <li><a href="registro-fabricante.html">Registro</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 main">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">Cadastro Fabricante</a></li>
+                    <li role="presentation"><a href="produto.html">Cadastro Produto</a></li>
+                    <li role="presentation"><a href="categoria.html">Cadastro Categoria</a></li>
+                    <li role="presentation"><a href="cadastro_adm.html">Cadastro ADM</a></li>
+                </ul>
+
+                <!--------------- CADASTRO FABRICANTE -------------------->
+
+
+                <div class="card-dados-container">
+                    <form action="#" method="post" class="form-horizontal" style="margin-right:40px;">
+                        <h2 class="form-heading">Fabricante</h2>
+                        <hr>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idTxtNomeF">Nome</label>
+                            <div class="col-sm-9 has-feedback">
+                                <input type="text" class="form-control form-page" id="txtNomeF" placeholder="Nome">
+                                <i class="fa fa-pencil form-control-feedback"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="idTxtCodigoF">Código</label>
+                            <div class="col-sm-9 has-feedback">
+                                <input type="text" class="form-control form-page" id="txtCodigoF" maxlength="11" placeholder="xxxxxxxxxxx">
+                                <i class="fa fa-pencil form-control-feedback"></i>
+                            </div>
+                        </div>
+                        <div class="form-group" style="position:relative;">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-block btn-form">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

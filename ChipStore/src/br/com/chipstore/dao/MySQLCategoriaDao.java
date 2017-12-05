@@ -14,7 +14,6 @@ import br.com.chipstore.model.Categoria;
 public class MySQLCategoriaDao implements CategoriaDao {
 
 	public MySQLCategoriaDao() {
-
 	}
 
 	@Override
@@ -27,23 +26,40 @@ public class MySQLCategoriaDao implements CategoriaDao {
 		conn = MySqlDAOFactory.createConnection();
 
 		// incluir categoria
-
-		String sql = "INSERT INTO Categoria (nome) VALUES (?);";
-		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
-		pstmt.setString(1, categoria.getNome());
-
-		pstmt.execute();
-
-		ResultSet tableKeys = pstmt.getGeneratedKeys();
-		tableKeys.next();
-		codigo = tableKeys.getInt(1);
-
-		categoria.setCodigo(codigo);
-
-		pstmt.close();
-
-		conn.close();
+		try {
+			String sql = "INSERT INTO Categoria (nome) VALUES (?);";
+			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+	
+			pstmt.setString(1, categoria.getNome());
+	
+			pstmt.execute();
+	
+			ResultSet tableKeys = pstmt.getGeneratedKeys();
+			tableKeys.next();
+			codigo = tableKeys.getInt(1);
+	
+			categoria.setCodigo(codigo);
+	
+			} catch (SQLException e) {
+		        System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+		
+		    } finally {
+		        // fechar a conexao com o banco de dados
+		        if (pstmt != null) {
+		            try {
+		                pstmt.close();
+		            } catch (SQLException e) {
+		                System.out.println("Erro ao fechar o statement: " + e);
+		            }
+		        }
+		        if (conn != null) {
+		            try {
+		                conn.close();
+		            } catch (SQLException e) {
+		                System.out.println("Erro a conexao com o SGBD: " + e);
+		            }
+		        }
+		    }
 
 		return codigo;
 
@@ -54,31 +70,101 @@ public class MySQLCategoriaDao implements CategoriaDao {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		Categoria categoriaConsultado = null;
+		Categoria categoriaConsultada = null;
 
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
 
 		// consultar as categorias por código que existem na tabela
+		try {
+			String sql = "SELECT * FROM Categoria  WHERE codigo=" + codigo + ";";
+			stmt = conn.createStatement();
 
-		String sql = "SELECT * FROM Categoria  WHERE codigo=" + codigo + ";";
-		stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 
-		rs = stmt.executeQuery(sql);
+			categoriaConsultada = new Categoria();
 
-		categoriaConsultado = new Categoria();
+			if (rs != null) {
+				categoriaConsultada.setCodigo(rs.getLong("codigo"));
+				categoriaConsultada.setNome(rs.getString("nome"));
 
-		if (rs != null) {
-			categoriaConsultado.setCodigo(rs.getLong("codigo"));
-			categoriaConsultado.setNome(rs.getString("nome"));
+			}
+			
+			rs.close();
+			
+			} catch (SQLException e) {
+		        System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+				
+		    } finally {
+		        // fechar a conexao com o banco de dados
+		        if (stmt != null) {
+		            try {
+		                stmt.close();
+		            } catch (SQLException e) {
+		                System.out.println("Erro ao fechar o statement: " + e);
+		            }
+		        }
+		        if (conn != null) {
+		            try {
+		                conn.close();
+		            } catch (SQLException e) {
+		                System.out.println("Erro a conexao com o SGBD: " + e);
+		            }
+		        }
+		    }
 
-		}
+		return categoriaConsultada;
+	}
+	
+	@Override
+	public Categoria consultarPorNome(String nome) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		Categoria categoriaConsultada = null;
 
-		rs.close();
-		stmt.close();
-		conn.close();
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
 
-		return categoriaConsultado;
+		// consultar as categorias por código que existem na tabela
+		try {
+			String sql = "SELECT * FROM Categoria  WHERE nome=" + nome + ";";
+			stmt = conn.createStatement();
+
+			rs = stmt.executeQuery(sql);
+
+			categoriaConsultada = new Categoria();
+
+			if (rs != null) {
+				categoriaConsultada.setCodigo(rs.getLong("codigo"));
+				categoriaConsultada.setNome(rs.getString("nome"));
+
+			}
+			
+			rs.close();
+			
+			} catch (SQLException e) {
+		        System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+				
+		    } finally {
+		        // fechar a conexao com o banco de dados
+		        if (stmt != null) {
+		            try {
+		                stmt.close();
+		            } catch (SQLException e) {
+		                System.out.println("Erro ao fechar o statement: " + e);
+		            }
+		        }
+		        if (conn != null) {
+		            try {
+		                conn.close();
+		            } catch (SQLException e) {
+		                System.out.println("Erro a conexao com o SGBD: " + e);
+		            }
+		        }
+		    }
+
+		return categoriaConsultada;
 	}
 
 	@Override
@@ -92,7 +178,8 @@ public class MySQLCategoriaDao implements CategoriaDao {
 		conn = MySqlDAOFactory.createConnection();
 
 		// listar as categorias que existem na tabela
-
+		try {
+			
 		String sql = "SELECT * FROM Categoria;";
 		stmt = conn.createStatement();
 
@@ -109,8 +196,27 @@ public class MySQLCategoriaDao implements CategoriaDao {
 			}
 		}
 		rs.close();
-		stmt.close();
-		conn.close();
+		
+		} catch (SQLException e) {
+	        System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+			
+	    } finally {
+	        // fechar a conexao com o banco de dados
+	        if (stmt != null) {
+	            try {
+	                stmt.close();
+	            } catch (SQLException e) {
+	                System.out.println("Erro ao fechar o statement: " + e);
+	            }
+	        }
+	        if (conn != null) {
+	            try {
+	                conn.close();
+	            } catch (SQLException e) {
+	                System.out.println("Erro a conexao com o SGBD: " + e);
+	            }
+	        }
+	    }
 
 		return listaCategorias;
 	}

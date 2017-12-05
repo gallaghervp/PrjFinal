@@ -20,33 +20,38 @@ public class MySQLProdutoDao implements ProdutoDao {
 
 	@Override
 	public long incluir(Produto produto) throws SQLException {
-		long codigoBarras = 0;
+		long id = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
 
-		// Pergunta: O código de barras já existe. Como proceder? 
-
 		String sql = "INSERT INTO Produto (nome) VALUES (?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-		pstmt.setString(1, produto.getNome());
+		pstmt.setLong(1, produto.getCodigoBarras());
+		pstmt.setString(2, produto.getNome());
+		pstmt.setLong(3, produto.getCategoria().getCodigo());
+		pstmt.setDouble(4, produto.getPreco());
+		pstmt.setBoolean(5, produto.isDisponivel());
+		pstmt.setString(6, produto.getImagem());
+		pstmt.setLong(7, produto.getQuantidade());
+		
 
 		pstmt.execute();
 
 		ResultSet tableKeys = pstmt.getGeneratedKeys();
 		tableKeys.next();
-		codigoBarras = tableKeys.getInt(1);
+		id = tableKeys.getInt(1);
 
-		produto.setCodigoBarras(codigoBarras);
+		produto.setId(id);
 
 		pstmt.close();
 
 		conn.close();
 
-		return codigoBarras;
+		return id;
 
 	}
 
@@ -60,7 +65,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
 
-		// consultar as produtos por código que existem na tabela
+		// consultar as produtos por código de barras que existem na tabela
 
 		String sql = "SELECT * FROM Produto  WHERE codigoBarras=" + codigoBarras + ";";
 		stmt = conn.createStatement();
@@ -68,10 +73,17 @@ public class MySQLProdutoDao implements ProdutoDao {
 		rs = stmt.executeQuery(sql);
 
 		produtoConsultado = new Produto();
+		
+		// Como associar categoria com esse produto?
 
 		if (rs != null) {
+			produtoConsultado.setId(rs.getLong("id"));
 			produtoConsultado.setCodigoBarras(rs.getLong("codigoBarras"));
 			produtoConsultado.setNome(rs.getString("nome"));
+			produtoConsultado.setPreco(rs.getDouble("preco"));
+			produtoConsultado.setDisponivel(rs.getBoolean("disponivel"));
+			produtoConsultado.setImagem(rs.getString("imagem"));
+			produtoConsultado.setQuantidade(rs.getLong("quantidade"));
 
 		}
 
@@ -103,7 +115,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 			listaProdutos = new ArrayList<>();
 			while (rs.next()) {
 				Produto pr = new Produto();
-				pr.setCodigoBarras(rs.getLong("codigoBarras"));
+				pr.setId(rs.getLong("id"));
 				pr.setNome(rs.getString("nome"));
 				
 				Categoria categoria = new Categoria();
@@ -128,7 +140,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 	}
 
 	@Override
-	public boolean remover(long codigoBarras) throws SQLException {
+	public boolean remover(long id) throws SQLException {
 		return false;
 	}
 

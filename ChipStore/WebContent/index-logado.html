@@ -1,12 +1,12 @@
 <html lang="pt-br">
 
 <head>
-    <title>ChipJobs - Principal</title>
+    <title>ChipStore - Index Logado</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="../css/contrast.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/produto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="./img/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="js/login.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -220,7 +220,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">ChipJobs</a>
+                <a class="navbar-brand" href="#">ChipStore</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="col-sm-3 brand-col">
@@ -254,6 +254,35 @@
         </div>
     </nav>
 
+    <!--------------- MODAL LOGIN -------------------->
+
+    <div class="modal fade" id="login" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modalLogin">
+                <div class="modal-header">
+                    <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form action="index-logado.html">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" required autofocus />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" required autofocus />
+                        </div>
+                        <button type="submit" class="btn btn-form btn-block">ENTRAR</button>
+                    </form>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <p>Não é cadastrado? <a class="login-link" href="cadastro_profissional.html">Clique aqui!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!--------------- LOGIN ADM -------------------->
 
     <div class="modal fade" id="loginadm" role="dialog">
@@ -282,6 +311,8 @@
         </div>
     </div>
 
+
+
     <!--------------- CAROUSEL -------------------->
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel" width="100%">
@@ -291,17 +322,29 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="item active" style="background-image: url('../img/servidor.jpg')">
+            <div class="item active" style="background-image: url(img/capa1.png)">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1 class="carousel-heading">Procurando oportunidade?</h1>
-                        <p>ChipJobs oferece a chance que você precisa para evoluir profissionalmente!</p>
+                        <h1 class="carousel-heading">Ta esperando o que?</h1>
+                        <p>ChipStore oferece a chance que você precisa para evoluir profissionalmente!</p>
                     </div>
                 </div>
             </div>
-            <div class="item" style="background-image: url('../img/estudar-redes-cisco-certificacao.jpg')">
+            <div class="item" style="background-image: url(img/capa2.png)">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1 class="carousel-heading">Procurando oportunidade?</h1>
+                        <p>ChipStore oferece a chance que você precisa para evoluir profissionalmente!</p>
+                    </div>
+                </div>
             </div>
-            <div class="item" style="background-image: url('../img/gestao.jpg')">
+            <div class="item" style="background-image: url(img/capa3.png)">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1 class="carousel-heading">Procurando oportunidade?</h1>
+                        <p>ChipStore oferece a chance que você precisa para evoluir profissionalmente!</p>
+                    </div>
+                </div>
             </div>
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -323,107 +366,333 @@
                 <a class="navbar-brand" href="#">CATEGORIA</a>
             </div>
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#">TODOS</a></li>
-                <li><a href="#produto1">PRODUTO 1</a></li>
-                <li><a href="#produto2">PRODUTO 2</a></li>
-                <li><a href="#produto3">PRODUTO 3</a></li>
+                <li><a href="#produto1" class="scroll">Celulares</a></li>
+                <li><a href="#produto2" class="scroll">Computadores</a></li>
+                <li><a href="#produto3" class="scroll">Acessórios</a></li>
             </ul>
         </div>
     </nav>
 
-    <!--------------- PRODUTO 1 -------------------->
+<!---------- Vitrine ------------------------------------------------>
 
-    <div id="produto1" class="heading-index">
-        <h1>PRODUTO 1</h1>
+    <div id="Destaque" class="heading-index">
+        <h1>Celulares </h1>
     </div>
-
-    <div class="container">
-        <div class="row">
-
-
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
-                    <div class="caption">
-                        <h4 class="pull-right">$700.99</h4>
-                        <h4><a href="#">Mobile Product</a></h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </div>
-                    <div class="ratings">
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span> (15 reviews)
-                        </p>
-                    </div>
-                    <div class="space-ten"></div>
-                    <div class="btn-ground text-center">
-                        <a href="carrinho-logado.html"><button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Carrinho</button></a>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Informações</button>
-                    </div>
-                    <div class="space-ten"></div>
+    
+   <div class="container">
+	<div class="row">
+    	<!-- Inicio Vitrine -->
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      		 <a href="celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
+      			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
                 </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--------------- MODAL PRODUTO 1 -------------------->
-
-    <div class="modal fade product_view" id="product_view">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-                    <h3 class="modal-title">HTML5 is a markup language</h3>
+      			<p>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$3.599,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/pcdell.jpg" alt="Imagem de um PC DELL">
+      			<h4>Computador Dell Inspiron </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-3 product_img">
-                            <img src="http://img.bbystatic.com/BestBuy_US/images/products/5613/5613060_sd.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-md-6 product_content">
-                            <h4>Product Id: <span>51526</span></h4>
-                            <div class="rating">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span> (15 reviews)
-                            </div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 700.99 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 800.00</small></h3>
-                            <div class="space-ten"></div>
-                            <div class="btn-ground">
-                                <a href="carrinho-logado.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Adicionar no carrinho</button></a>
-                            </div>
-                        </div>
-                    </div>
+      			<p>Computador Dell Inspiron 3268-D05P Intel Pentium Dual Core 4GB 1TB - Linux  </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$1.209,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/tablet.png" alt="Imagem de um tablet">
+      			<h4>Tablet Samsung Galaxy Tab </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
                 </div>
-            </div>
-        </div>
-    </div>
-
+      			<p>Tablet Samsung Galaxy Tab T113 8GB - Preto </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$999,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                      
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/hd.png" alt="Imagem de um Iphone 8">
+      			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>HD Externo Portátil Samsung M3 Portable 1TB Preto </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$429,90</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                       
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<!-- END PRODUCTS -->
+	</div>
+</div>
 
     <!--------------- PRODUTO 2 -------------------->
 
-    <div id="produto2" class="heading-index">
-        <h1>PRODUTO 2</h1>
+   <div id="Destaque" class="heading-index">
+        <h1>Computadores</h1>
     </div>
+    
+   <div class="container">
+	<div class="row">
+    	<!-- Inicio Vitrine -->
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      		 <a href="celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
+      			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$3.599,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/pcdell.jpg" alt="Imagem de um PC DELL">
+      			<h4>Computador Dell Inspiron </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Computador Dell Inspiron 3268-D05P Intel Pentium Dual Core 4GB 1TB - Linux  </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$1.209,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/tablet.png" alt="Imagem de um tablet">
+      			<h4>Tablet Samsung Galaxy Tab </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Tablet Samsung Galaxy Tab T113 8GB - Preto </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$999,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                      
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/hd.png" alt="Imagem de um Iphone 8">
+      			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>HD Externo Portátil Samsung M3 Portable 1TB Preto </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$429,90</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                       
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<!-- END PRODUCTS -->
+	</div>
+</div>
 
+    <!--------------- PRODUTO 3 -------------------->
 
-
-    <!--------------- PRODUTO -------------------->
-
-    <div id="produto3" class="heading-index">
-        <h1>PRODUTO 3</h1>
+   <div id="Destaque" class="heading-index">
+        <h1>Acessórios</h1>
     </div>
+    
+   <div class="container">
+	<div class="row">
+    	<!-- Inicio Vitrine -->
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      		 <a href="celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
+      			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$3.599,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/pcdell.jpg" alt="Imagem de um PC DELL">
+      			<h4>Computador Dell Inspiron </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Computador Dell Inspiron 3268-D05P Intel Pentium Dual Core 4GB 1TB - Linux  </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$1.209,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/tablet.png" alt="Imagem de um tablet">
+      			<h4>Tablet Samsung Galaxy Tab </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Tablet Samsung Galaxy Tab T113 8GB - Preto </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$999,00</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                      
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="img/hd.png" alt="Imagem de um Iphone 8">
+      			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>HD Externo Portátil Samsung M3 Portable 1TB Preto </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="price">R$429,90</p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					 <a href="carrinho.html"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                       
+      				</div>	
+      			</div>
+    		</span>
+  		</div>
+  		<!-- END PRODUCTS -->
+	</div>
+</div>
 
+     
+    <!--------------- SOBRE -------------------->
 
     <div id="sobre" class="heading-index">
-        <h1 style="text-shadow: 0.1em 0.1em 0.2em #87F">Sobre a ChipJobs</h1>
+        <h1 style="text-shadow: 0.1em 0.1em 0.2em #87F">Sobre a ChipStore</h1>
     </div>
 
     <br>
@@ -438,13 +707,12 @@
 
                         <p>Não somos uma associação de profissionais e não estamos ligados a nenhum sindicato ou entidades de classe. Nosso compromisso é atender a comunidades de profissionais de informática, possibilitando a troca de informações e experiências.</p>
 
-                        <p>ChipJobs é uma marca registrada no INPI, todas as informações deste site são protegidas pela lei de direitos autorais nro 9.610/98, não podendo ser copiadas, utilizadas por outros sites, ou disponibilizadas em outro local. Caso saiba de alguma violação denuncie.</p>
+                        <p>ChipStore é uma marca registrada no INPI, todas as informações deste site são protegidas pela lei de direitos autorais nro 9.610/98, não podendo ser copiadas, utilizadas por outros sites, ou disponibilizadas em outro local. Caso saiba de alguma violação denuncie.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="parallax-container" id="parallaxIndex" data-speed="6" data-type="background"></div>
     <div id="contato" class="heading-index">
@@ -495,6 +763,10 @@
 
 
     <div id="map-container" style="width:100%;height:400px;"></div>
+
+
+    <!--------------- FOOTER -------------------->
+
     <footer class="footer">
         <div class="container">
             <div class="col-sm-4">
@@ -502,6 +774,9 @@
                     <h3>Acesso rápido</h3>
                     <ul class="footerAccess">
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#myCarousel" class="scroll" class="footer-link"> Inicio</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#produto1" class="scroll" class="footer-link"> Produto 1</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#produto2" class="scroll" class="footer-link"> Produto 2</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#produto3" class="scroll" class="footer-link"> Produto 3</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#sobre" class="scroll" class="footer-link"> Sobre</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#contato" class="scroll" class="footer-link"> Contato</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#myCarousel" class="scroll" class="footer-link"> Pesquisar</a></li>
@@ -524,8 +799,8 @@
                     <h3>Curta nossa página</h3>
                     <div class="fb-page" data-href="https://www.facebook.com/ChipJobs-507113656303453/" data-tabs="timeline" data-width="450" data-height="100" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
                         <blockquote cite="https://www.facebook.com/ChipJobs-507113656303453/" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/ChipJobs-507113656303453/">
-                                <h1 class="fb">Curta nossa página</h1>ChipJobs</a>
+                            <a href="https://www.facebook.com/ChipStore-507113656303453/">
+                                <h1 class="fb">Curta nossa página</h1>ChipStore</a>
                         </blockquote>
                     </div>
                 </div>
@@ -533,7 +808,7 @@
         </div>
     </footer>
     <div style="padding:10px;background-color: black;color:lightgray;font-family:Aldrich;">
-        <p style="margin:0;">© Copyright 2017 <a style="color:white;font-family:Aldrich;" href="chipjobs@chipjobs.com.br">ChipJobs</a></p>
+        <p style="margin:0;">© Copyright 2017 <a style="color:white;font-family:Aldrich;" href="ChipStore@ChipStore.com.br">ChipStore</a></p>
     </div>
 </body>
 

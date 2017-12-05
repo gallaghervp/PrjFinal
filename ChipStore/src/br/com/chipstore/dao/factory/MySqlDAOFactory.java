@@ -8,9 +8,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import br.com.chipstore.dao.FabricanteDao;
+import br.com.chipstore.dao.MySQLFabricanteDao;
+
 public class MySqlDAOFactory extends DAOFactory {
     public static final String DBDRIVER = "com.mysql.jdbc.Driver";
-    public static final String DBURL = "jdbc:mysql://localhost:3306/curso";
+    public static final String DBURL = "jdbc:mysql://localhost:3306/projetofinal";
 
     public static Connection createConnection() {
         Connection conn = null;
@@ -34,15 +37,10 @@ public class MySqlDAOFactory extends DAOFactory {
         return conn;
     }
 
-    /*
-    @Override
-    public ApoliceDAO getApoliceDAO() {
-       return new MySqlApoliceDAO();
-    }
+	@Override
+	public FabricanteDao getFabricanteDao() {
+		return new MySQLFabricanteDao();
+	}
 
-    @Override
-    public SeguradoDAO getSeguradoDAO() {
-        return new MySqlSeguradoDAO();
-    }
-    */
+
 }

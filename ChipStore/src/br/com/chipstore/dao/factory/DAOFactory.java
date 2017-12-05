@@ -1,5 +1,6 @@
 package br.com.chipstore.dao.factory;
 
+import br.com.chipstore.dao.FabricanteDao;
 
 public abstract class DAOFactory {
     // lista de tipos de DAO por SGBD
@@ -7,7 +8,7 @@ public abstract class DAOFactory {
     
 
     // metodo para criar a fabrica correspondente
-    //public abstract ApoliceDAO getApoliceDAO();
+    public abstract FabricanteDao getFabricanteDao();
     //public abstract SeguradoDAO getSeguradoDAO();
 
     // metodo que retorna a fabrica correspondente

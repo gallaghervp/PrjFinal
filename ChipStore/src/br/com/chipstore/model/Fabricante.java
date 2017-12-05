@@ -4,6 +4,7 @@ public class Fabricante {
 	
 	private long codigo;
 	private String nome;
+	
 	public Fabricante() {
 		super();
 	}

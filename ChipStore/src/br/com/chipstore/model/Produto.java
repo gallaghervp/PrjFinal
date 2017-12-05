@@ -2,6 +2,7 @@ package br.com.chipstore.model;
 
 public class Produto {
 	
+	private long id;
 	private long codigoBarras;
 	private String nome;
 	private Categoria categoria;
@@ -12,6 +13,13 @@ public class Produto {
 	
 	public Produto() {
 		super();
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 	public long getCodigoBarras() {
 		return codigoBarras;
@@ -29,11 +37,9 @@ public class Produto {
 	public Categoria getCategoria() {
 		return categoria;
 	}
-	
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
 	public double getPreco() {
 		return preco;
 	}
@@ -61,7 +67,7 @@ public class Produto {
 	
 	@Override
 	public String toString() {
-		return "Produto [codigoBarras=" + codigoBarras + ", nome=" + nome + ", categoria=" + categoria + ", "
+		return "Produto [id=" + id + ",codigoBarras=" + codigoBarras + ", nome=" + nome + ", categoria=" + categoria + ", "
 				+ "preco=" + preco + ", disponivel=" + disponivel + ", imagem=" + imagem + ", quantidade=" + quantidade + "]";
 	}
 	

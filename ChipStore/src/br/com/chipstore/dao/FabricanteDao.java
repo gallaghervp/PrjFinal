@@ -8,6 +8,7 @@ import br.com.chipstore.model.Fabricante;
 public interface FabricanteDao {
 	public long incluir(Fabricante fabricante) throws SQLException;
     public Fabricante consultarPorCodigo(long codigo) throws SQLException;
+    public Fabricante consultarPorNome(String nome) throws SQLException;
     public List<Fabricante> listar() throws SQLException;
     public boolean atualizar(Fabricante fabricante) throws SQLException;
     public boolean remover(long codigo) throws SQLException;

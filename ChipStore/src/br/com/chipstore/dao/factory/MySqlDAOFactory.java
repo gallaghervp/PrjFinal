@@ -8,8 +8,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import br.com.chipstore.dao.CategoriaDao;
 import br.com.chipstore.dao.FabricanteDao;
+import br.com.chipstore.dao.MySQLCategoriaDao;
 import br.com.chipstore.dao.MySQLFabricanteDao;
+import br.com.chipstore.dao.MySQLProdutoDao;
+import br.com.chipstore.dao.ProdutoDao;
 
 public class MySqlDAOFactory extends DAOFactory {
     public static final String DBDRIVER = "com.mysql.jdbc.Driver";
@@ -40,6 +44,16 @@ public class MySqlDAOFactory extends DAOFactory {
 	@Override
 	public FabricanteDao getFabricanteDao() {
 		return new MySQLFabricanteDao();
+	}
+	
+	@Override
+	public CategoriaDao getCategoriaDao() {
+		return new MySQLCategoriaDao();
+	}
+	
+	@Override
+	public ProdutoDao getProdutoDao() {
+		return new MySQLProdutoDao();
 	}
 
 

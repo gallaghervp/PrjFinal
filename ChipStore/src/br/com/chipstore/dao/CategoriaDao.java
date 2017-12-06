@@ -12,4 +12,5 @@ public interface CategoriaDao {
     public List<Categoria> listar() throws SQLException;
     public boolean atualizar(Categoria categoria) throws SQLException;
     public boolean remover(long codigo) throws SQLException;
+    public boolean abc();
 }

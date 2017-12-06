@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.chipstore.exception.ChipstoreExpection;
 import br.com.chipstore.model.Fabricante;
 import br.com.chipstore.service.FabricanteService;
 
@@ -26,34 +27,35 @@ public class IncluirFabricante extends HttpServlet {
 		PrintWriter saida;
 		String nome;
 		
-		
-		nome = request.getParameter("nome");
-		
-		Fabricante novoFabricante = new Fabricante();
-		
-		novoFabricante.setNome(nome);
-		
-		
-		FabricanteService fs = new FabricanteService();
-		
-		long codigoGerado = fs.incluir(novoFabricante);
-		
-		if(codigoGerado > 0){
+		try {
+			nome = request.getParameter("nome");
 			
-		} else{
+			Fabricante novoFabricante = new Fabricante();
 			
+			novoFabricante.setNome(nome);
+			
+			
+			FabricanteService fs = new FabricanteService();
+			
+			long codigoGerado = fs.incluir(novoFabricante);
+			
+			if(codigoGerado > 0){
+				
+			} else{
+				
+			}
+			//request.setAttribute("mensagem", mensagem);
+			
+			//RequestDispatcher rd = request.getRequestDispatcher();
+			//rd.forward(request, response);
+		} catch (ChipstoreExpection e) {
+			throw new ServletException(e.getMessage(), e.getCause());
 		}
-		//request.setAttribute("mensagem", mensagem);
-		
-		//RequestDispatcher rd = request.getRequestDispatcher();
-		//rd.forward(request, response);
-		
 		
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		doGet(request, response);
 	}
 

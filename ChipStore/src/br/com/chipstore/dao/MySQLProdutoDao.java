@@ -88,7 +88,9 @@ public class MySQLProdutoDao implements ProdutoDao {
 		}
 
 		rs.close();
+		
 		stmt.close();
+		
 		conn.close();
 
 		return produtoConsultado;
@@ -128,7 +130,9 @@ public class MySQLProdutoDao implements ProdutoDao {
 			}
 		}
 		rs.close();
+		
 		stmt.close();
+		
 		conn.close();
 
 		return listaProdutos;

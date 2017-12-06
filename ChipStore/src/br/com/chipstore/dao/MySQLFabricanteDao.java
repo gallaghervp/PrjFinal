@@ -18,51 +18,32 @@ public class MySQLFabricanteDao implements FabricanteDao {
 	}
 
 	@Override
-	public long incluir(Fabricante fabricante) {
+	public long incluir(Fabricante fabricante) throws SQLException {
 		long codigo = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
+	
+		String sql = "INSERT INTO Fabricante (nome) VALUES (?);";
+		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-		try {
+		pstmt.setString(1, fabricante.getNome());
+
+		pstmt.execute();
+
+		ResultSet tableKeys = pstmt.getGeneratedKeys();
+		tableKeys.next();
+		codigo = tableKeys.getInt(1);
+
+		fabricante.setCodigo(codigo);
 			
-			String sql = "INSERT INTO Fabricante (nome) VALUES (?);";
-			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        pstmt.close();
 
-			pstmt.setString(1, fabricante.getNome());
+        conn.close();
 
-			pstmt.execute();
-
-			ResultSet tableKeys = pstmt.getGeneratedKeys();
-			tableKeys.next();
-			codigo = tableKeys.getInt(1);
-
-			fabricante.setCodigo(codigo);
-			
-			} catch (SQLException e) {
-	            System.out.println("Erro ao conectar o SGBD MySQL: " + e);
-
-	        } finally {
-	            // fechar a conexao com o banco de dados
-	            if (pstmt != null) {
-	                try {
-	                    pstmt.close();
-	                } catch (SQLException e) {
-	                    System.out.println("Erro ao fechar o statement: " + e);
-	                }
-	            }
-	            if (conn != null) {
-	                try {
-	                    conn.close();
-	                } catch (SQLException e) {
-	                    System.out.println("Erro a conexao com o SGBD: " + e);
-	                }
-	            }
-	        }
-
-			return codigo;
+		return codigo;
 	}
 
 	@Override
@@ -76,42 +57,24 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		conn = MySqlDAOFactory.createConnection();
 
 		// consultar por código os fabricantes que existem na tabela
-		try {
-			String sql = "SELECT * FROM Fabricante  WHERE codigo=" + codigo + ";";
-			stmt = conn.createStatement();
 
-			rs = stmt.executeQuery(sql);
+		String sql = "SELECT * FROM Fabricante  WHERE codigo=" + codigo + ";";
+		stmt = conn.createStatement();
 
-			fabricanteConsultado = new Fabricante();
+		rs = stmt.executeQuery(sql);
 
-			if (rs != null) {
-				fabricanteConsultado.setCodigo(rs.getLong("codigo"));
-				fabricanteConsultado.setNome(rs.getString("nome"));
-			}
+		fabricanteConsultado = new Fabricante();
+
+		if (rs != null) {
+			fabricanteConsultado.setCodigo(rs.getLong("codigo"));
+			fabricanteConsultado.setNome(rs.getString("nome"));
+		}
 			
-			rs.close();
+		rs.close();
 
-			} catch (SQLException e) {
-            
-				System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+        stmt.close();
 
-			} finally {
-            // fechar a conexao com o banco de dados
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    System.out.println("Erro ao fechar o statement: " + e);
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    System.out.println("Erro a conexao com o SGBD: " + e);
-                }
-            }
-        }
+        conn.close();
 		
 		return fabricanteConsultado;
 	}
@@ -127,44 +90,25 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		conn = MySqlDAOFactory.createConnection();
 
 		// consultar por nome os fabricantes que existem na tabela
-		try {
-			String sql = "SELECT * FROM Fabricante  WHERE nome=" + nome + ";";
-			stmt = conn.createStatement();
 
-			rs = stmt.executeQuery(sql);
+		String sql = "SELECT * FROM Fabricante  WHERE nome=" + nome + ";";
+		stmt = conn.createStatement();
 
-			fabricanteConsultado = new Fabricante();
+		rs = stmt.executeQuery(sql);
 
-			if (rs != null) {
-				fabricanteConsultado.setCodigo(rs.getLong("codigo"));
-				fabricanteConsultado.setNome(rs.getString("nome"));
+		fabricanteConsultado = new Fabricante();
 
-			}
+		if (rs != null) {
+			fabricanteConsultado.setCodigo(rs.getLong("codigo"));
+			fabricanteConsultado.setNome(rs.getString("nome"));
 
-			rs.close();
+		}
+
+		rs.close();
 			
-			} catch (SQLException e) {
-	            
-				System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+        stmt.close();
 
-			} finally {
-            // fechar a conexao com o banco de dados
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    System.out.println("Erro ao fechar o statement: " + e);
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    System.out.println("Erro a conexao com o SGBD: " + e);
-                }
-            }
-			
-		} 
+        conn.close();
 		
 		return fabricanteConsultado;
 	}
@@ -180,47 +124,27 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		conn = MySqlDAOFactory.createConnection();
 
 		// consultar os alunos que existem na tabela
-		try {
-			String sql = "SELECT * FROM Fabricante;";
-			stmt = conn.createStatement();
 
-			rs = stmt.executeQuery(sql);
+		String sql = "SELECT * FROM Fabricante;";
+		stmt = conn.createStatement();
 
-			if (rs != null) {
-				listaFabricantes = new ArrayList<>();
-				while (rs.next()) {
-					Fabricante fa = new Fabricante();
-					fa.setCodigo(rs.getLong("codigo"));
-					fa.setNome(rs.getString("nome"));
+		rs = stmt.executeQuery(sql);
 
-					listaFabricantes.add(fa);
-				}
+		if (rs != null) {
+			listaFabricantes = new ArrayList<>();
+			while (rs.next()) {
+				Fabricante fa = new Fabricante();
+				fa.setCodigo(rs.getLong("codigo"));
+				fa.setNome(rs.getString("nome"));
+
+				listaFabricantes.add(fa);
 			}
-			rs.close();
-			
-			} catch (SQLException e) {
-            
-				System.out.println("Erro ao conectar o SGBD MySQL: " + e);
+		}
+		rs.close();
+		
+		stmt.close();
 
-			} finally {
-			// fechar a conexao com o banco de dados
-				if (stmt != null) {
-					try {
-						stmt.close();
-					} catch (SQLException e) {
-						System.out.println("Erro ao fechar o statement: " + e);
-            }
-        }
-        
-	        if (conn != null) {
-	            try {
-	                conn.close();
-	            } catch (SQLException e) {
-	                System.out.println("Erro a conexao com o SGBD: " + e);
-	            }
-	        }
-			
-		} 
+        conn.close();
 
 		return listaFabricantes;
 	}

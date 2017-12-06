@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.chipstore.dao.FabricanteDao;
 import br.com.chipstore.dao.factory.DAOFactory;
 import br.com.chipstore.dao.factory.MySqlDAOFactory;
+import br.com.chipstore.exception.ChipstoreExpection;
 import br.com.chipstore.model.Fabricante;
 
 
@@ -18,57 +19,51 @@ public class FabricanteService {
         fabricanteDAO = factory.getFabricanteDao();
     }
 
-    public long incluir(Fabricante novoFabricante) {
+    public long incluir(Fabricante novoFabricante) throws ChipstoreExpection {
         long codigo = 0;
         try {
 			codigo = fabricanteDAO.incluir(novoFabricante);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
         return codigo;
     }
 
-    public boolean atualizar(Fabricante fabricanteAtualizado) {
+    public boolean atualizar(Fabricante fabricanteAtualizado) throws ChipstoreExpection {
         try {
 			return fabricanteDAO.atualizar(fabricanteAtualizado);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
-        return false;
     }
 
-    public Fabricante consultarPorCodigo(long codigo) {
+    public Fabricante consultarPorCodigo(long codigo) throws ChipstoreExpection {
         Fabricante fabricante = null;
         try {
 			fabricante = fabricanteDAO.consultarPorCodigo(codigo);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
         return fabricante;
     }
 
-    public Fabricante consultarPorNome(String nome) {
+    public Fabricante consultarPorNome(String nome) throws ChipstoreExpection {
 	    Fabricante fabricante = null;
 	    try {
 			fabricante = fabricanteDAO.consultarPorNome(nome);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
 	    return fabricante;
     }
 
     
-    public List<Fabricante> listar() {
+    public List<Fabricante> listar() throws ChipstoreExpection {
         List<Fabricante> fabricantes = null;
         try {
 			fabricantes = fabricanteDAO.listar();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
         return fabricantes;
     }

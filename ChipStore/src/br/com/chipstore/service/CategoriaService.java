@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.chipstore.dao.CategoriaDao;
 import br.com.chipstore.dao.factory.DAOFactory;
 import br.com.chipstore.dao.factory.MySqlDAOFactory;
+import br.com.chipstore.exception.ChipstoreExpection;
 import br.com.chipstore.model.Categoria;
 
 
@@ -18,57 +19,52 @@ public class CategoriaService {
         categoriaDAO = factory.getCategoriaDao();
     }
 
-    public long incluir(Categoria novaCategoria) {
+    public long incluir(Categoria novaCategoria) throws ChipstoreExpection {
+    	
         long codigo = 0;
         try {
 			codigo = categoriaDAO.incluir(novaCategoria);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection("Houve erro na inclusão da categoria", e);
 		}
         return codigo;
     }
 
-    public boolean atualizar(Categoria categoriaAtualizado) {
+    public boolean atualizar(Categoria categoriaAtualizada) throws ChipstoreExpection {
         try {
-			return categoriaDAO.atualizar(categoriaAtualizado);
+			return categoriaDAO.atualizar(categoriaAtualizada);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
-        return false;
     }
 
-    public Categoria consultarPorCodigo(long codigo) {
+    public Categoria consultarPorCodigo(long codigo) throws ChipstoreExpection {
         Categoria categoria = null;
         try {
 			categoria = categoriaDAO.consultarPorCodigo(codigo);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
         return categoria;
     }
 
-    public Categoria consultarPorNome(String nome) {
+    public Categoria consultarPorNome(String nome) throws ChipstoreExpection {
 	    Categoria categoria = null;
 	    try {
 			categoria = categoriaDAO.consultarPorNome(nome);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
 	    return categoria;
     }
 
     
-    public List<Categoria> listar() {
+    public List<Categoria> listar() throws ChipstoreExpection {
         List<Categoria> categorias = null;
         try {
 			categorias = categoriaDAO.listar();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ChipstoreExpection();
 		}
         return categorias;
     }

@@ -163,10 +163,4 @@ public class MySQLCategoriaDao implements CategoriaDao {
 		return false;
 	}
 
-	@Override
-	public boolean abc() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

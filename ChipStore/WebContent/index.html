@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="shortcut icon" href="./img/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/login.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
-    <script type="text/javascript">
+    < src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></>
+    < src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></>
+    < src="js/login.js"></>
+    < src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></>
+    < type="text/java">
         $(document).ready(function() {
             $window = $(window);
 
@@ -207,7 +207,7 @@
 
         google.maps.event.addDomListener(window, 'load', init_map);
 
-    </script>
+    </>
 </head>
 
 <body>
@@ -228,7 +228,6 @@
                         <li><a href="#myCarousel" class="scroll">INÍCIO</a></li>
                         <li><a href="#sobre" class="scroll">SOBRE</a></li>
                         <li><a href="#contato" class="scroll">CONTATO</a></li>
-                        <li><a href="#map-container" class="scroll">LOJA</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 search-col">
@@ -247,6 +246,7 @@
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
                     <a href="cadastro_profissional.html" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginadm" id="nav-btn-login">ADM</button>
+                    <i class="glyphicon glyphicon-shopping"></i>
                 </div>
             </div>
         </div>
@@ -281,7 +281,7 @@
     </div>
 
 
-    <!--------------- LOGIN ADM --------------------->
+    <!--------------- LOGIN ADM -------------------->
 
     <div class="modal fade" id="loginadm" role="dialog">
         <div class="modal-dialog" role="document">
@@ -322,9 +322,9 @@
         <div class="carousel-inner">
             <div class="item active" style="background-image: url(img/capa1.png)">
             </div>
-            <div class="item" style="background-image: url(img/capa2.png)">
+            <div class="item" style = "background-image: url(img/capa2.png)">
             </div>
-            <div class="item" style="background-image: url(img/capa3.png)">
+            <div class="item" style = "background-image: url(img/capa3.png)">
             </div>
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -364,8 +364,15 @@
     	<!-- Inicio Vitrine -->
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail">
-      		 <a href="celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
+      		 <a href="loja/celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
       			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple </p>
       			<hr class="line">
       			<div class="row">
@@ -382,6 +389,13 @@
     		<span class="thumbnail">
       			<img src="img/pcdell.jpg" alt="Imagem de um PC DELL">
       			<h4>Computador Dell Inspiron </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>Computador Dell Inspiron 3268-D05P Intel Pentium Dual Core 4GB 1TB - Linux  </p>
       			<hr class="line">
       			<div class="row">
@@ -398,6 +412,13 @@
     		<span class="thumbnail">
       			<img src="img/tablet.png" alt="Imagem de um tablet">
       			<h4>Tablet Samsung Galaxy Tab </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>Tablet Samsung Galaxy Tab T113 8GB - Preto </p>
       			<hr class="line">
       			<div class="row">
@@ -414,6 +435,13 @@
     		<span class="thumbnail">
       			<img src="img/hd.png" alt="Imagem de um Iphone 8">
       			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>HD Externo Portátil Samsung M3 Portable 1TB Preto </p>
       			<hr class="line">
       			<div class="row">
@@ -441,8 +469,15 @@
     	<!-- Inicio Vitrine -->
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail">
-      		 <a href="/loja/celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
+      		 <a href="celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
       			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple </p>
       			<hr class="line">
       			<div class="row">
@@ -459,6 +494,13 @@
     		<span class="thumbnail">
       			<img src="img/pcdell.jpg" alt="Imagem de um PC DELL">
       			<h4>Computador Dell Inspiron </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>Computador Dell Inspiron 3268-D05P Intel Pentium Dual Core 4GB 1TB - Linux  </p>
       			<hr class="line">
       			<div class="row">
@@ -475,6 +517,13 @@
     		<span class="thumbnail">
       			<img src="img/tablet.png" alt="Imagem de um tablet">
       			<h4>Tablet Samsung Galaxy Tab </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>Tablet Samsung Galaxy Tab T113 8GB - Preto </p>
       			<hr class="line">
       			<div class="row">
@@ -491,6 +540,13 @@
     		<span class="thumbnail">
       			<img src="img/hd.png" alt="Imagem de um Iphone 8">
       			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>HD Externo Portátil Samsung M3 Portable 1TB Preto </p>
       			<hr class="line">
       			<div class="row">
@@ -520,6 +576,13 @@
     		<span class="thumbnail">
       		 <a href="celular.html"><img src="img/iphone.png" alt="Imagem de um Iphone 8"></a> 
       			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple </p>
       			<hr class="line">
       			<div class="row">
@@ -536,6 +599,13 @@
     		<span class="thumbnail">
       			<img src="img/pcdell.jpg" alt="Imagem de um PC DELL">
       			<h4>Computador Dell Inspiron </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>Computador Dell Inspiron 3268-D05P Intel Pentium Dual Core 4GB 1TB - Linux  </p>
       			<hr class="line">
       			<div class="row">
@@ -552,6 +622,13 @@
     		<span class="thumbnail">
       			<img src="img/tablet.png" alt="Imagem de um tablet">
       			<h4>Tablet Samsung Galaxy Tab </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>Tablet Samsung Galaxy Tab T113 8GB - Preto </p>
       			<hr class="line">
       			<div class="row">
@@ -568,6 +645,13 @@
     		<span class="thumbnail">
       			<img src="img/hd.png" alt="Imagem de um Iphone 8">
       			<h4>iPhone 8 256GB </h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
       			<p>HD Externo Portátil Samsung M3 Portable 1TB Preto </p>
       			<hr class="line">
       			<div class="row">
@@ -644,7 +728,7 @@
                             </div>
                             <div class="form-group ">
                                 <label for="exampleInputText">Mensagem</label>
-                                <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Description" required="required"> </textarea>
+                                <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Deion" required="required"> </textarea>
                             </div>
                             <button type="submit" name="btEnviar" class="btn btn-default">Enviar Mensagem</button>
                         </form>

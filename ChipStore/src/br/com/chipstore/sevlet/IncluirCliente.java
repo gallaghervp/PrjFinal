@@ -50,7 +50,7 @@ public class IncluirCliente extends HttpServlet {
 		String complemento;
 		String bairro;
 		String municipio;
-		String estado;
+		String uf;
 		String senha;
 
 		nome = request.getParameter("nomecli");
@@ -63,12 +63,12 @@ public class IncluirCliente extends HttpServlet {
 		complemento = request.getParameter("complementocli");
 		bairro = request.getParameter("bairrocli");
 		municipio = request.getParameter("municipiocli");
-		estado = request.getParameter("selEstadocli");
+		uf = request.getParameter("selEstadocli");
 		senha = request.getParameter("senhacli");
 
 		Cliente novoCliente = new Cliente();
 
-		novoCliente.setCpf(cpf);
+		
 		novoCliente.setNome(nome);
 		novoCliente.setCpf(cpf);
 		novoCliente.setRg(rg);
@@ -78,11 +78,12 @@ public class IncluirCliente extends HttpServlet {
 		novoCliente.setComplemento(complemento);
 		novoCliente.setBairro(bairro);
 		novoCliente.setMunicipio(municipio);
+		novoCliente.setUf(uf);
 		novoCliente.setSenha(senha);
-
-		int diaNascimento = Integer.parseInt(dataNascimento.substring(0, 2));
-		int mesNascimento = Integer.parseInt(dataNascimento.substring(3, 5));
-		int anoNascimento = Integer.parseInt(dataNascimento.substring(6)) - 1900;
+		
+		int diaNascimento = Integer.parseInt(dataNascimento.substring(6));
+		int mesNascimento = Integer.parseInt(dataNascimento.substring(3,5));
+		int anoNascimento = Integer.parseInt(dataNascimento.substring(1,4)) - 1900;
 
 		novoCliente.setDataNascimento(new Date(anoNascimento, mesNascimento, diaNascimento));
 

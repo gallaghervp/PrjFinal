@@ -39,6 +39,7 @@ DROP TABLE IF EXISTS `projetofinal`.`administrador` ;
 CREATE TABLE IF NOT EXISTS `projetofinal`.`administrador` (
   `matricula` INT NOT NULL,
   `nome` INT NOT NULL,
+  `cpf` VARCHAR(15) NOT NULL,
   `senha` VARCHAR(10) NOT NULL,
   `email` VARCHAR(70) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,

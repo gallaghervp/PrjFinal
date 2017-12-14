@@ -6,12 +6,23 @@ public  class Administrador{
 
 	private long matricula;
 	private String nome;
+	private String cpf;
 	private String email;
 	private String telefone;
 	private String senha;
 	
 	public Administrador() {
 		super();
+	}
+
+	public Administrador(long matricula, String nome, String cpf, String email, String telefone, String senha) {
+		super();
+		this.matricula = matricula;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.telefone = telefone;
+		this.senha = senha;
 	}
 
 	public long getMatricula() {
@@ -28,6 +39,14 @@ public  class Administrador{
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getEmail() {

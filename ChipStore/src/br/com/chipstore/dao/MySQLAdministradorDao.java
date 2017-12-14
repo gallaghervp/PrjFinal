@@ -28,13 +28,14 @@ public class MySQLAdministradorDao implements AdministradorDao{
 
 		// incluir administrador
 		 
-		String sql = "INSERT INTO Administrador (nome) VALUES (?);";
+		String sql = "INSERT INTO Administrador (nome, cpf, senha, email, telefone) VALUES (?,?,?,?,?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 		pstmt.setString(1,  administrador.getNome());
-		pstmt.setString(2, administrador.getSenha());
-		pstmt.setString(3, administrador.getEmail());
-		pstmt.setString(4, administrador.getTelefone());
+		pstmt.setString(2,  administrador.getCpf());
+		pstmt.setString(3, administrador.getSenha());
+		pstmt.setString(4, administrador.getEmail());
+		pstmt.setString(5, administrador.getTelefone());
 		
 		
 		
@@ -79,6 +80,7 @@ public class MySQLAdministradorDao implements AdministradorDao{
 		if (rs != null) {
 			administradorConsultado.setMatricula(rs.getLong("matricula"));
 			administradorConsultado.setNome(rs.getString("nome"));
+			administradorConsultado.setCpf(rs.getString("cpf"));
 			administradorConsultado.setEmail(rs.getString("email"));
 			administradorConsultado.setTelefone(rs.getString("telefone"));
 			
@@ -96,8 +98,79 @@ public class MySQLAdministradorDao implements AdministradorDao{
 
 	@Override
 	public Administrador consultarPorNome(String nome) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		Administrador administradorConsultado = null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		// consultar os Administradoress que existem na tabela
+
+		String sql = "SELECT * FROM Administrador  WHERE nome=" + nome + ";";
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		administradorConsultado = new Administrador();
+		
+		// Como associar administradores com esse administrador?
+
+		if (rs != null) {
+			administradorConsultado.setMatricula(rs.getLong("matricula"));
+			administradorConsultado.setNome(rs.getString("nome"));
+			administradorConsultado.setCpf(rs.getString("cpf"));
+			administradorConsultado.setEmail(rs.getString("email"));
+			administradorConsultado.setTelefone(rs.getString("telefone"));
+			
+		}
+
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return administradorConsultado;
+	}
+	
+	public Administrador consultarPorCpf(String cpf) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		Administrador administradorConsultado = null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		// consultar os Administradoress que existem na tabela
+
+		String sql = "SELECT * FROM Administrador  WHERE cpf=" + cpf + ";";
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		administradorConsultado = new Administrador();
+		
+		// Como associar administradores com esse administrador?
+
+		if (rs != null) {
+			administradorConsultado.setMatricula(rs.getLong("matricula"));
+			administradorConsultado.setNome(rs.getString("nome"));
+			administradorConsultado.setCpf(rs.getString("cpf"));
+			administradorConsultado.setEmail(rs.getString("email"));
+			administradorConsultado.setTelefone(rs.getString("telefone"));
+			
+		}
+
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return administradorConsultado;
 	}
 
 	@Override

@@ -107,6 +107,52 @@ public class MySQLClienteDao implements ClienteDao {
 	}
 	
 	@Override
+	public Cliente consultarPorEmail(String email) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		Cliente clienteConsultado = null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		// consultar os Clientes que existem na tabela
+
+		String sql = "SELECT * FROM Cliente  WHERE email=" + email + ";";
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		clienteConsultado = new Cliente();
+		
+		// Como associar clientes com esse cliente?
+
+		if (rs != null) {
+			clienteConsultado.setId(rs.getLong("id"));
+			clienteConsultado.setCpf(rs.getString("cpf"));
+			clienteConsultado.setNome(rs.getString("nome"));
+			clienteConsultado.setRg(rs.getString("rg"));
+			clienteConsultado.setDataNascimento(rs.getDate("dataNascimento"));
+			clienteConsultado.setEndereco(rs.getString("endereco"));
+			clienteConsultado.setMunicipio(rs.getString("municipio"));
+			clienteConsultado.setUf(rs.getString("uf"));
+			clienteConsultado.setComplemento(rs.getString("complemento"));
+			clienteConsultado.setEmail(rs.getString("email"));
+			clienteConsultado.setTelefone(rs.getString("telefone"));
+			
+		}
+
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return clienteConsultado;
+	
+	}
+	
+	@Override
 	public List<Cliente> listar() throws SQLException {
 		Connection conn = null;
 		Statement stmt = null;

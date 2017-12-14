@@ -9,6 +9,7 @@ public interface AdministradorDao {
 	public long incluir(Administrador administrador) throws SQLException;
     public Administrador consultarPorMatricula(long matricula) throws SQLException;
     public Administrador consultarPorNome(String nome) throws SQLException;
+    public Administrador consultarPorCpf(String cpf) throws SQLException;
     public List<Administrador> listar() throws SQLException;
     public boolean atualizar(Administrador administrador) throws SQLException;
     public boolean remover(long matricula) throws SQLException;

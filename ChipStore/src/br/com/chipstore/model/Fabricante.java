@@ -2,7 +2,7 @@ package br.com.chipstore.model;
 
 public class Fabricante {
 	
-	private long codigo;
+	private long id;
 	private String nome;
 	private String cnpj;
 	private String endereco;
@@ -18,10 +18,10 @@ public class Fabricante {
 		super();
 	}
 	
-	public Fabricante(long codigo, String nome, String cnpj, String endereco, String complemento, String bairro,
+	public Fabricante(long id, String nome, String cnpj, String endereco, String complemento, String bairro,
 			String municipio, String uf, String contato, String email, String telefone) {
 		super();
-		this.codigo = codigo;
+		this.id = id;
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.endereco = endereco;
@@ -34,12 +34,12 @@ public class Fabricante {
 		this.telefone = telefone;
 	}
 
-	public long getCodigo() {
-		return codigo;
+	public long getId() {
+		return id;
 	}
 
-	public void setCodigo(long codigo) {
-		this.codigo = codigo;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -124,7 +124,7 @@ public class Fabricante {
 
 	@Override
 	public String toString() {
-		return "Fabricante [codigo=" + codigo + ", nome=" + nome + ", cnpj=" + cnpj + ", endereco=" + endereco
+		return "Fabricante [id=" + id + ", nome=" + nome + ", cnpj=" + cnpj + ", endereco=" + endereco
 				+ ", complemento=" + complemento + ", bairro=" + bairro + ", municipio=" + municipio + ", uf=" + uf
 				+ ", contato=" + contato + ", email=" + email + ", telefone=" + telefone + "]";
 	}

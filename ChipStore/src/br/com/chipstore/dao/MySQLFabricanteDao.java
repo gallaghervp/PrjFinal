@@ -46,7 +46,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		tableKeys.next();
 		codigo = tableKeys.getInt(1);
 
-		fabricante.setCodigo(codigo);
+		fabricante.setId(codigo);
 			
         pstmt.close();
 
@@ -75,7 +75,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		fabricanteConsultado = new Fabricante();
 
 		if (rs != null) {
-			fabricanteConsultado.setCodigo(rs.getLong("codigo"));
+			fabricanteConsultado.setId(rs.getLong("codigo"));
 			fabricanteConsultado.setNome(rs.getString("nome"));
 			fabricanteConsultado.setCnpj(rs.getString("cnpj"));
 			fabricanteConsultado.setEndereco(rs.getString("endereco"));
@@ -117,7 +117,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		fabricanteConsultado = new Fabricante();
 
 		if (rs != null) {
-			fabricanteConsultado.setCodigo(rs.getLong("codigo"));
+			fabricanteConsultado.setId(rs.getLong("codigo"));
 			fabricanteConsultado.setNome(rs.getString("nome"));
 			fabricanteConsultado.setCnpj(rs.getString("cnpj"));
 			fabricanteConsultado.setEndereco(rs.getString("endereco"));
@@ -161,7 +161,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 			listaFabricantes = new ArrayList<>();
 			while (rs.next()) {
 				Fabricante fa = new Fabricante();
-				fa.setCodigo(rs.getLong("codigo"));
+				fa.setId(rs.getLong("codigo"));
 				fa.setNome(rs.getString("nome"));
 				fa.setNome(rs.getString("cnpj"));
 				fa.setNome(rs.getString("endereco"));

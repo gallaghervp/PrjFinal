@@ -40,7 +40,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 		pstmt.setString(7, produto.getDisponivel());
 		pstmt.setString(8, produto.getImagem());
 		pstmt.setLong(9, produto.getCategoria().getCodigo());
-		pstmt.setLong(10, produto.getFabricante().getCodigo());
+		pstmt.setLong(10, produto.getFabricante().getId());
 		
 		
 
@@ -94,7 +94,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 			produtoConsultado.setDisponivel(rs.getString("disponivel"));
 			produtoConsultado.setImagem(rs.getString("imagem"));
 			
-			fabricante.setCodigo(rs.getLong("codigo"));
+			fabricante.setId(rs.getLong("codigo"));
 			fabricante.setNome(rs.getString("nome"));
 			fabricante.setCnpj(rs.getString("cnpj"));
 			fabricante.setEndereco(rs.getString("endereco"));
@@ -156,7 +156,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 				
 				Fabricante fabricante = new Fabricante();
 				
-				fabricante.setCodigo(rs.getLong("codigo"));
+				fabricante.setId(rs.getLong("codigo"));
 				fabricante.setNome(rs.getString("nome"));
 				fabricante.setCnpj(rs.getString("cnpj"));
 				fabricante.setEndereco(rs.getString("endereco"));

@@ -74,7 +74,6 @@ public class IncluirCliente extends HttpServlet {
 		novoCliente.setRg(rg);
 		novoCliente.setTelefone(telefone);
 		novoCliente.setEmail(email);
-		novoCliente.setEstado(estado);
 		novoCliente.setEndereco(endereco);
 		novoCliente.setComplemento(complemento);
 		novoCliente.setBairro(bairro);

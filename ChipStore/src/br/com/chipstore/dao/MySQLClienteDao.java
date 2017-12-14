@@ -28,7 +28,7 @@ public class MySQLClienteDao implements ClienteDao {
 
 		// incluir cliente
 		 
-		String sql = "INSERT INTO Cliente (nome, datanascimento, cpf, rg, telefone, email, uf, endereco, complemento, bairro, municipio, senha) VALUES (?,?,?,?,?,?,?,?,?,?,?,?); ";
+		String sql = "INSERT INTO Cliente (nome,datanascimento,cpf,rg,telefone,email,uf,endereco,complemento,bairro,municipio,senha) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 		pstmt.setString(1, cliente.getNome());
@@ -37,13 +37,12 @@ public class MySQLClienteDao implements ClienteDao {
 		pstmt.setString(4, cliente.getRg());
 		pstmt.setString(5, cliente.getTelefone());
 		pstmt.setString(6, cliente.getEmail());
-		pstmt.setString(7, cliente.getEstado());
+		pstmt.setString(7, cliente.getUf());
 		pstmt.setString(8, cliente.getEndereco());
 		pstmt.setString(9, cliente.getComplemento());
 		pstmt.setString(10, cliente.getBairro());
 		pstmt.setString(11, cliente.getMunicipio());
 		pstmt.setString(12, cliente.getSenha());
-		
 		
 		pstmt.execute();
 
@@ -90,7 +89,7 @@ public class MySQLClienteDao implements ClienteDao {
 			clienteConsultado.setDataNascimento(rs.getDate("dataNascimento"));
 			clienteConsultado.setEndereco(rs.getString("endereco"));
 			clienteConsultado.setMunicipio(rs.getString("municipio"));
-			clienteConsultado.setEstado(rs.getString("estado"));
+			clienteConsultado.setUf(rs.getString("uf"));
 			clienteConsultado.setComplemento(rs.getString("complemento"));
 			clienteConsultado.setEmail(rs.getString("email"));
 			clienteConsultado.setTelefone(rs.getString("telefone"));
@@ -136,13 +135,13 @@ public class MySQLClienteDao implements ClienteDao {
 				cr.setDataNascimento(rs.getDate("dataNascimento"));
 				cr.setCpf(rs.getString("cpf"));
 				cr.setRg(rs.getString("rg"));
-				cr.setEstado(rs.getString("estado"));
+				cr.setUf(rs.getString("uf"));
 				cr.setEndereco(rs.getString("endereco"));
 				cr.setComplemento(rs.getString("complemento"));
 				cr.setBairro(rs.getString("bairro"));
 				cr.setNome(rs.getString("Municipio"));
 				cr.setTelefone(rs.getString("telefone"));
-				cr.setEmail(rs.getString("email"));  
+				cr.setEmail(rs.getString("email"));
 				
 				listaClientes.add(cr);
 				

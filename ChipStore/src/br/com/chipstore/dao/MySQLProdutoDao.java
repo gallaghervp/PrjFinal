@@ -28,7 +28,7 @@ public class MySQLProdutoDao implements ProdutoDao {
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
 
-		String sql = "INSERT INTO Produto (nome, codigobarras, modelo, descricao, preco, quantidade, disponivel, imagem, categoria,fabricante) VALUES (?,?,?,?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO Produto (codigobarra,nome,modelo,descricao,preco,quantidade,disponivel,imagem,) VALUES (?,?,?,?,?,?,?,?,?,?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 		pstmt.setLong(1, produto.getCodigoBarras());

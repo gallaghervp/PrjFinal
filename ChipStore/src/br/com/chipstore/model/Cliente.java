@@ -12,7 +12,7 @@ public class Cliente {
 	private String rg;
 	private String telefone;
 	private String email;
-	private String estado;
+	private String uf;
 	private String endereco;
 	private String complemento;
 	private String bairro;
@@ -95,13 +95,13 @@ public class Cliente {
 	}
 
 
-	public String getEstado() {
-		return estado;
+	public String getUf() {
+		return uf;
 	}
 
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 
 
@@ -158,7 +158,7 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf + ", rg="
-				+ rg + ", telefone=" + telefone + ", email=" + email + ", estado=" + estado + ", endereco=" + endereco
+				+ rg + ", telefone=" + telefone + ", email=" + email + ", uf=" + uf + ", endereco=" + endereco
 				+ ", complemento=" + complemento + ", bairro=" + bairro + ", municipio=" + municipio + ", senha="
 				+ senha + "]";
 	}

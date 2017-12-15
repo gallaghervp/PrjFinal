@@ -28,11 +28,13 @@ public class IncluirAdministrador extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nome;
+		String cpf;
 		String telefone;
 		String email;
 		String senha;
 
 		nome = request.getParameter("nomepro");
+		cpf = request.getParameter("cpfpro");
 		telefone = request.getParameter("txtTelPro");
 		email = request.getParameter("emailpro");
 		senha = request.getParameter("senhapro");
@@ -40,6 +42,7 @@ public class IncluirAdministrador extends HttpServlet {
 		Administrador novoAdministrador = new Administrador();
 
 		novoAdministrador.setNome(nome);
+		novoAdministrador.setCpf(cpf);
 		novoAdministrador.setTelefone(telefone);
 		novoAdministrador.setEmail(email);
 		novoAdministrador.setSenha(senha);

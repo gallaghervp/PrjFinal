@@ -36,10 +36,10 @@ public class IncluirAdministrador extends HttpServlet {
 		
 		 
 		 
-		 nome = request.getParameter("nome");
-		 telefone = request.getParameter("telefone");
-		 email = request.getParameter("email");
-		 senha = request.getParameter("senha");
+		 nome = request.getParameter("nomepro");
+		 telefone = request.getParameter("txtTelPro");
+		 email = request.getParameter("emailpro");
+		 senha = request.getParameter("senhapro");
 		 
 		 
 		 

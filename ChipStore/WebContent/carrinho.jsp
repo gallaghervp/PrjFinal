@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" type="text/css" href="css/produtos.css">
+    <link rel="stylesheet" type="text/css" href="css/contrast.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -18,14 +19,98 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/autocontraste.js"></script>
+	<script src="js/letras.js"></script>
 </head>
 <script type="text/javascript">
-function funcao1()
-{
-alert("Realize seu cadastro na página inicial, caso já tenha faça login, você será redirecionado em segundo após clicar em OK!");
-window.location.href="index.jsp"; 
-}
 </script>
+
+<body style="padding-top: 240px;">
+
+    <!----------------- LOGIN ADM ------------------->
+
+    <div class="modal fade" id="loginadm" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modalLogin">
+                <div class="modal-header">
+                    <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login Administrativo</h1>
+                </div>
+                <div class="modal-body">
+                    <form action="incluirFabricante.jsp">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" required autofocus />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" required autofocus />
+                        </div>
+                        <button type="submit" class="btn btn-form btn-block">ENTRAR</button>
+                    </form>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <p>Cadastro somente com o ADM do site!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%@ include file="../template/cabecalho2.jsp" %>
+	
+	<br>
+	
+    <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Produto</th>
+                    <th style="width:10%">Preço</th>
+                    <th style="width:8%">Quantidade</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">Produto 1</h4>
+                                <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">$1.99</td>
+                    <td data-th="Quantity">
+                        <input type="number" class="form-control text-center" value="1">
+                    </td>
+                    <td data-th="Subtotal" class="text-center">1.99</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Total 1.99</strong></td>
+                </tr>
+                <tr>
+                    <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                    <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    <br>
+
+
+  	<%@ include file="../template/footer2.jsp" %>
+
 
 <body style="padding-top: 240px;">
     <nav class="navbar navbar-inverse navbar-fixed-top custom">
@@ -135,6 +220,7 @@ window.location.href="index.jsp";
 
 
     <!--------------- FOOTER -------------------->
+
 
 
 </body>

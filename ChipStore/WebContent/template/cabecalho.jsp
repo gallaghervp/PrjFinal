@@ -3,6 +3,66 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<<<<<<< HEAD
+<title>Cabeçalho</title>
+</head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Alternar Navegação</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.jsp">ChipStore</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="col-sm-3 brand-col">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="index.jsp">INÍCIO</a></li>
+                        <li><a href="#sobre" class="scroll">SOBRE</a></li>
+                        <li><a href="#contato" class="scroll">CONTATO</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a title="Diminuir Fonte" alt="Diminuir" style="font-size:16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>
+                        <li><a title="Aumentar Fonte" alt="Aumentar" style="font-size:16px;" href="#"><span id="aumentar-fonte" class="glyphicon glyphicon-font"></span>+</a></li>
+                        <li><a style="font-size:16px;" href="#altocontraste" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast"><span class="glyphicon glyphicon-adjust"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 search-col">
+                    <form class="navbar-form" role="search">
+                        <div class="input-group" style="width:93%;">
+                            <input type="text" id="busca" class="form-control search-form" placeholder="Buscar">
+                            <div class="input-group-btn" style="display:block">
+                                <button class="btn btn-default search-btn" type="submit" style="display:inline-block">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
+                    <a href="incluirCliente.jsp" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>        
+                    <span style="font-size: 15px"><a href="#" class="glyphicon glyphicon-shopping-cart"></a></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!--------------- MODAL LOGIN -------------------->
+
+    <div class="modal fade" id="login" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modalLogin">
+                <div class="modal-header">
+                    <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form action="index.jsp">
+=======
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -58,6 +118,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="indexLogado.jsp">
+>>>>>>> branch 'master' of https://github.com/gallaghervp/PrjFinal.git
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" required autofocus />

@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<<<<<<< HEAD
+<title>Sobre</title>
+=======
 <title>Insert title here</title>
+>>>>>>> branch 'master' of https://github.com/gallaghervp/PrjFinal.git
 </head>
 <body>
   <!--------------- SOBRE -------------------->

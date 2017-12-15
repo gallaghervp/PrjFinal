@@ -81,10 +81,16 @@ public class AdministradorService {
 			throw new ChipstoreException();
 		}
         
-        
-        
-        
-        
     }
-
+    
+    public String recuperarSenha(String cpf)  throws ChipstoreException {
+	    String  senha = null;
+	    try {
+			senha = administradorDAO.recuperarSenha(cpf);
+			return senha;
+		} catch (SQLException e) {
+			throw new ChipstoreException();
+		}
+	    
+    }
 }

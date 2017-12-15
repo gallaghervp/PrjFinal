@@ -158,6 +158,7 @@ public class MySQLAdministradorDao implements AdministradorDao{
 			administradorConsultado.setMatricula(rs.getLong("matricula"));
 			administradorConsultado.setNome(rs.getString("nome"));
 			administradorConsultado.setCpf(rs.getString("cpf"));
+			administradorConsultado.setSenha(rs.getString("senha"));
 			administradorConsultado.setEmail(rs.getString("email"));
 			administradorConsultado.setTelefone(rs.getString("telefone"));
 			
@@ -221,6 +222,36 @@ public class MySQLAdministradorDao implements AdministradorDao{
 	@Override
 	public boolean remover(long matricula) throws SQLException {
 		return false;
+	}
+
+	@Override
+	public String recuperarSenha(String cpf) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String senha =  null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		// consultar os Administradoress que existem na tabela
+
+		String sql = "SELECT senha FROM Administrador  WHERE cpf=" + cpf + ";";
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		if (rs != null) {
+			senha = rs.getString("senha");
+		}
+
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return senha;
 	}
 
 }

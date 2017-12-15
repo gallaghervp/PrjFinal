@@ -13,5 +13,6 @@ public interface AdministradorDao {
     public List<Administrador> listar() throws SQLException;
     public boolean atualizar(Administrador administrador) throws SQLException;
     public boolean remover(long matricula) throws SQLException;
+    public String recuperarSenha(String cpf) throws SQLException; 
 
 }

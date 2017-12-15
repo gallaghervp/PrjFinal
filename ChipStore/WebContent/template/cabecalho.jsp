@@ -90,12 +90,12 @@
                 <div class="modal-body">
                     <form action="incluirFabricante.jsp">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" required autofocus />
+                            <label for="exampleInputEmail1">Cpf</label>
+                            <input type="text" class="form-control" id="exampleInputCpf1" placeholder="Digite seu Cpf"  name ="cpfadmin"required autofocus />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" required autofocus />
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" required autofocus name="senhaadmin"/>
                         </div>
                         <button type="submit" class="btn btn-form btn-block">ENTRAR</button>
                     </form>

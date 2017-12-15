@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Administrador;
 import br.com.chipstore.service.AdministradorService;
+import br.com.chipstore.util.Utilitarios;
 
 @WebServlet("/IncluirAdministrador")
 public class IncluirAdministrador extends HttpServlet {
@@ -38,18 +39,23 @@ public class IncluirAdministrador extends HttpServlet {
 		telefone = request.getParameter("txtTelPro");
 		email = request.getParameter("emailpro");
 		senha = request.getParameter("senhapro");
-
-		Administrador novoAdministrador = new Administrador();
-
-		novoAdministrador.setNome(nome);
-		novoAdministrador.setCpf(cpf);
-		novoAdministrador.setTelefone(telefone);
-		novoAdministrador.setEmail(email);
-		novoAdministrador.setSenha(senha);
-
-		AdministradorService ar = new AdministradorService();
-
+		
 		try {
+
+			String hashSenhaAdmin = Utilitarios.calcularHashSenha(senha);
+
+			Administrador novoAdministrador = new Administrador();
+	
+			novoAdministrador.setNome(nome);
+			novoAdministrador.setCpf(cpf);
+			novoAdministrador.setTelefone(telefone);
+			novoAdministrador.setEmail(email);
+			novoAdministrador.setSenha(hashSenhaAdmin);
+
+			AdministradorService ar = new AdministradorService();
+
+		
+
 			long idGerada = ar.incluir(novoAdministrador);
 
 			RequestDispatcher rd = request.getRequestDispatcher("/registroAdm.jsp");

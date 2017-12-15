@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`administrador` (
   `matricula` INT NOT NULL,
   `nome` INT NOT NULL,
   `cpf` VARCHAR(15) NOT NULL,
-  `senha` VARCHAR(10) NOT NULL,
+  `senha` VARCHAR(32) NOT NULL,
   `email` VARCHAR(70) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`matricula`))
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`cliente` (
   `complemento` VARCHAR(20) NOT NULL,
   `bairro` VARCHAR(50) NOT NULL,
   `municipio` VARCHAR(50) NOT NULL,
-  `senha` VARCHAR(10) NOT NULL,
+  `senha` VARCHAR(32) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;

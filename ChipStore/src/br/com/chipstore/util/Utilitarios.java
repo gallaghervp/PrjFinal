@@ -1,7 +1,12 @@
 package br.com.chipstore.util;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.chipstore.exception.ChipstoreException;
 
 public class Utilitarios {
 	public static List<String> montarListaUf(){
@@ -38,4 +43,44 @@ public class Utilitarios {
 		
 		return uf;
 	}
+	
+	public static String calcularHashSenha(String senha) throws ChipstoreException {
+    	MessageDigest md;
+		try {
+			md = MessageDigest.getInstance( "MD5" );
+			md.update( senha.getBytes() );  
+			
+			BigInteger hash = new BigInteger( 1, md.digest() );  
+			
+			String hashSenha = hash.toString( 16 ); 
+			
+			return hashSenha;
+			
+		} catch (NoSuchAlgorithmException e) {
+			throw new ChipstoreException("Erro ao gerar hash da senha");
+		}  
+
+	}
+    
+    public static boolean validarSenha(String hashSenhaOriginal, String hashSenhaInformada) {
+		 return (hashSenhaOriginal.equals(hashSenhaInformada));
+    }
+
+    public void testarValidacaoSenha() {
+    	String senha1 = "ABCDEFGHIJ";
+    	String senha2 = "1234567890";
+    	
+    	try {
+			String hashSenha1 = calcularHashSenha(senha1);
+			System.out.println(hashSenha1);
+			
+	    	String hashSenha2 = calcularHashSenha(senha2);
+	    	System.out.println(hashSenha2);
+			
+	    	System.out.println(validarSenha(hashSenha1, hashSenha2));
+
+		} catch (ChipstoreException e) {
+			e.printStackTrace();
+		}
+    }
 }

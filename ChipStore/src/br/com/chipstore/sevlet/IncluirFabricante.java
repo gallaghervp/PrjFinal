@@ -70,7 +70,7 @@ public class IncluirFabricante extends HttpServlet {
 		FabricanteService fs = new FabricanteService();
 		
 		try {
-			long codigoGerado = fs.incluir(novoFabricante);
+			long idGerado = fs.incluir(novoFabricante);
 
 			RequestDispatcher rd = request.getRequestDispatcher("/registroFabricante.jsp");
 			rd.forward(request, response);

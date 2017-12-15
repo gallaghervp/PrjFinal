@@ -50,6 +50,17 @@ public class AdministradorService {
 	    
     }
     
+    public Administrador consultarPorCpf(String cpf) throws ChipstoreException {
+	    Administrador administrador = null;
+	    try {
+			administrador = administradorDAO.consultarPorCpf(cpf);
+			return administrador;
+		} catch (SQLException e) {
+			throw new ChipstoreException();
+		}
+	    
+    }
+    
     public Administrador consultarPorMatricula(long matricula) throws ChipstoreException {
 	    Administrador administrador = null;
 	    try {
@@ -69,6 +80,10 @@ public class AdministradorService {
 		} catch (SQLException e) {
 			throw new ChipstoreException();
 		}
+        
+        
+        
+        
         
     }
 

@@ -152,7 +152,7 @@ CREATE INDEX `fk_boleto_pedido1_idx` ON `projetofinal`.`boleto` (`pedido_id` ASC
 DROP TABLE IF EXISTS `projetofinal`.`produto` ;
 
 CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
-  `codigo` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `codigobarra` VARCHAR(16) NOT NULL,
   `nome` VARCHAR(70) NOT NULL,
   `modelo` VARCHAR(20) NOT NULL,

@@ -26,9 +26,9 @@ public class TestarFabricanteDao {
 		return fabricanteDAO.atualizar(fabricanteAtualizada);
 	}
 
-	public Fabricante consultarPorCodigo(long codigo) throws SQLException {
+	public Fabricante consultarPorId(long id) throws SQLException {
 		Fabricante fabricante = null;
-		fabricante = fabricanteDAO.consultarPorCodigo(codigo);
+		fabricante = fabricanteDAO.consultarPorId(id);
 		return fabricante;
 	}
 
@@ -43,11 +43,11 @@ public class TestarFabricanteDao {
 		
 		Fabricante f = new Fabricante();
 		f.setNome("Caio");
-		long codigo = tfd.incluir(f);
+		long id = tfd.incluir(f);
 		
-		System.out.println("O codigo foi " + codigo);
+		System.out.println("O codigo foi " + id);
 		
-		f = tfd.consultarPorCodigo(codigo);
+		f = tfd.consultarPorId(id);
 		
 		
 		System.out.println(f.toString());

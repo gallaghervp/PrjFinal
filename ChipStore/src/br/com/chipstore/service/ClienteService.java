@@ -61,6 +61,17 @@ public class ClienteService {
 	    
     }
     
+    public Cliente consultarPorEmail(String email) throws ChipstoreException {
+	    Cliente cliente = null;
+	    try {
+			cliente = clienteDAO.consultarPorEmail(email);
+			return cliente;
+		} catch (SQLException e) {
+			throw new ChipstoreException();
+		}
+	    
+    }
+    
     public List<Cliente> listar() throws ChipstoreException {
         List<Cliente> clientes = null;
         try {

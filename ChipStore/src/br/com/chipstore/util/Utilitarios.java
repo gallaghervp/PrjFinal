@@ -6,36 +6,36 @@ import java.util.List;
 public class Utilitarios {
 	public static List<String> montarListaUf(){
 		
-		List<String> estado = new ArrayList<>();
-		estado.add("Selecione a UF");
-		estado.add("AC");
-		estado.add("AL");
-		estado.add("AP");
-		estado.add("AM");
-		estado.add("BA");
-		estado.add("CE");
-		estado.add("DF");
-		estado.add("ES");
-		estado.add("GO");
-		estado.add("MA");
-		estado.add("MT");
-		estado.add("MS");
-		estado.add("MG");
-		estado.add("PA");
-		estado.add("PB");
-		estado.add("PR");
-		estado.add("PE");
-		estado.add("PI");
-		estado.add("RJ");
-		estado.add("RN");
-		estado.add("RS");
-		estado.add("RO");
-		estado.add("RR");
-		estado.add("SC");
-		estado.add("SP");
-		estado.add("SE");
-		estado.add("TO");
+		List<String> uf = new ArrayList<>();
+		uf.add("Selecione a UF");
+		uf.add("AC");
+		uf.add("AL");
+		uf.add("AP");
+		uf.add("AM");
+		uf.add("BA");
+		uf.add("CE");
+		uf.add("DF");
+		uf.add("ES");
+		uf.add("GO");
+		uf.add("MA");
+		uf.add("MT");
+		uf.add("MS");
+		uf.add("MG");
+		uf.add("PA");
+		uf.add("PB");
+		uf.add("PR");
+		uf.add("PE");
+		uf.add("PI");
+		uf.add("RJ");
+		uf.add("RN");
+		uf.add("RS");
+		uf.add("RO");
+		uf.add("RR");
+		uf.add("SC");
+		uf.add("SP");
+		uf.add("SE");
+		uf.add("TO");
 		
-		return estado;
+		return uf;
 	}
 }

@@ -10,7 +10,6 @@ import java.util.List;
 
 import br.com.chipstore.dao.factory.MySqlDAOFactory;
 import br.com.chipstore.model.Administrador;
-import br.com.chipstore.model.Cliente;
 
 public class MySQLAdministradorDao implements AdministradorDao{
 	

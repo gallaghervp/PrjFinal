@@ -30,16 +30,7 @@ public class CategoriaService {
 	      
     }
 
-  //    public long incluir(Categoria novaCategoria) throws ChipStoreException {
-//        long codigo = 0;
-//        try {
-//			codigo = categoriaDAO.incluir(novaCategoria);
-//	  		return codigo;
-//		} catch (SQLException e) {
-//			throw new ChipStoreException("Erro na inclusão de Categoria", e);
-//		}
-//        
-//    }
+ 
 
     public boolean atualizar(Categoria categoriaAtualizada) throws ChipstoreException {
     	try {

@@ -19,7 +19,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 
 	@Override
 	public long incluir(Fabricante fabricante) throws SQLException {
-		long codigo = 0;
+		long id = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -44,19 +44,19 @@ public class MySQLFabricanteDao implements FabricanteDao {
 
 		ResultSet tableKeys = pstmt.getGeneratedKeys();
 		tableKeys.next();
-		codigo = tableKeys.getInt(1);
+		id = tableKeys.getInt(1);
 
-		fabricante.setId(codigo);
+		fabricante.setId(id);
 			
         pstmt.close();
 
         conn.close();
 
-		return codigo;
+		return id;
 	}
 
 	@Override
-	public Fabricante consultarPorCodigo(long codigo) throws SQLException {
+	public Fabricante consultarPorId(long id) throws SQLException {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -67,7 +67,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 
 		// consultar por código os fabricantes que existem na tabela
 
-		String sql = "SELECT * FROM Fabricante  WHERE codigo=" + codigo + ";";
+		String sql = "SELECT * FROM Fabricante  WHERE id=" + id + ";";
 		stmt = conn.createStatement();
 
 		rs = stmt.executeQuery(sql);
@@ -75,7 +75,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		fabricanteConsultado = new Fabricante();
 
 		if (rs != null) {
-			fabricanteConsultado.setId(rs.getLong("codigo"));
+			fabricanteConsultado.setId(rs.getLong("id"));
 			fabricanteConsultado.setNome(rs.getString("nome"));
 			fabricanteConsultado.setCnpj(rs.getString("cnpj"));
 			fabricanteConsultado.setEndereco(rs.getString("endereco"));
@@ -117,7 +117,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		fabricanteConsultado = new Fabricante();
 
 		if (rs != null) {
-			fabricanteConsultado.setId(rs.getLong("codigo"));
+			fabricanteConsultado.setId(rs.getLong("id"));
 			fabricanteConsultado.setNome(rs.getString("nome"));
 			fabricanteConsultado.setCnpj(rs.getString("cnpj"));
 			fabricanteConsultado.setEndereco(rs.getString("endereco"));
@@ -161,7 +161,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 			listaFabricantes = new ArrayList<>();
 			while (rs.next()) {
 				Fabricante fa = new Fabricante();
-				fa.setId(rs.getLong("codigo"));
+				fa.setId(rs.getLong("id"));
 				fa.setNome(rs.getString("nome"));
 				fa.setNome(rs.getString("cnpj"));
 				fa.setNome(rs.getString("endereco"));
@@ -191,7 +191,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 	}
 
 	@Override
-	public boolean remover(long codigo) throws SQLException {
+	public boolean remover(long id) throws SQLException {
 		return false;
 	}
 

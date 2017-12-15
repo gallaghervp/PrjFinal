@@ -3,6 +3,7 @@ package br.com.chipstore.sevlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -50,8 +51,8 @@ public class MontarProduto extends HttpServlet {
 			request.setAttribute("categorias", categorias);
 			request.setAttribute("fabricante", fabricante);
 			
-			//RequestDispatcher rd = request.getRequestDispatcher();
-			//rd.forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/IncluirProduto");
+			rd.forward(request, response);
 			
 		} catch (ChipstoreException e) {
 			throw new ServletException(e.getMessage(),e.getCause());

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Cliente {
 	
+	
 	private long id;
 	private String nome;
 	private Date dataNascimento;
@@ -18,27 +19,11 @@ public class Cliente {
 	private String municipio;
 	private String senha;
 	
+	
 	public Cliente() {
 		super();
 	}
 
-	public Cliente(long id, String nome, Date dataNascimento, String cpf, String rg, String telefone, String email,
-			String uf, String endereco, String complemento, String bairro, String municipio, String senha) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.dataNascimento = dataNascimento;
-		this.cpf = cpf;
-		this.rg = rg;
-		this.telefone = telefone;
-		this.email = email;
-		this.uf = uf;
-		this.endereco = endereco;
-		this.complemento = complemento;
-		this.bairro = bairro;
-		this.municipio = municipio;
-		this.senha = senha;
-	}
 
 	public long getId() {
 		return id;

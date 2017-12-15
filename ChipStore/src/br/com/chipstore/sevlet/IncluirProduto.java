@@ -1,9 +1,6 @@
 package br.com.chipstore.sevlet;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Categoria;
-import br.com.chipstore.model.Cliente;
 import br.com.chipstore.model.Fabricante;
 import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.CategoriaService;
@@ -29,90 +25,106 @@ public class IncluirProduto extends HttpServlet {
 
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		int codigoBarras;
-		String nome;
-		String modelo;
-		String descricao;
-		double preco;
-		int quantidade;
-		String disponivel;
-		String imagem;
+    
+		Produto novoProduto;
+		Categoria categoria;
+		Fabricante fabricante;
+		
+		
+		String reqcodigoBarras = "";
+		long codigoBarras = 0;
+		String reqnome = "";
+		String reqmodelo = "";
+		String reqdescricao = "";
+		double preco = 0;
+		
+		int quantidade = 0;
+		String reqdisponivel = "";
+		String reqimagem = "";
+		String reqCodigoFabricante = "";
+		long codigoFabricante = 0;
+		String reqCodigoCategoria = "";
+		long codigoCategoria = 0;
+		
+		reqcodigoBarras = request.getParameter("codigoBarras");
+		codigoBarras = Long.parseLong(reqcodigoBarras);
+		
+		reqnome = request.getParameter("nome").trim();
+		if (reqnome.equalsIgnoreCase("outros")) {
+			reqnome = "OU";
+		}
 		
 
-		
-		codigoBarras = Integer.parseInt(request.getParameter("codigoprodu"));
-		nome = request.getParameter("nomeprodu");
-		modelo = request.getParameter("modeloprodu");
-		descricao = request.getParameter("descricaoprodu");
-		preco = Double.parseDouble(request.getParameter("precoprodu"));
-		quantidade = Integer.parseInt(request.getParameter("quantidadeprodu"));
-		disponivel = request.getParameter("disponivel");
-		imagem = request.getParameter("imagemprodu");
+		reqdescricao = request.getParameter("descricao").trim();
+		if (reqdescricao.equalsIgnoreCase("outros")) {
+			reqdescricao = "OU";
+		}
 		
 		
+		preco = Double.parseDouble(request.getParameter("preco"));
 		
 		
-
+		quantidade = Integer.parseInt(request.getParameter("quantidade"));
 		
-        Produto novoProduto = new Produto();
-        
-        
-        novoProduto.setCodigoBarras(codigoBarras);
-        novoProduto.setNome(nome);
-        novoProduto.setModelo(modelo);
-        novoProduto.setDescricao(descricao);
-        novoProduto.setPreco(preco);
-        novoProduto.setQuantidade(quantidade);
-        novoProduto.setDisponivel(disponivel);
-        novoProduto.setImagem(imagem);
-        
-        
-        
-        
+		reqdisponivel = request.getParameter("disponivel").trim();
+		if (reqdisponivel.equalsIgnoreCase("outros")) {
+			reqdisponivel = "OU";
+		}
 		
+		reqimagem = request.getParameter("imagem").trim();
+		if (reqimagem.equalsIgnoreCase("outros")) {
+			reqimagem = "OU";
+		}
 		
-		ProdutoService ps = new ProdutoService();
+		reqCodigoFabricante = request.getParameter("fabricante");
+		codigoFabricante = Long.parseLong(reqCodigoFabricante);
 		
-		long idGerado = 0;
+		reqCodigoCategoria = request.getParameter("categoria");
+		codigoCategoria = Long.parseLong(reqCodigoCategoria);
+		
 		try {
-			idGerado = ps.incluir(novoProduto);
-		} catch (ChipstoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		if(idGerado > 0){
+			CategoriaService cs = new CategoriaService();
+			categoria = cs.consultarPorCodigo(codigoCategoria);
 			
-		} else{
+			FabricanteService fs = new FabricanteService();
+			fabricante = fs.consultarPorCodigo(codigoFabricante);
 			
-		}
-		List<Produto> produtos = null;
-		try {
-			produtos = ps.listar();
+			novoProduto = new Produto();
+			novoProduto.setCodigoBarras(codigoBarras);
+			novoProduto.setNome(reqnome);
+			novoProduto.setModelo(reqmodelo);
+			novoProduto.setDescricao(reqdescricao);
+			novoProduto.setPreco(preco);
+			novoProduto.setQuantidade(quantidade);
+			novoProduto.setDisponivel(reqdisponivel);
+			novoProduto.setCategoria(categoria);
+			novoProduto.setFabricante(fabricante);
+			
+			
+
+			ProdutoService ps = new ProdutoService();
+			long idProduto = ps.incluir(novoProduto);
+
+			RequestDispatcher rd = null;
+		
+			if (idProduto > 0) {
+				request.setAttribute("produto", novoProduto);
+				rd = request.getRequestDispatcher("/registroProduto.jsp");
+			}
+			rd.forward(request, response);
+		
 		} catch (ChipstoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ServletException(e.getMessage(), e.getCause());
 		}
-		request.setAttribute("listaProduto", produtos);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/registroProduto.jsp");
-		rd.forward(request, response);
-		
+
 	}
-		
-
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
-	}
+	
 
 }

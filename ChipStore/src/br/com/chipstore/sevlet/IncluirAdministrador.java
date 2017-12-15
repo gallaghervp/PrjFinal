@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Administrador;
-import br.com.chipstore.model.Cliente;
 import br.com.chipstore.service.AdministradorService;
 
 

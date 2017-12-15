@@ -20,10 +20,10 @@ public class FabricanteService {
     }
 
     public long incluir(Fabricante novoFabricante) throws ChipstoreException {
-        long codigo = 0;
+        long id = 0;
         try {
-			codigo = fabricanteDAO.incluir(novoFabricante);
-			return codigo;
+			id = fabricanteDAO.incluir(novoFabricante);
+			return id;
 		} catch (SQLException e) {
 			throw new ChipstoreException();
 		}
@@ -39,10 +39,10 @@ public class FabricanteService {
         
     }
 
-    public Fabricante consultarPorCodigo(long codigo) throws ChipstoreException {
+    public Fabricante consultarPorCodigo(long id) throws ChipstoreException {
         Fabricante fabricante = null;
         try {
-			fabricante = fabricanteDAO.consultarPorCodigo(codigo);
+			fabricante = fabricanteDAO.consultarPorId(id);
 			return fabricante;
 		} catch (SQLException e) {
 			throw new ChipstoreException();

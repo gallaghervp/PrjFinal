@@ -1,7 +1,5 @@
 package br.com.chipstore.model;
 
-import java.util.Date;
-
 public  class Administrador{
 
 	private long matricula;

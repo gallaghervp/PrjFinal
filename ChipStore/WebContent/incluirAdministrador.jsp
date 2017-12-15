@@ -54,6 +54,13 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-3 control-label" for="idTxtCpf">Cpf</label>
+                        <div class="col-sm-9 has-feedback">
+                            <input type="text" class="form-control form-page" name="cpfpro" id="txtNomepro" placeholder="Cpf">
+                            <i class="fa fa-pencil form-control-feedback"></i>
+                         </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-3 control-label" for="idTxtTel">Telefone</label>
                         <div class="col-sm-9 has-feedback">
                             <input type="text" class="form-control form-page" name="telpro" id="txtTelPro" maxlength="10" placeholder="(xx) xxxx-xxxx">

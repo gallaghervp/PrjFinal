@@ -81,9 +81,9 @@ public class IncluirCliente extends HttpServlet {
 		novoCliente.setUf(uf);
 		novoCliente.setSenha(senha);
 		
-		int diaNascimento = Integer.parseInt(dataNascimento.substring(6));
-		int mesNascimento = Integer.parseInt(dataNascimento.substring(3,5));
-		int anoNascimento = Integer.parseInt(dataNascimento.substring(1,4)) - 1900;
+		int diaNascimento = Integer.parseInt(dataNascimento.substring(8));
+		int mesNascimento = Integer.parseInt(dataNascimento.substring(5, 7));
+		int anoNascimento = Integer.parseInt(dataNascimento.substring(0, 3)) - 1900;
 
 		novoCliente.setDataNascimento(new Date(anoNascimento, mesNascimento, diaNascimento));
 

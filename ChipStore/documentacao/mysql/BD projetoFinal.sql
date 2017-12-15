@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
   `imagem` VARCHAR(100) NOT NULL,
   `fabricante_id` INT NOT NULL,
   `categoria_codigo` INT NOT NULL,
-  PRIMARY KEY (`codigo`),
+  PRIMARY KEY (`id`),
   CONSTRAINT `fk_produtos_fabricante1`
     FOREIGN KEY (`fabricante_id`)
     REFERENCES `projetofinal`.`fabricante` (`id`)
@@ -201,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`item_pedido` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_has_produto_produto1`
     FOREIGN KEY (`produto_codigo`)
-    REFERENCES `projetofinal`.`produto` (`codigo`)
+    REFERENCES `projetofinal`.`produto` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

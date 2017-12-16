@@ -3,10 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
 </head>
 <body>
+
+	<div id="map-container" style="width:100%;height:400px;"></div>
+	
    <!--------------- FOOTER -------------------->
 
     <footer class="footer">
@@ -22,6 +23,7 @@
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#sobre" class="scroll" class="footer-link"> Sobre</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#contato" class="scroll" class="footer-link"> Contato</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="#myCarousel" class="scroll" class="footer-link"> Pesquisar</a></li>
+                        <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginadm" id="nav-btn-login">ADM</button> 
                     </ul>
                 </div>
             </div>

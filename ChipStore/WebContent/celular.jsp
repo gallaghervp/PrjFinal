@@ -3,214 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>ChipStore - Principal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-     <link rel="stylesheet" type="text/css" href="css/produto.css">
-    <link rel="stylesheet" type="text/css" href="css/contrast.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/produto.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $window = $(window);
-
-            $('section[data-type="background"]').each(function() {
-                var $scroll = $(this);
-
-                $(window).scroll(function() {
-                    var yPos = -($window.scrollTop() / $scroll.data('speed'));
-                    var coords = '50% ' + yPos + 'px';
-                    $scroll.css({
-                        backgroundPosition: coords
-                    });
-                });
-            });
-        });
-
-        function init_map() {
-            var var_location = new google.maps.LatLng(-22.947115, -43.185613);
-
-            var var_mapoptions = {
-                center: var_location,
-                zoom: 15,
-                styles: [{
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#f5f5f5"
-                        }]
-                    },
-                    {
-                        "elementType": "labels.icon",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    },
-                    {
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#616161"
-                        }]
-                    },
-                    {
-                        "elementType": "labels.text.stroke",
-                        "stylers": [{
-                            "color": "#f5f5f5"
-                        }]
-                    },
-                    {
-                        "featureType": "administrative.land_parcel",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#bdbdbd"
-                        }]
-                    },
-                    {
-                        "featureType": "landscape",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#d1d1d1"
-                        }]
-                    },
-                    {
-                        "featureType": "landscape.man_made",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#e4e4e4"
-                        }]
-                    },
-                    {
-                        "featureType": "landscape.natural",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#d8d5fe"
-                        }]
-                    },
-                    {
-                        "featureType": "landscape.natural.landcover",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#000000"
-                        }]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#ebe9fe"
-                        }]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#757575"
-                        }]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#b5affa"
-                        }]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#9e9e9e"
-                        }]
-                    },
-                    {
-                        "featureType": "road",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#ffffff"
-                        }]
-                    },
-                    {
-                        "featureType": "road.arterial",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#757575"
-                        }]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#c7c7c7"
-                        }]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#616161"
-                        }]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#9e9e9e"
-                        }]
-                    },
-                    {
-                        "featureType": "transit.line",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#e5e5e5"
-                        }]
-                    },
-                    {
-                        "featureType": "transit.station",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#eeeeee"
-                        }]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#8981f8"
-                        }]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#9e9e9e"
-                        }]
-                    }
-                ]
-            };
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "Venice"
-            });
-
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
-
-            var_marker.setMap(var_map);
-        }
-
-        google.maps.event.addDomListener(window, 'load', init_map);
-
-    </script>
+    <title>ChipStore - Celular</title>
 </head>
 
 <body>
@@ -230,7 +23,7 @@
                 <div class="col-xs-5" style="border:0px solid gray">
                     <!-- Dados do Vendedor e produto -->
                     <h3>iPhone 8 256GB Tela 4.7" IOS 11 4G Wi-Fi câmera 12MP - Apple</h3>    
-                    <h5 style="color:#337ab7">vendido por <a href="#">Apple</a> · <small style="color:#337ab7">(587 Vendas)</small></h5>
+                    <h5 style="color:#337ab7">vendido por <a href="#">Apple</a> Â· <small style="color:#337ab7">(587 Vendas)</small></h5>
         
                     <!-- Precios -->
                     <h6 class="title-price"><small>Preço</small></h6>
@@ -260,7 +53,7 @@
                         </div>
                     </div>                
         
-                    <!-- Botões de compra -->
+                    <!-- BotÃµes de compra -->
                     <div class="section" style="padding-bottom:20px;">
                         <a href="carrinho.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Adicionar ao carrinho</button></a>
                     </div>                                        
@@ -273,7 +66,7 @@
                     <div style="width:100%;border-top:1px solid #A8A2FA">
                         <p style="padding:15px;">
                             <small>
-                           iPhone 8 Dourado 256GB <br/>
+                           	iPhone 8 Dourado 256GB <br/>
 
                             Uma nova geração do iPhone.<br/>
 
@@ -288,9 +81,6 @@
                             • Touch ID para autenticação segura <br/>
                             • A11 Bionic, o chip mais inteligente e poderoso em um smartphone<br/>
                             • Recarga sem fio - funciona com carregadores padrão Qi¹<br/>
-
-
-                            
                             </small>
                         </p>
                         <small>
@@ -315,19 +105,11 @@
                     </div>
                 </div>		
             </div>
-        </div>        
+        </div>       
 
-<%@ include file="../template/sobre.jsp" %>
-<%@ include file="../template/contato.jsp" %>
-<!--------------- MAPA -------------------->
-
-
-     <div id="map-container" style="width:100%;height:400px;"></div>
-     
+<%@ include file="../template/sobre.jsp" %>     
 <%@ include file="../template/footer.jsp" %>
 
-
-   
 </body>
 </html>
   

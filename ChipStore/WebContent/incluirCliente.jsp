@@ -3,85 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>ChipStore - Cadastro Profissional</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="css/produtos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/login.js"></script>
+<title>ChipStore - Incluir Cliente</title>
 </head>
-
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top custom">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Alternar Navegação</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                <a class="navbar-brand" href="#">ChipJobs</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="index.jsp">INÍCIO</a></li>
-                </ul>
-                <div class="col-sm-3">
-                    <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#logincadastro" id="nav-btn-login">LOGIN</button>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <div class="modal fade" id="logincadastro" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" id="modalLogin">
-                <div class="modal-header">
-                    <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
-                </div>
-                <div class="modal-body">
-                    <form action="indexLogado.jsp">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
-                        </div>
-                        <button type="submit" class="btn btn-form btn-block">ENTRAR</button>
-                    </form>
-                </div>
-                <div class="modal-footer" style="text-align: center;">
-                    <p>Não é cadastrado? <a class="login-link" href="incluirUsuario.jsp">Clique aqui!</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<%@ include file="../template/cabecalho2.jsp" %>
 
-    <div class="parallax-container" id="parallaxHead" data-speed="6" data-type="background">
-        <div class="container">
-            <div class="row">
-                <i class="fa fa-edit"></i>
-                <h2 class="page-heading">CADASTRAR</h2>
-                <ol class="breadcrumb">
-                    <li><a href="index.jsp">Início</a></li>
-                    <li><a href="#">Login & Cadastro</a></li>
-                    <li class="active-breadcrumb">Página de Cadastro</li>
-                </ol>
-            </div>
-        </div>
-    </div>
 
 	<!--------------- CADASTRO CLIENTE -------------------->
 	
@@ -212,44 +139,8 @@
         </div>
     </div>
 
+<%@ include file="../template/footer2.jsp" %>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="col-sm-4">
-                <div class="row">
-                    <h3>Acesso rápido</h3>
-                    <ul class="footerAccess">
-                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="index.jsp" class="footer-link"> Inicio</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="row">
-                    <h3>Social</h3>
-                    <div class="footerSocial">
-                        <a href="https://www.facebook.com/boladavezbr/"><i class="fa fa-facebook fa-2x icon-square" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-google-plus fa-2x icon-square" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram fa-2x icon-square" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-2x icon-square" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="row">
-                    <h3>Curta nossa página</h3>
-                    <div class="fb-page" data-href="https://www.facebook.com/ChipJobs-507113656303453/" data-tabs="timeline" data-width="450" data-height="100" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/ChipJobs-507113656303453/" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/ChipJobs-507113656303453/">
-                                <h1 class="fb">Curta nossa página</h1>ChipJobs</a>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div style="padding:10px;background-color: black;color:lightgray;font-family:Aldrich;">
-        <p style="margin:0;">© Copyright 2017 <a style="color:white;font-family:Aldrich;" href="chipjobs@chipjobs.com.br">ChipJobs</a></p>
-    </div>
 </body>
 
 </html>

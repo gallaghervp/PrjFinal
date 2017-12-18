@@ -13,5 +13,6 @@ public interface ClienteDao {
     public List<Cliente> listar() throws SQLException;
     public boolean atualizar(Cliente cliente) throws SQLException;
     public boolean remover(long id) throws SQLException;
+    public String recuperarSenha(String email) throws SQLException; 
 
 }

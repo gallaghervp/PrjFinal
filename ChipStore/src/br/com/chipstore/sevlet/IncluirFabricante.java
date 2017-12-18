@@ -1,3 +1,4 @@
+
 package br.com.chipstore.sevlet;
 
 import java.io.IOException;
@@ -14,47 +15,41 @@ import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Fabricante;
 import br.com.chipstore.service.FabricanteService;
 
-
 @WebServlet("/IncluirFabricante")
 public class IncluirFabricante extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public IncluirFabricante() {
-        // TODO Auto-generated constructor stub
-    }
+	public IncluirFabricante() {
+		// TODO Auto-generated constructor stub
+	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		 String nome;
-		 String cnpj;
-		 String endereco;
-		 String complemento;
-		 String bairro;
-		 String municipio;
-		 String uf;
-		 String contato;
-		 String email;
-		 String telefone;
-		
-		
-		
-		nome = request.getParameter("nome");
-		cnpj = request.getParameter("cnpj");
-		endereco = request.getParameter("endereco");
-		complemento = request.getParameter("complemento");
-		bairro = request.getParameter("bairro");
-		municipio = request.getParameter("municipio");
-		uf = request.getParameter("uf");
-		contato = request.getParameter("contato");
-		email = request.getParameter("email");
-		telefone = request.getParameter("telefone");
-		
-		
-		
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String nome;
+		String cnpj;
+		String endereco;
+		String complemento;
+		String bairro;
+		String municipio;
+		String uf;
+		String contato;
+		String email;
+		String telefone;
+
+		nome = request.getParameter("nomefabri");
+		cnpj = request.getParameter("cnpjfabri");
+		endereco = request.getParameter("enderecofabri");
+		complemento = request.getParameter("complementofabri");
+		bairro = request.getParameter("bairrocli");
+		municipio = request.getParameter("municipiofabri");
+		uf = request.getParameter("selEstadofabri");
+		contato = request.getParameter("telfabri");
+		email = request.getParameter("emailfabri");
+		telefone = request.getParameter("telfabri");
+
 		Fabricante novoFabricante = new Fabricante();
-		
+
 		novoFabricante.setNome(nome);
 		novoFabricante.setCnpj(cnpj);
 		novoFabricante.setEndereco(endereco);
@@ -65,10 +60,9 @@ public class IncluirFabricante extends HttpServlet {
 		novoFabricante.setContato(contato);
 		novoFabricante.setEmail(email);
 		novoFabricante.setTelefone(telefone);
-		
-		
+
 		FabricanteService fs = new FabricanteService();
-		
+
 		try {
 			long idGerado = fs.incluir(novoFabricante);
 
@@ -77,14 +71,7 @@ public class IncluirFabricante extends HttpServlet {
 
 		} catch (ChipstoreException e) {
 			throw new ServletException(e.getMessage(), e.getCause());
+
 		}
-
 	}
-
-		
-	
-
-	
-	
-
 }

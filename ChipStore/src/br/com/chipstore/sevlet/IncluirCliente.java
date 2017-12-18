@@ -18,6 +18,7 @@ import br.com.chipstore.model.Cliente;
 import br.com.chipstore.model.Fabricante;
 import br.com.chipstore.service.ClienteService;
 import br.com.chipstore.service.FabricanteService;
+import br.com.chipstore.util.Utilitarios;
 
 /**
  * Servlet implementation class IncluuirCliente
@@ -66,39 +67,47 @@ public class IncluirCliente extends HttpServlet {
 		uf = request.getParameter("selEstadocli");
 		senha = request.getParameter("senhacli");
 
-		Cliente novoCliente = new Cliente();
-
-		
-		novoCliente.setNome(nome);
-		novoCliente.setCpf(cpf);
-		novoCliente.setRg(rg);
-		novoCliente.setTelefone(telefone);
-		novoCliente.setEmail(email);
-		novoCliente.setEndereco(endereco);
-		novoCliente.setComplemento(complemento);
-		novoCliente.setBairro(bairro);
-		novoCliente.setMunicipio(municipio);
-		novoCliente.setUf(uf);
-		novoCliente.setSenha(senha);
-		
-		int diaNascimento = Integer.parseInt(dataNascimento.substring(8));
-		int mesNascimento = Integer.parseInt(dataNascimento.substring(5, 7));
-		int anoNascimento = Integer.parseInt(dataNascimento.substring(0, 3)) - 1900;
-
-		novoCliente.setDataNascimento(new Date(anoNascimento, mesNascimento, diaNascimento));
-
-		ClienteService cs = new ClienteService();
-
 		try {
-			long idGerado = cs.incluir(novoCliente);
+			String hashSenhaCliente = Utilitarios.calcularHashSenha(senha);
+			
+			Cliente novoCliente = new Cliente();
+			
+			novoCliente.setNome(nome);
+			novoCliente.setCpf(cpf);
+			novoCliente.setRg(rg);
+			novoCliente.setTelefone(telefone);
+			novoCliente.setEmail(email);
+			novoCliente.setEndereco(endereco);
+			novoCliente.setComplemento(complemento);
+			novoCliente.setBairro(bairro);
+			novoCliente.setMunicipio(municipio);
+			novoCliente.setUf(uf);
+			novoCliente.setSenha(hashSenhaCliente);
+			
+			int diaNascimento = Integer.parseInt(dataNascimento.substring(8));
+			int mesNascimento = Integer.parseInt(dataNascimento.substring(5, 7));
+			int anoNascimento = Integer.parseInt(dataNascimento.substring(0, 3)) - 1900;
 
+			novoCliente.setDataNascimento(new Date(anoNascimento, mesNascimento, diaNascimento));
+			
+			ClienteService cs = new ClienteService();
+			
+			long idGerado = cs.incluir(novoCliente);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 			rd.forward(request, response);
-
-		} catch (ChipstoreException e) {
+		}
+		catch (ChipstoreException e) {
 			throw new ServletException(e.getMessage(), e.getCause());
 		}
+		
 
+		
+		
+
+		
+
+		
 	}
 
 	

@@ -217,5 +217,35 @@ public class MySQLClienteDao implements ClienteDao {
 	public Cliente consultarPorNome(String nome) throws SQLException {
 		return null;
 	}
+	
+	public String recuperarSenha(String email) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String senha =  null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		
+
+		String sql = "SELECT senha FROM Cliente  WHERE email=" + email + ";";
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		if (rs != null) {
+			senha = rs.getString("senha");
+		}
+
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return senha;
+	}
+
 
 }

@@ -82,5 +82,16 @@ public class ClienteService {
 		}
         
     }
+    
+    public String recuperarSenha(String email)  throws ChipstoreException {
+	    String  senha = null;
+	    try {
+			senha = clienteDAO.recuperarSenha(email);
+			return senha;
+		} catch (SQLException e) {
+			throw new ChipstoreException();
+		}
+	    
+    }
 
 }

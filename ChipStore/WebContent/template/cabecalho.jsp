@@ -354,7 +354,7 @@
                 <a class="navbar-brand" href="#">CATEGORIA</a>
             </div>
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="lojaCelulares.jsp"> Celulares</a></li>
+                <li><a href="MontarLojaProduto?codigoCategoria=1"> Celulares</a></li>
                 <li><a href="lojaComputadores.jsp"> Computadores</a></li>
                 <li><a href="lojaAcessorios.jsp"> Acessórios</a></li>
             </ul>

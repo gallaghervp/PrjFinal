@@ -61,5 +61,14 @@ public class ProdutoService {
 		}
         
     }
-
+    public List<Produto> listarProdutoCategoria(long codigoCategoria) throws ChipstoreException {
+        List<Produto> produtos = null;
+        try {
+			produtos = produtoDAO.listarProdutoCategoria(codigoCategoria);
+			return produtos;
+		} catch (SQLException e) {
+			throw new ChipstoreException();
+		}
+        
+    }
 }

@@ -2,17 +2,17 @@ package br.com.chipstore.model;
 
 public class Produto {
 	
-	public long id;
-	public long codigoBarras;
-	public String nome;
-	public String modelo;
-	public String descricao;
-	public double preco;
-	public int quantidade;
-	public String disponivel;
-	public String imagem;
-	public Fabricante fabricante;
-	public Categoria categoria;
+	private long id;
+	private long codigoBarras;
+	private String nome;
+	private String modelo;
+	private String descricao;
+	private double preco;
+	private int quantidade;
+	private String disponivel;
+	private String imagem;
+	private Fabricante fabricante;
+	private Categoria categoria;
 		
 	public Produto() {
 		super();

@@ -71,8 +71,9 @@ public class MySQLProdutoDao implements ProdutoDao {
 		conn = MySqlDAOFactory.createConnection();
 
 		// consultar as produtos por código de barras que existem na tabela
-
-		String sql = "SELECT * FROM Produto  WHERE codigoBarras=" + codigoBarras + ";";
+		String sql = "SELECT * FROM Produto p INNER JOIN Fabricante f ON p.fabricante_id = f.id "
+				+ "INNER JOIN Categoria c ON p.categoria_codigo = c.codigo " 
+				+ "WHERE codigoBarras=" + codigoBarras + ";";
 		stmt = conn.createStatement();
 
 		rs = stmt.executeQuery(sql);
@@ -84,6 +85,8 @@ public class MySQLProdutoDao implements ProdutoDao {
 		// Como associar categoria com esse produto?
 
 		if (rs != null) {
+			rs.next();
+			
 			produtoConsultado.setId(rs.getLong("id"));
 			produtoConsultado.setCodigoBarras(rs.getLong("codigoBarras"));
 			produtoConsultado.setNome(rs.getString("nome"));
@@ -271,6 +274,73 @@ public class MySQLProdutoDao implements ProdutoDao {
 		conn.close();
 
 		return listaProdutos;
+	}
+
+	@Override
+	public Produto consultarPorId(long id) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		Produto produtoConsultado = null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		// consultar as produtos por código de barras que existem na tabela
+		String sql = "SELECT * FROM Produto p INNER JOIN Fabricante f ON p.fabricante_id = f.id "
+				+ "INNER JOIN Categoria c ON p.categoria_codigo = c.codigo " 
+				+ "WHERE p.id=" + id + ";";
+		
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		produtoConsultado = new Produto();
+		Fabricante fabricante = new Fabricante();
+		Categoria categoria = new Categoria();
+		
+		// Como associar categoria com esse produto?
+
+		if (rs != null) {
+			rs.next();
+			
+			produtoConsultado.setId(rs.getLong("id"));
+			produtoConsultado.setCodigoBarras(rs.getLong("codigoBarras"));
+			produtoConsultado.setNome(rs.getString("nome"));
+			produtoConsultado.setModelo(rs.getString("modelo"));
+			produtoConsultado.setDescricao(rs.getString("descricao"));
+			produtoConsultado.setPreco(rs.getDouble("preco"));
+			produtoConsultado.setQuantidade(rs.getInt("quantidade"));
+			produtoConsultado.setDisponivel(rs.getString("disponivel"));
+			produtoConsultado.setImagem(rs.getString("imagem"));
+			
+			fabricante.setId(rs.getLong("id"));
+			fabricante.setNome(rs.getString("nome"));
+			fabricante.setCnpj(rs.getString("cnpj"));
+			fabricante.setEndereco(rs.getString("endereco"));
+			fabricante.setComplemento(rs.getString("complemento"));
+			fabricante.setBairro(rs.getString("bairro"));
+			fabricante.setMunicipio(rs.getString("municipio"));
+			fabricante.setUf(rs.getString("uf"));
+			fabricante.setContato(rs.getString("contato"));
+			fabricante.setEmail(rs.getString("email"));
+			fabricante.setTelefone(rs.getString("telefone"));
+			
+			categoria.setCodigo(rs.getLong("codigo"));
+		    categoria.setNome(rs.getString("nome"));
+		    
+		    produtoConsultado.setFabricante(fabricante);
+		    produtoConsultado.setCategoria(categoria);
+
+		}
+
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return produtoConsultado;
 	}
 
 }

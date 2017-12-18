@@ -71,4 +71,15 @@ public class ProdutoService {
 		}
         
     }
+    public Produto consultarPorId(long id) throws ChipstoreException {
+	    Produto produto = null;
+	    try {
+			produto = produtoDAO.consultarPorId(id);
+			return produto;
+		} catch (SQLException e) {
+			throw new ChipstoreException();
+		}
+	    
+    }
 }
+

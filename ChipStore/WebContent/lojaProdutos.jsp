@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>ChipStore - loja Acessórios</title>
+<title>ChipStore - Categoria</title>
 </head>
 <body>
 
@@ -50,7 +50,7 @@
 	    	<!-- Inicio Vitrine -->
 	  		<div class="col-md-3 col-sm-6">
 	    		<span class="thumbnail">
-	      		 <a href="carregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
+	      		 <a href="CarregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
 	      			<h4><%=produto.getNome()%></h4>
 	      			
 	      			<p><%=produto.getModelo()%></p>
@@ -81,7 +81,7 @@
 		    	<!-- Inicio Vitrine -->
 		  		<div class="col-md-3 col-sm-6">
 		    		<span class="thumbnail">
-		      		 <a href="carregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
+		      		 <a href="CarregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
 		      			<h4><%=produto.getNome()%></h4>
 		      			
 		      			<p><%=produto.getModelo()%></p>
@@ -111,7 +111,7 @@
 		    	<!-- Inicio Vitrine -->
 		  		<div class="col-md-3 col-sm-6">
 		    		<span class="thumbnail">
-		      		 <a href="carregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
+		      		 <a href="CarregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
 		      			<h4><%=produto.getNome()%></h4>
 		      			
 		      			<p><%=produto.getModelo()%></p>

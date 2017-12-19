@@ -83,7 +83,7 @@
 							<label class="col-sm-3 control-label" for="idTxtBairro">Bairro</label>
 							<div class="col-sm-9 has-feedback">
 								<input type="text" class="form-control form-page"
-									name="bairrocli" id="txtBairroCli" placeholder="Bairro">
+									name="bairrofabri" id="txtBairroCli" placeholder="Bairro">
 								<i class="fa fa-address-card form-control-feedback"></i>
 							</div>
 						</div>
@@ -140,7 +140,7 @@
 							<label class="col-sm-3 control-label" for="idTxtTel">Contato</label>
 							<div class="col-sm-9 has-feedback">
 								<input type="text" class="form-control form-page"
-									name="telfabri" id="txtTelFabri" maxlength="10"
+									name="contatofabri" id="txtTelFabri" maxlength="10"
 									placeholder="(xx) xxxx-xxxx"> <i
 									class="fa fa-phone form-control-feedback"></i>
 							</div>

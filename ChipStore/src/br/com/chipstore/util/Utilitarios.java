@@ -11,6 +11,8 @@ import br.com.chipstore.exception.ChipstoreException;
 public class Utilitarios {
 	public static List<String> montarListaUf(){
 		
+		
+		 
 		List<String> uf = new ArrayList<>();
 		uf.add("Selecione a UF");
 		uf.add("AC");

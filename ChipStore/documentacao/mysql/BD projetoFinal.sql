@@ -153,7 +153,7 @@ DROP TABLE IF EXISTS `projetofinal`.`produto` ;
 
 CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `codigobarra` VARCHAR(16) NOT NULL,
+  `codigobarras` VARCHAR(16) NOT NULL,
   `nome` VARCHAR(70) NOT NULL,
   `modelo` VARCHAR(20) NOT NULL,
   `descricao` VARCHAR(45) NOT NULL,

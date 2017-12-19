@@ -27,7 +27,7 @@ public class MySQLCategoriaDao implements CategoriaDao {
 
 	    // incluir categoria
 	    
-	    String sql = "INSERT INTO Categoria (nome, codigo) VALUES (?,?);";
+	    String sql = "INSERT INTO Categoria (nome) VALUES (?);";
 	    pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 	    pstmt.setString(1, categoria.getNome());

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" 
+    import="java.util.List, br.com.chipstore.model.Produto"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +10,16 @@
 <body>
 
 <%@ include file="../template/cabecalho2.jsp" %>
+
+<% List<Produto>carrinho; 
+
+	carrinho = (List<Produto>)session.getAttribute("carrinho");
+	
+	for (Produto p:carrinho) {
+		out.println("Descrição do Produto" + p.getDescricao());
+	}
+
+%>
 
     <br>
     <div class="container">
@@ -23,26 +34,32 @@
                 </tr>
             </thead>
             <tbody>
+             <%
+				for (Produto p:carrinho) {		
+				%>
+				
+				
                 <tr>
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-2 hidden-xs"><img src="img/<%=p.getId()%>.png" alt="..." class="img-responsive" /></div>
                             <div class="col-sm-10">
-                                <h4 class="nomargin">Produto 1</h4>
-                                <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+                                <h4 href="MontarCarrinho?id=<%=p.getId()%>" class="nomargin"><%=p.getNome()%></h4>
+                                <p><%=p.getModelo()%></p>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">$1.99</td>
+                    <td data-th="Price"><%=p.getPreco() %></td>
                     <td data-th="Quantity">
                         <input type="number" class="form-control text-center" value="1">
                     </td>
-                    <td data-th="Subtotal" class="text-center">1.99</td>
+                    <td data-th="Subtotal" class="text-center"><%=p.getPreco() %></td>
                     <td class="actions" data-th="">
                         <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
                         <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
                     </td>
                 </tr>
+                <%} %>
             </tbody>
             <tfoot>
                 <tr class="visible-xs">

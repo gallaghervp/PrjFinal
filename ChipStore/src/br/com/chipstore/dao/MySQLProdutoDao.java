@@ -275,6 +275,76 @@ public class MySQLProdutoDao implements ProdutoDao {
 
 		return listaProdutos;
 	}
+	
+	@Override
+	public List<Produto> listarProdutoCarrinho(long id) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		List<Produto> listaProdutos = null;
+
+		// criar a conexao
+		conn = MySqlDAOFactory.createConnection();
+
+		// listar as produtos que existem na tabela
+		
+		String sql = "SELECT * FROM Produto p INNER JOIN Fabricante f ON p.fabricante_id = f.id"
+				+ "INNER JOIN Categoria c ON p.categoria_codigo = c.codigo;";
+		
+		stmt = conn.createStatement();
+
+		rs = stmt.executeQuery(sql);
+
+		if (rs != null) {
+			listaProdutos = new ArrayList<>();
+			while (rs.next()) {
+				Produto pr = new Produto();
+				pr.setId(rs.getLong("id"));
+				pr.setCodigoBarras(rs.getLong("codigoBarras"));
+				pr.setNome(rs.getString("nome"));
+				pr.setModelo(rs.getString("modelo"));
+				pr.setDescricao(rs.getString("descricao"));
+				pr.setPreco(rs.getDouble("preco"));
+				pr.setQuantidade(rs.getInt("quantidade"));
+				pr.setDisponivel(rs.getString("disponivel"));
+				pr.setImagem(rs.getString("imagem"));
+				
+				Fabricante fabricante = new Fabricante();
+				
+				fabricante.setId(rs.getLong("id"));
+				fabricante.setNome(rs.getString("nome"));
+				fabricante.setCnpj(rs.getString("cnpj"));
+				fabricante.setEndereco(rs.getString("endereco"));
+				fabricante.setComplemento(rs.getString("complemento"));
+				fabricante.setBairro(rs.getString("bairro"));
+				fabricante.setMunicipio(rs.getString("municipio"));
+				fabricante.setUf(rs.getString("uf"));
+				fabricante.setContato(rs.getString("contato"));
+				fabricante.setEmail(rs.getString("email"));
+				fabricante.setTelefone(rs.getString("telefone"));
+				
+				
+				Categoria categoria = new Categoria();
+				categoria.setCodigo(rs.getLong("codigo"));
+			    categoria.setNome(rs.getString("nome"));
+			    
+			    pr.setFabricante(fabricante);
+			    pr.setCategoria(categoria);
+				
+				
+				listaProdutos.add(pr);
+				
+			}
+			
+		}
+		rs.close();
+		
+		stmt.close();
+		
+		conn.close();
+
+		return listaProdutos;
+	}
 
 	@Override
 	public Produto consultarPorId(long id) throws SQLException {

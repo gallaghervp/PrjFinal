@@ -60,13 +60,11 @@
             <div class="col-lg-12">
                 <div class="panel panel-default" style="border-color: #847BF6;box-shadow: 6px 6px 10px #847BF6;">
                     <div class="panel-body" style="color: #000000">
-                        <p>O nome do nosso site vem de Application Program Interface, que é um tipo de programa utilizado para fazer com que dois outros programas diferentes troquem informações entre si. Um programa do tipo API pode ser entendido como uma interface.</p>
+                        <p>Começamos nossas atividades em 2016 e crescemos mediante a confiabilidade e a credibilidade que recebemos de nossos clientes e parceiros durante todos esses anos. Nós temos como principal foco, a responsabilidade de oferecer um serviço de extrema qualidade para que a satisfação dos clientes atendidos pelo Mania Virtual, cresça sempre mais.</p>
 
-                        <p>Escolhemos este nome pois além de ser um jargão muito conhecido na área de informática, reflete também o nosso papel, que é facilitar o contato entre as empresas e os profissionais de informática.</p>
+                        <p>São mais de 5 mil produtos em diversas categorias, atendendo mais de 2 MILHÕES de clientes de todas as regiões do Brasil. Nossa especialização está baseada nas maiores e melhores marcas nacionais e internacionais, no segmentos de Informática.</p>
 
-                        <p>Não somos uma associação de profissionais e não estamos ligados a nenhum sindicato ou entidades de classe. Nosso compromisso é atender a comunidades de profissionais de informática, possibilitando a troca de informações e experiências.</p>
-
-                        <p>ChipStore é uma marca registrada no INPI, todas as informações deste site são protegidas pela lei de direitos autorais nro 9.610/98, não podendo ser copiadas, utilizadas por outros sites, ou disponibilizadas em outro local. Caso saiba de alguma violação denuncie.</p>
+                        <p>Aliás, CRESCIMENTO é a palavra do momento! Se você é um dos mais de 2 milhões de clientes que nos conhece e compra conosco, já deve ter notado que nosso site está de cara nova. Agradecemos pela confiança que nos possibilitou alcançar patamares mais altos e que nos permitirá oferecer condições cada vez melhores para todos os nossos clientes. E se você é novo por aqui, sinta-se bem-vindo e convidado a nos conhecer e se tornar mais um Maníaco em compras online.</p>
                     </div>
                 </div>
             </div>

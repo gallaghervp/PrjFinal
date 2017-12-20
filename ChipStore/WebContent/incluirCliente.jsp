@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%@ include file="../template/cabecalho2.jsp" %>
+<jsp:include page="template/cabecalho2.jsp" />
 
 
 	<!--------------- CADASTRO CLIENTE -------------------->
@@ -84,6 +84,17 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="idSelEstado">UF </label>
                         <div class="col-sm-9 has-feedback">
+                        
+                        	<!-- 
+                        	<select id="idSelAssuntoCli" class="form-control form-page" name="selEstadocli">
+                        
+    	                    <c:forEach items="ufs" var="uf"> 
+        	    	   			<option value="${uf}"> ${uf} </option>
+            	    		</c:forEach>
+                        	
+                           </select>
+                           -->
+                           
                 <% 
                         List <String> ufs = (List<String>) request.getAttribute("ufs");
 				%>
@@ -122,7 +133,7 @@
         </div>
     </div>
 
-<%@ include file="../template/footer2.jsp" %>
+<jsp:include page="template/footer2.jsp" />
 
 </body>
 

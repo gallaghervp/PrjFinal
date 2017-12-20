@@ -41,10 +41,10 @@ public class IncluirFabricante extends HttpServlet {
 		cnpj = request.getParameter("cnpjfabri");
 		endereco = request.getParameter("enderecofabri");
 		complemento = request.getParameter("complementofabri");
-		bairro = request.getParameter("bairrocli");
+		bairro = request.getParameter("bairrofabri");
 		municipio = request.getParameter("municipiofabri");
 		uf = request.getParameter("selEstadofabri");
-		contato = request.getParameter("telfabri");
+		contato = request.getParameter("contatofabri");
 		email = request.getParameter("emailfabri");
 		telefone = request.getParameter("telfabri");
 

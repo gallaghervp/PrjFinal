@@ -26,7 +26,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
 	
-		String sql = "INSERT INTO Fabricante (nome,cnpj, endereco, complemente, bairro, municipio, uf, contato, email, telefone) VALUES (?,?,?,?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO Fabricante (nome,cnpj, endereco, complemento, bairro, municipio, uf, contato, email, telefone) VALUES (?,?,?,?,?,?,?,?,?,?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 		pstmt.setString(1, fabricante.getNome());
@@ -40,7 +40,7 @@ public class MySQLFabricanteDao implements FabricanteDao {
 		pstmt.setString(9, fabricante.getEmail());
 		pstmt.setString(10, fabricante.getTelefone());
 
-		pstmt.execute();
+			pstmt.execute();
 
 		ResultSet tableKeys = pstmt.getGeneratedKeys();
 		tableKeys.next();

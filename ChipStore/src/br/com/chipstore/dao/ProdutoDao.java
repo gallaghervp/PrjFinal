@@ -13,4 +13,5 @@ public interface ProdutoDao {
     public boolean atualizar(Produto produto) throws SQLException;
     public boolean remover(long codigoBarras) throws SQLException;
     public List<Produto> listarProdutoCategoria(long codigoCategoria) throws SQLException;
+    public List<Produto> listarProdutoCarrinho(long id) throws SQLException;
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="ISO-8859-1" import="java.util.List, br.com.chipstore.model.Categoria"%>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -223,12 +223,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.jsp">ChipStore</a>
+                <a class="navbar-brand" href="main.jsp">ChipStore</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="col-sm-3 brand-col">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="index.jsp">INÍCIO</a></li>
+                        <li><a href="main.jsp">INÍCIO</a></li>
                         <li><a href="#sobre" class="scroll">SOBRE</a></li>
                         <li><a href="#contato" class="scroll">CONTATO</a></li>
                     </ul>
@@ -352,11 +352,22 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">CATEGORIA</a>
-            </div>
+            </div> 
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="MontarLojaProduto?codigoCategoria=1"> Celulares</a></li>
-                <li><a href="lojaComputadores.jsp"> Computadores</a></li>
-                <li><a href="lojaAcessorios.jsp"> Acessórios</a></li>
+            
+            <%
+            
+            List<Categoria> categorias = ( List<Categoria>) session.getAttribute("categorias");
+            for (Categoria c: categorias){
+            
+            %>
+            
+                <li><a href="MontarLojaProduto?codigoCategoria=<%=c.getCodigo()%>"> <%=c.getNome()%></a></li>
+                <%
+                
+            	}
+                
+                %>
             </ul>
         </div>
     </nav>

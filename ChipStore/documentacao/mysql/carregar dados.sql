@@ -11,11 +11,11 @@ insert into fabricante values
 
 -- categoria
 insert into categoria values
-  (DEFAULT, 'placas e periféricos I'),
-  (DEFAULT, 'placas e periféricos II'),
-  (DEFAULT, 'placas e periféricos III'),
-  (DEFAULT, 'placas e periféricos IV'),
-  (DEFAULT, 'placas e periféricos V');
+  (DEFAULT, 'Placas'),
+  (DEFAULT, 'Perif�ricos'),
+  (DEFAULT, 'Mouses'),
+  (DEFAULT, 'Teclados'),
+  (DEFAULT, 'Monitores');
   
   
 -- produto

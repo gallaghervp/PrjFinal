@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`boleto` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `dataemissao` DATETIME NOT NULL,
   `valor` DOUBLE NOT NULL,
-  `codigobarra` VARCHAR(16) NOT NULL,
+  `codigobarras` VARCHAR(16) NOT NULL,
   `pedido_id` INT NOT NULL,
   PRIMARY KEY (`id`, `pedido_id`),
   CONSTRAINT `fk_boleto_pedido1`
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE UNIQUE INDEX `codigobarra_UNIQUE` ON `projetofinal`.`produto` (`codigobarra` ASC);
+CREATE UNIQUE INDEX `codigobarras_UNIQUE` ON `projetofinal`.`produto` (`codigobarras` ASC);
 
 CREATE INDEX `fk_produtos_fabricante1_idx` ON `projetofinal`.`produto` (`fabricante_id` ASC);
 

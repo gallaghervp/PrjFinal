@@ -20,11 +20,16 @@ insert into categoria values
   
 -- produto
   insert into produto values
-  (DEFAULT, '1112223334445556', 'Placa-mãe', 'Modelo A', 'Placa-mãe nova', '90.00', '10','5', 'imagem', 1, 1),
-  (DEFAULT, '1112223334445557', 'Placa-mãe XY', 'Modelo B', 'Placa-mãe antiga', '91.00', '11','6', 'imagem II', 2, 2),
-  (DEFAULT, '1112223334445558', 'Placa-mãe AB', 'Modelo C', 'Placa-mãe quase nova', '92.00', '12','7', 'imagem III', 3, 3),
-  (DEFAULT, '1112223334445559', 'Placa-mãe CD', 'Modelo D', 'Placa-mãe um pouco antiga', '93.00', '13','8', 'imagem VI', 4, 4),
-  (DEFAULT, '1112223334445551', 'Placa-mãe EF', 'Modelo E', 'Placa-mãe muito antiga', '94.00', '14','9', 'imagem V', 5, 5);
+  (DEFAULT, '1112223334445540', 'Placa-mãe', 'Modelo A', 'Placa-mãe nova', '90.00', '10','5', 'imagem', 1, 1),
+  (DEFAULT, '1112223334445541', 'Placa-mãe XY', 'Modelo B', 'Placa-mãe antiga', '91.00', '11','6', 'imagem II', 2, 1),
+  (DEFAULT, '1112223334445542', 'Placa-mãe AB', 'Modelo C', 'Placa-mãe quase nova', '92.00', '12','7', 'imagem III', 3, 1),
+  (DEFAULT, '1112223334445543', 'Placa-mãe CD', 'Modelo D', 'Placa-mãe um pouco antiga', '93.00', '13','8', 'imagem VI', 4, 1),
+  (DEFAULT, '1112223334445544', 'Placa-mãe EF', 'Modelo E', 'Placa-mãe muito antiga', '94.00', '14','9', 'imagem V', 5, 1),
+  (DEFAULT, '1112223334445545', 'Placa-mãe', 'Modelo A', 'Placa-mãe nova', '90.00', '10','5', 'imagem', 1, 1),
+  (DEFAULT, '1112223334445546', 'Placa-mãe XY', 'Modelo B', 'Placa-mãe antiga', '91.00', '11','6', 'imagem II', 2, 1),
+  (DEFAULT, '1112223334445547', 'Placa-mãe AB', 'Modelo C', 'Placa-mãe quase nova', '92.00', '12','7', 'imagem III', 3, 1),
+  (DEFAULT, '1112223334445548', 'Placa-mãe CD', 'Modelo D', 'Placa-mãe um pouco antiga', '93.00', '13','8', 'imagem VI', 4, 1),
+  (DEFAULT, '1112223334445549', 'Placa-mãe EF', 'Modelo E', 'Placa-mãe muito antiga', '94.00', '14','9', 'imagem V', 5, 1);
   
 
   -- junção das tabelas

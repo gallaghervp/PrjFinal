@@ -30,7 +30,7 @@
 
 
                 <div class="card-dados-container">
-				<form action="#" method="post" class="form-horizontal" style="margin-right:40px;">
+				<form action="IncluirAdministrador" method="post" class="form-horizontal" style="margin-right:40px;">
                     <h2 class="form-heading">Cadastrar</h2>
                     <hr>
                     <div class="form-group">

@@ -101,13 +101,6 @@ public class IncluirCliente extends HttpServlet {
 			throw new ServletException(e.getMessage(), e.getCause());
 		}
 		
-
-		
-		
-
-		
-
-		
 	}
 
 	

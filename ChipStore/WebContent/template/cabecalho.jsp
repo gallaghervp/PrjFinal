@@ -252,7 +252,7 @@
                 </div>
                 <div class="col-sm-3">
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
-                    <a href="incluirCliente.jsp" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>                
+                    <a href="MontarCliente" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>                
                     <span style="font-size: 15px"><a href="#" class="glyphicon glyphicon-shopping-cart"></a></span>
                 </div>
             </div>
@@ -281,7 +281,7 @@
                     </form>
                 </div>
                 <div class="modal-footer" style="text-align: center;">
-                    <p>Não é cadastrado? <a class="login-link" href="incluirCliente.jsp">Clique aqui!</a></p>
+                    <p>Não é cadastrado? <a class="login-link" href="MontarCliente">Clique aqui!</a></p>
                 </div>
             </div>
         </div>

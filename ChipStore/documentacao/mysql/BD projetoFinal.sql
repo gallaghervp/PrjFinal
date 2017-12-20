@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`boleto` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `dataemissao` DATETIME NOT NULL,
   `valor` DOUBLE NOT NULL,
-  `codigobarra` VARCHAR(16) NOT NULL,
+  `codigobarras` VARCHAR(16) NOT NULL,
   `pedido_id` INT NOT NULL,
   PRIMARY KEY (`id`, `pedido_id`),
   CONSTRAINT `fk_boleto_pedido1`

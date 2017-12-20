@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"
+    import="java.util.*, br.com.chipstore.model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,7 +33,7 @@
                 <!--------------- CADASTRO PRODUTO -------------------->
 
                 <div class="card-dados-container">
-                    <form action="incluirProduto" method="post" class="form-horizontal" style="margin-right:40px;">
+                    <form action="IncluirProduto" method="post" class="form-horizontal" style="margin-right:40px;">
                         <h2 class="form-heading">Produto</h2>
                         <hr>
 
@@ -104,14 +105,36 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="idCategoriaProdu">Categoria</label>
                             <div class="col-sm-9 has-feedback">
-                                <input id="idSelCategoriaProdu" class="form-control form-page" name="categoriaprodu">
+                             <%
+					List<Fabricante> fabricantes = (List<Fabricante>) request.getAttribute("fabricantes");
+                    List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
+				%>
+                                <select id="idSelCategoriaProdu" class="form-control form-page" name="categoriaprodu">
+                                 <%
+						for(Categoria categoria: categorias) {
+					%>
+									<option value="<%=categoria.getCodigo()%>"><%=categoria.getNome() %></option>
+					<% 
+						}
+					%>
+                                </select>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="idCategoriaP">Fabricante</label>
                             <div class="col-sm-9 has-feedback">
-                                <input id="idSelCategoriaProdu" class="form-control form-page" name="fabricanteaprodu">
+                           
+                                <select id="idSelFabricanteProdu" class="form-control form-page" name="fabricanteaprodu">
+                                 <%
+						for(Fabricante fabricante: fabricantes) {
+					%>
+									<option value="<%=fabricante.getId()%>"><%=fabricante.getNome() %></option>
+					<% 
+						}
+					%>
+                                
+                                </select>
                             </div>
                         </div>
 

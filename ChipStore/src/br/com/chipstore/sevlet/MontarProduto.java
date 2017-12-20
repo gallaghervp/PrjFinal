@@ -38,7 +38,7 @@ public class MontarProduto extends HttpServlet {
 		List<Categoria> categorias = null;
 		CategoriaService cs = new CategoriaService();
 		
-		List<Fabricante> fabricante = null;
+		List<Fabricante> fabricantes = null;
 		FabricanteService fs = new FabricanteService();
 		
 		
@@ -46,12 +46,12 @@ public class MontarProduto extends HttpServlet {
 		try {
 			categorias = cs.listar();
 		
-			fabricante = fs.listar();
+			fabricantes = fs.listar();
 			
 			request.setAttribute("categorias", categorias);
-			request.setAttribute("fabricante", fabricante);
+			request.setAttribute("fabricantes", fabricantes);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/IncluirProduto");
+			RequestDispatcher rd = request.getRequestDispatcher("incluirProduto.jsp");
 			rd.forward(request, response);
 			
 		} catch (ChipstoreException e) {
@@ -60,12 +60,6 @@ public class MontarProduto extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	
 
 }

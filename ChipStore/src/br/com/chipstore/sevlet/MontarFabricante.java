@@ -24,12 +24,12 @@ public class MontarFabricante extends HttpServlet {
     }
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 List<String> uf = Utilitarios.montarListaUf();		
 		
 		request.setAttribute("uf", uf);
-		RequestDispatcher rd = request.getRequestDispatcher("/IncluirFabricante");
+		RequestDispatcher rd = request.getRequestDispatcher("incluirFabricante.jsp");
 		rd.forward(request, response);
 	}
 	

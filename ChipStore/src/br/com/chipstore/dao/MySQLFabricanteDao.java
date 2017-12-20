@@ -163,15 +163,15 @@ public class MySQLFabricanteDao implements FabricanteDao {
 				Fabricante fa = new Fabricante();
 				fa.setId(rs.getLong("id"));
 				fa.setNome(rs.getString("nome"));
-				fa.setNome(rs.getString("cnpj"));
-				fa.setNome(rs.getString("endereco"));
-				fa.setNome(rs.getString("complemento"));
-				fa.setNome(rs.getString("bairro"));
-				fa.setNome(rs.getString("municipio"));
-				fa.setNome(rs.getString("uf"));
-				fa.setNome(rs.getString("contato"));
-				fa.setNome(rs.getString("email"));
-				fa.setNome(rs.getString("telefone"));
+				fa.setCnpj(rs.getString("cnpj"));
+				fa.setEndereco(rs.getString("endereco"));
+				fa.setComplemento(rs.getString("complemento"));
+				fa.setBairro(rs.getString("bairro"));
+				fa.setMunicipio(rs.getString("municipio"));
+				fa.setUf(rs.getString("uf"));
+				fa.setContato(rs.getString("contato"));
+				fa.setEmail(rs.getString("email"));
+				fa.setTelefone(rs.getString("telefone"));
 
 				listaFabricantes.add(fa);
 			}

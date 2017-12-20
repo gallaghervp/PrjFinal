@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE UNIQUE INDEX `codigobarra_UNIQUE` ON `projetofinal`.`produto` (`codigobarra` ASC);
+CREATE UNIQUE INDEX `codigobarras_UNIQUE` ON `projetofinal`.`produto` (`codigobarras` ASC);
 
 CREATE INDEX `fk_produtos_fabricante1_idx` ON `projetofinal`.`produto` (`fabricante_id` ASC);
 

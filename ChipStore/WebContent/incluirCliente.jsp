@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="ISO-8859-1"
+    import="java.util.*, br.com.chipstore.model.*"%>
+<!DOCTYPE html>
 <html>
 <head>
 <title>ChipStore - Incluir Cliente</title>
 </head>
 <body>
 
-<%@ include file="../template/cabecalho2.jsp" %>
+<jsp:include page="template/cabecalho2.jsp" />
 
 
 	<!--------------- CADASTRO CLIENTE -------------------->
@@ -83,36 +84,29 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="idSelEstado">UF </label>
                         <div class="col-sm-9 has-feedback">
+                        
+                        	<!-- 
+                        	<select id="idSelAssuntoCli" class="form-control form-page" name="selEstadocli">
+                        
+    	                    <c:forEach items="ufs" var="uf"> 
+        	    	   			<option value="${uf}"> ${uf} </option>
+            	    		</c:forEach>
+                        	
+                           </select>
+                           -->
+                           
+                <% 
+                        List <String> ufs = (List<String>) request.getAttribute("ufs");
+				%>
                             <select id="idSelAssuntoCli" class="form-control form-page" name="selEstadocli">
-                                    <option>Selecione</option>
-                                    <option value="AC">Acre</option>
-                                    <option value="AL">Alagoas</option>
-                                    <option value="AP">Amapá</option>
-                                    <option value="AM">Amazonas</option>
-                                    <option value="BA">Bahia</option>
-                                    <option value="CE">Ceará</option>
-                                    <option value="DF">Distrito Federal</option>
-                                    <option value="ES">Espírito Santo</option>
-                                    <option value="GO">Goiás</option>
-                                    <option value="MA">Maranhão</option>
-                                    <option value="MT">Mato Grosso</option>
-                                    <option value="MS">Mato Grosso do Sul</option>
-                                    <option value="MG">Minas Gerais</option>
-                                    <option value="PA">Pará</option>
-                                    <option value="PB">Paraíba</option>
-                                    <option value="PR">Paraná</option>
-                                    <option value="PE">Pernambuco</option>
-                                    <option value="PI">Piauí</option>
-                                    <option value="RJ">Rio de Janeiro</option>
-                                    <option value="RN">Rio Grande do Norte</option>
-                                    <option value="RS">Rio Grande do Sul</option>
-                                    <option value="RO">Rondônia</option>
-                                    <option value="RR">Roraima</option>
-                                    <option value="SC">Santa Catarina</option>
-                                    <option value="SP">São Paulo</option>
-                                    <option value="SE">Sergipe</option>
-                                    <option value="TO">Tocantins</option>
-                                </select>
+                <%
+						for(String uf: ufs) {
+				%>
+								<option value="<%=uf %>"> <%=uf %> </option>
+				<% 
+						}
+				%>
+                           </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -139,7 +133,7 @@
         </div>
     </div>
 
-<%@ include file="../template/footer2.jsp" %>
+<jsp:include page="template/footer2.jsp" />
 
 </body>
 

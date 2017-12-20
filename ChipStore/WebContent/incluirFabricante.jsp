@@ -24,7 +24,7 @@
 				<ul class="nav nav-tabs">
 					<li role="presentation" class="active"><a href="#">Cadastro
 							Fabricante</a></li>
-					<li role="presentation"><a href="incluirProduto.jsp">Cadastro
+					<li role="presentation"><a href="MontarProduto">Cadastro
 							Produto</a></li>
 					<li role="presentation"><a href="incluirCategoria.jsp">Cadastro
 							Categoria</a></li>

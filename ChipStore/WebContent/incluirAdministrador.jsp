@@ -20,8 +20,8 @@
             </div>
             <div class="col-sm-9 col-sm-offset-3 main">
                 <ul class="nav nav-tabs">
-                    <li role="presentation"><a href="incluirFabricante.jsp">Cadastro Fabricante</a></li>
-                    <li role="presentation"><a href="incluirProduto.jsp">Cadastro Produto</a></li>
+                    <li role="presentation"><a href="MontarFabricante">Cadastro Fabricante</a></li>
+                    <li role="presentation"><a href="MontarProduto">Cadastro Produto</a></li>
                     <li role="presentation"><a href="incluirCategoria.jsp">Cadastro Categoria</a></li>
                     <li role="presentation" class="active"><a href="#">Cadastro ADM</a></li>
                 </ul>
@@ -30,7 +30,7 @@
 
 
                 <div class="card-dados-container">
-				<form action="#" method="post" class="form-horizontal" style="margin-right:40px;">
+				<form action="IncluirAdministrador" method="post" class="form-horizontal" style="margin-right:40px;">
                     <h2 class="form-heading">Cadastrar</h2>
                     <hr>
                     <div class="form-group">

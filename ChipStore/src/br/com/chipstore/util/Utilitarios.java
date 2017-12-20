@@ -13,37 +13,37 @@ public class Utilitarios {
 		
 		
 		 
-		List<String> uf = new ArrayList<>();
-		uf.add("Selecione a UF");
-		uf.add("AC");
-		uf.add("AL");
-		uf.add("AP");
-		uf.add("AM");
-		uf.add("BA");
-		uf.add("CE");
-		uf.add("DF");
-		uf.add("ES");
-		uf.add("GO");
-		uf.add("MA");
-		uf.add("MT");
-		uf.add("MS");
-		uf.add("MG");
-		uf.add("PA");
-		uf.add("PB");
-		uf.add("PR");
-		uf.add("PE");
-		uf.add("PI");
-		uf.add("RJ");
-		uf.add("RN");
-		uf.add("RS");
-		uf.add("RO");
-		uf.add("RR");
-		uf.add("SC");
-		uf.add("SP");
-		uf.add("SE");
-		uf.add("TO");
+		List<String> ufs = new ArrayList<>();
+		ufs.add("Selecione a UF");
+		ufs.add("AC");
+		ufs.add("AL");
+		ufs.add("AP");
+		ufs.add("AM");
+		ufs.add("BA");
+		ufs.add("CE");
+		ufs.add("DF");
+		ufs.add("ES");
+		ufs.add("GO");
+		ufs.add("MA");
+		ufs.add("MT");
+		ufs.add("MS");
+		ufs.add("MG");
+		ufs.add("PA");
+		ufs.add("PB");
+		ufs.add("PR");
+		ufs.add("PE");
+		ufs.add("PI");
+		ufs.add("RJ");
+		ufs.add("RN");
+		ufs.add("RS");
+		ufs.add("RO");
+		ufs.add("RR");
+		ufs.add("SC");
+		ufs.add("SP");
+		ufs.add("SE");
+		ufs.add("TO");
 		
-		return uf;
+		return ufs;
 	}
 	
 	public static String calcularHashSenha(String senha) throws ChipstoreException {

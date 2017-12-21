@@ -98,9 +98,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="col-sm-3">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="index.jsp">INÍCIO</a></li>
-                         <li><a href="index.jsp">SOBRE</a></li>
-                        <li><a href="index.jsp">CONTATO</a></li>
+                        <li><a href="main.jsp">INÍCIO</a></li>
+                         <li><a href="main.jsp">SOBRE</a></li>
+                        <li><a href="main.jsp">CONTATO</a></li>
                     </ul>
                    <ul class="nav navbar-nav navbar-right">
                         <li><a title="Diminuir Fonte" alt="Diminuir" style="font-size:16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>

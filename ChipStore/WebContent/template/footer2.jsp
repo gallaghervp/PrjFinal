@@ -14,13 +14,13 @@
                 <div class="row">
                     <h3>Acesso rápido</h3>
                     <ul class="footerAccess">
-                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="index.jsp" class="footer-link"> Inicio</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="main.jsp" class="footer-link"> Inicio</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="lojaCelulares.jsp" class="footer-link"> Celulares</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="lojaComputadores.jsp" class="footer-link"> Computadores</a></li>
                         <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="lojaAcessorios.jsp" class="footer-link"> Acessórios</a></li>
-                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="index.jsp" class="footer-link"> Sobre</a></li>
-                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="index.jsp" class="footer-link"> Contato</a></li>
-                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="index.jsp" class="footer-link"> Pesquisar</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="main.jsp" class="footer-link"> Sobre</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="main.jsp" class="footer-link"> Contato</a></li>
+                        <li><i class="fa fa-angle-double-right icon-link" aria-hidden="true"></i><a href="main.jsp" class="footer-link"> Pesquisar</a></li>
                         <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginadm" id="nav-btn-login">ADM</button>
                     </ul>
                 </div>

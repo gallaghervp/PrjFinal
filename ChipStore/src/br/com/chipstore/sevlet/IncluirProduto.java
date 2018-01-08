@@ -28,77 +28,53 @@ public class IncluirProduto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
     
-		Produto novoProduto;
+		
 		Categoria categoria;
 		Fabricante fabricante;
 		
 		
-		String reqcodigoBarras = "";
-		long codigoBarras = 0;
-		String reqnome = "";
-		String reqmodelo = "";
-		String reqdescricao = "";
-		double preco = 0;
+		String codigoBarras;
+		String nome;
+		String modelo;
+		String descricao;
+		double preco;
+		int quantidade;
+		String imagem;
+		long codigoFabricante;
+		long codigoCategoria;
 		
-		int quantidade = 0;
-		String reqdisponivel = "";
-		String reqimagem = "";
-		String reqCodigoFabricante = "";
-		long codigoFabricante = 0;
-		String reqCodigoCategoria = "";
-		long codigoCategoria = 0;
+		codigoBarras = request.getParameter("codigoprodu");
+		nome = request.getParameter("nomeprodu");
+		modelo = request.getParameter("modeloprodu");
+		descricao = request.getParameter("descricaoprodu");
+		preco = Double.parseDouble(request.getParameter("precoprodu"));
+		quantidade = Integer.parseInt(request.getParameter("quantidadeprodu"));
+		imagem = request.getParameter("imagemprodu");
 		
-		reqcodigoBarras = request.getParameter("codigoBarras");
-		codigoBarras = Long.parseLong(reqcodigoBarras);
-		
-		reqnome = request.getParameter("nome").trim();
-		if (reqnome.equalsIgnoreCase("outros")) {
-			reqnome = "OU";
-		}
-		
-
-		reqdescricao = request.getParameter("descricao").trim();
-		if (reqdescricao.equalsIgnoreCase("outros")) {
-			reqdescricao = "OU";
-		}
+		codigoFabricante =  Long.parseLong(request.getParameter("fabricanteaprodu"));
 		
 		
-		preco = Double.parseDouble(request.getParameter("preco"));
+		codigoCategoria = Long.parseLong(request.getParameter("categoriaprodu"));
 		
-		
-		quantidade = Integer.parseInt(request.getParameter("quantidade"));
-		
-		reqdisponivel = request.getParameter("disponivel").trim();
-		if (reqdisponivel.equalsIgnoreCase("outros")) {
-			reqdisponivel = "OU";
-		}
-		
-		reqimagem = request.getParameter("imagem").trim();
-		if (reqimagem.equalsIgnoreCase("outros")) {
-			reqimagem = "OU";
-		}
-		
-		reqCodigoFabricante = request.getParameter("fabricante");
-		codigoFabricante = Long.parseLong(reqCodigoFabricante);
-		
-		reqCodigoCategoria = request.getParameter("categoria");
-		codigoCategoria = Long.parseLong(reqCodigoCategoria);
 		
 		try {
+			
 			CategoriaService cs = new CategoriaService();
 			categoria = cs.consultarPorCodigo(codigoCategoria);
 			
 			FabricanteService fs = new FabricanteService();
 			fabricante = fs.consultarPorCodigo(codigoFabricante);
 			
+			Produto novoProduto;
+			
 			novoProduto = new Produto();
 			novoProduto.setCodigoBarras(codigoBarras);
-			novoProduto.setNome(reqnome);
-			novoProduto.setModelo(reqmodelo);
-			novoProduto.setDescricao(reqdescricao);
+			novoProduto.setNome(nome);
+			novoProduto.setModelo(modelo);
+			novoProduto.setDescricao(descricao);
 			novoProduto.setPreco(preco);
 			novoProduto.setQuantidade(quantidade);
-			novoProduto.setDisponivel(reqdisponivel);
+			novoProduto.setImagem(imagem);
 			novoProduto.setCategoria(categoria);
 			novoProduto.setFabricante(fabricante);
 			
@@ -121,10 +97,6 @@ public class IncluirProduto extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	
 
 }

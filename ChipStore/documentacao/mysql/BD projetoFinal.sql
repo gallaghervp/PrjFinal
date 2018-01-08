@@ -159,7 +159,6 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
   `descricao` VARCHAR(45) NOT NULL,
   `preco` DOUBLE NOT NULL,
   `quantidade` INT NOT NULL,
-  `disponivel` CHAR(1) NOT NULL,
   `imagem` VARCHAR(100) NOT NULL,
   `fabricante_id` INT NOT NULL,
   `categoria_codigo` INT NOT NULL,

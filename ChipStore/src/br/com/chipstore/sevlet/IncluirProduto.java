@@ -50,10 +50,7 @@ public class IncluirProduto extends HttpServlet {
 		preco = Double.parseDouble(request.getParameter("precoprodu"));
 		quantidade = Integer.parseInt(request.getParameter("quantidadeprodu"));
 		imagem = request.getParameter("imagemprodu");
-		
 		codigoFabricante =  Long.parseLong(request.getParameter("fabricanteaprodu"));
-		
-		
 		codigoCategoria = Long.parseLong(request.getParameter("categoriaprodu"));
 		
 		

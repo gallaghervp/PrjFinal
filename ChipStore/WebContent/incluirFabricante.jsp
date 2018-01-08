@@ -104,7 +104,7 @@
 							</label>
 							<div class="col-sm-9 has-feedback">
 							 <% 
-                        List <String> ufs = (List<String>) request.getAttribute("ufs");
+                        List <String> ufs = (List<String>) request.getAttribute("uf");
 				%>
 								<select id="idSelAssuntoFabri" class="form-control form-page"
 									name="selEstadofabri">

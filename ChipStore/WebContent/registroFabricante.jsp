@@ -28,7 +28,7 @@
 			
 		</div>
 		<div class="col-sm-3">
-			<a href="incluirFabricante.jsp" class="btn btn-primary pull-right h2">Retorna para Cadastro</a>
+			<a href="MontarFabricante" class="btn btn-primary pull-right h2">Retorna para Cadastro</a>
 		</div>
 	</div> <!-- /#top -->
  

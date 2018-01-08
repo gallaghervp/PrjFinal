@@ -94,7 +94,7 @@ public class IncluirCliente extends HttpServlet {
 			
 			long idGerado = cs.incluir(novoCliente);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/MontarPaginaMain");
 			rd.forward(request, response);
 		}
 		catch (ChipstoreException e) {

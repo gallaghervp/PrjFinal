@@ -30,7 +30,7 @@
       					<p class="price">R$3.599,00</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					 <a href="carrinho.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      					 <a href="carrinho2.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
       				</div>	
       			</div>
     		</span>
@@ -47,7 +47,7 @@
       					<p class="price">R$1.209,00</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					 <a href="carrinho.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+      					 <a href="carrinho2.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
       				</div>	
       			</div>
     		</span>
@@ -64,7 +64,7 @@
       					<p class="price">R$999,00</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					 <a href="carrinho.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                      
+      					 <a href="carrinho2.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                      
       				</div>	
       			</div>
     		</span>
@@ -81,7 +81,7 @@
       					<p class="price">R$429,90</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					 <a href="carrinho.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                       
+      					 <a href="carrinho2.jsp"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                       
       				</div>	
       			</div>
     		</span>

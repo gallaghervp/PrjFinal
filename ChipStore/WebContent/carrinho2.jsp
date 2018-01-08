@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" 
-    import="java.util.List, br.com.chipstore.model.Produto"%>
+    import="java.util.List, br.com.chipstore.model.ItemCarrinho"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +12,12 @@
 <%@ include file="../template/cabecalho2.jsp" %>
 
 <% 
-	List<Produto>carrinho; 
+	List<ItemCarrinho> carrinho; 
 
-	carrinho = (List<Produto>) session.getAttribute("carrinho");
+	carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
 	
-	for (Produto p:carrinho) {
-		out.println("Descrição do Produto" + p.getDescricao());
+	for (ItemCarrinho ic: carrinho) {
+		out.println("Descrição do Produto" + ic.getProduto().getDescricao());
 	}
 
 %>
@@ -36,28 +36,28 @@
             </thead>
             <tbody>
              <%
-				for (Produto p:carrinho) {		
+				for (ItemCarrinho ic: carrinho) {		
 				%>
 				
 				
                 <tr>
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-sm-2 hidden-xs"><img src="img/<%=p.getId()%>.png" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-2 hidden-xs"><img src="img/<%=ic.getProduto().getId()%>.png" alt="..." class="img-responsive" /></div>
                             <div class="col-sm-10">
-                                <h4 href="MontarCarrinho?id=<%=p.getId()%>" class="nomargin"><%=p.getNome()%></h4>
-                                <p><%=p.getModelo()%></p>
+                                <h4 href="MontarCarrinho?id=<%=ic.getProduto().getId()%>" class="nomargin"><%=ic.getProduto().getNome()%></h4>
+                                <p><%=ic.getProduto().getModelo()%></p>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price"><%=p.getPreco() %></td>
+                    <td data-th="Price"><%=ic.getProduto().getPreco() %></td>
                     <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" value="1">
+                        <input type="number" class="form-control text-center" value="<%=ic.getQuantidade()%>">
                     </td>
-                    <td data-th="Subtotal" class="text-center"><%=p.getPreco() %></td>
+                    <td data-th="Subtotal" class="text-center"><%=ic.getPreco()%></td>
                     <td class="actions" data-th="">
                         <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o" onClick="DesmontarCarrinho?id=<%=p.getId()%>"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
                     </td>
                 </tr>
                 <%} %>

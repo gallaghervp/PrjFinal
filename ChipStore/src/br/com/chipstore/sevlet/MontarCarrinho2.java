@@ -2,7 +2,6 @@ package br.com.chipstore.sevlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -14,22 +13,32 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.chipstore.exception.ChipstoreException;
+import br.com.chipstore.model.ItemCarrinho;
 import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.ProdutoService;
+import br.com.chipstore.util.Utilitarios;
 
-@WebServlet("/MontarCarrinho")
-public class MontarCarrinho extends HttpServlet {
+/**
+ * Servlet implementation class MontarCarrinho2
+ */
+@WebServlet("/MontarCarrinho2")
+public class MontarCarrinho2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private List<Produto> produtos;
 	
-    public MontarCarrinho() {
+    public MontarCarrinho2() {
         super();
-        produtos = new ArrayList<>();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		Produto produto = new Produto();
+		List<ItemCarrinho> carrinho;
+		
+		// verificar se o carrinho esta na sessao
+		carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
+		if (carrinho == null) {
+			carrinho = new ArrayList<>();
+		} 
 		
 		long id = Long.parseLong(request.getParameter("id"));
 		
@@ -39,11 +48,18 @@ public class MontarCarrinho extends HttpServlet {
 			
 			produto = ps.consultarPorId(id);
 			
-			produtos.add(produto);
+			int indiceItemCarrinho = Utilitarios.indiceProdutoCarrinho(carrinho, produto);
 			
-			session.setAttribute("carrinho", produtos);
+			if (indiceItemCarrinho < 0) {
+				ItemCarrinho ic = new ItemCarrinho(produto);
+				carrinho.add(ic);
+			} else {
+				carrinho.get(indiceItemCarrinho).incrementaQuantidade();
+			}
+			
+			session.setAttribute("carrinho", carrinho);
 			 
-			RequestDispatcher rd = request.getRequestDispatcher("/carrinho.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/carrinho2.jsp");
 			rd.forward(request, response);	
 			   
 		} catch (ChipstoreException e) {
@@ -58,5 +74,5 @@ public class MontarCarrinho extends HttpServlet {
 		session.invalidate();
 		
 	}
-
+	
 }

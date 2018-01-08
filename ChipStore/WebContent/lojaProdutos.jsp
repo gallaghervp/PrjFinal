@@ -60,7 +60,7 @@
 	      					<p class="price"><%=produto.getPreco() %></p>
 	      				</div>
 	      				<div class="col-md-6 col-sm-6">
-	      					 <a href="MontarCarrinho?id=<%=produto.getId() %>"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+	      					 <a href="MontarCarrinho2?id=<%=produto.getId() %>"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
 	      				</div>	
 	      			</div>
 	    		</span>
@@ -91,7 +91,7 @@
 		      					<p class="price"><%=produto.getPreco() %></p>
 		      				</div>
 		      				<div class="col-md-6 col-sm-6">
-		      					 <a href="MontarCarrinho?id=<%=produto.getId() %>"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+		      					 <a href="MontarCarrinho2?id=<%=produto.getId() %>"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
 		      				</div>	
 		      			</div>
 		    		</span>
@@ -121,7 +121,7 @@
 		      					<p class="price"><%=produto.getPreco() %></p>
 		      				</div>
 		      				<div class="col-md-6 col-sm-6">
-		      					 <a href="MontarCarrinho?id=<%=produto.getId() %>"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
+		      					 <a href="MontarCarrinho2?id=<%=produto.getId() %>"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>Comprar</button></a>                     
 		      				</div>	
 		      			</div>
 		    		</span>

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.chipstore.exception.ChipstoreException;
+import br.com.chipstore.model.ItemCarrinho;
+import br.com.chipstore.model.Produto;
 
 public class Utilitarios {
 	public static List<String> montarListaUf(){
@@ -85,4 +87,38 @@ public class Utilitarios {
 			e.printStackTrace();
 		}
     }
+
+
+	public static int indiceProdutoCarrinho(List<ItemCarrinho> carrinho, Produto novoProduto) {
+		int indice = -1;
+		for(ItemCarrinho ic: carrinho) {
+			Produto produtoCarrinho = ic.getProduto();
+			
+			if (produtoCarrinho.getId() == novoProduto.getId()) {
+				indice = carrinho.indexOf(ic); 
+				break;
+			}
+			
+		}
+		
+		return indice;
+	}
+	
+	public static boolean removerProdutoCarrinho(List<ItemCarrinho> carrinho, Produto produto) {
+		boolean resultado = false;
+		
+		int indice = indiceProdutoCarrinho(carrinho, produto);
+		
+		if (indice >= 0) {
+			carrinho.remove(indice);
+			resultado = true;
+		}
+		
+		return resultado;
+	}
+
+
 }
+
+
+

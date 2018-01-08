@@ -268,14 +268,14 @@
                     <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
                 </div>
                 <div class="modal-body">
-                    <form action="index.jsp">
+                    <form action="index.html">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" required autofocus />
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" name ="emailcliente" required autofocus />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" required autofocus />
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" name ="senhacliente" required autofocus />
                         </div>
                         <button type="submit" class="btn btn-form btn-block">ENTRAR</button>
                     </form>

@@ -37,7 +37,7 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `projetofinal`.`administrador` ;
 
 CREATE TABLE IF NOT EXISTS `projetofinal`.`administrador` (
-  `matricula` INT NOT NULL,
+  `matricula` INT NOT NULL AUTO_INCREMENT,
   `nome` INT NOT NULL,
   `cpf` VARCHAR(15) NOT NULL,
   `senha` VARCHAR(32) NOT NULL,
@@ -159,7 +159,6 @@ CREATE TABLE IF NOT EXISTS `projetofinal`.`produto` (
   `descricao` VARCHAR(45) NOT NULL,
   `preco` DOUBLE NOT NULL,
   `quantidade` INT NOT NULL,
-  `disponivel` CHAR(1) NOT NULL,
   `imagem` VARCHAR(100) NOT NULL,
   `fabricante_id` INT NOT NULL,
   `categoria_codigo` INT NOT NULL,

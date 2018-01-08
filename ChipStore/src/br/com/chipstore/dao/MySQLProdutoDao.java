@@ -28,19 +28,18 @@ public class MySQLProdutoDao implements ProdutoDao {
 		// criar a conexao
 		conn = MySqlDAOFactory.createConnection();
 
-		String sql = "INSERT INTO Produto (codigobarra,nome,modelo,descricao,preco,quantidade,disponivel,imagem,categoria,fabricante) VALUES (?,?,?,?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO Produto (codigobarras,nome,modelo,descricao,preco,quantidade,imagem,categoria,fabricante) VALUES (?,?,?,?,?,?,?,?,?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-		pstmt.setLong(1, produto.getCodigoBarras());
+		pstmt.setString(1, produto.getCodigoBarras());
 		pstmt.setString(2, produto.getNome());
 		pstmt.setString(3, produto.getModelo());
 		pstmt.setString(4, produto.getDescricao());
 		pstmt.setDouble(5, produto.getPreco());
 		pstmt.setInt(6, produto.getQuantidade());
-		pstmt.setString(7, produto.getDisponivel());
-		pstmt.setString(8, produto.getImagem());
-		pstmt.setLong(9, produto.getCategoria().getCodigo());
-		pstmt.setLong(10, produto.getFabricante().getId());
+		pstmt.setString(7, produto.getImagem());
+		pstmt.setLong(8, produto.getCategoria().getCodigo());
+		pstmt.setLong(9, produto.getFabricante().getId());
 		
 		
 
@@ -88,13 +87,12 @@ public class MySQLProdutoDao implements ProdutoDao {
 			rs.next();
 			
 			produtoConsultado.setId(rs.getLong("id"));
-			produtoConsultado.setCodigoBarras(rs.getLong("codigoBarras"));
+			produtoConsultado.setCodigoBarras(rs.getString("codigoBarras"));
 			produtoConsultado.setNome(rs.getString("nome"));
 			produtoConsultado.setModelo(rs.getString("modelo"));
 			produtoConsultado.setDescricao(rs.getString("descricao"));
 			produtoConsultado.setPreco(rs.getDouble("preco"));
 			produtoConsultado.setQuantidade(rs.getInt("quantidade"));
-			produtoConsultado.setDisponivel(rs.getString("disponivel"));
 			produtoConsultado.setImagem(rs.getString("imagem"));
 			
 			fabricante.setId(rs.getLong("id"));
@@ -149,13 +147,12 @@ public class MySQLProdutoDao implements ProdutoDao {
 			while (rs.next()) {
 				Produto pr = new Produto();
 				pr.setId(rs.getLong("id"));
-				pr.setCodigoBarras(rs.getLong("codigoBarras"));
+				pr.setCodigoBarras(rs.getString("codigoBarras"));
 				pr.setNome(rs.getString("nome"));
 				pr.setModelo(rs.getString("modelo"));
 				pr.setDescricao(rs.getString("descricao"));
 				pr.setPreco(rs.getDouble("preco"));
 				pr.setQuantidade(rs.getInt("quantidade"));
-				pr.setDisponivel(rs.getString("disponivel"));
 				pr.setImagem(rs.getString("imagem"));
 				
 				Fabricante fabricante = new Fabricante();
@@ -230,13 +227,12 @@ public class MySQLProdutoDao implements ProdutoDao {
 			while (rs.next()) {
 				Produto pr = new Produto();
 				pr.setId(rs.getLong("id"));
-				pr.setCodigoBarras(rs.getLong("codigoBarras"));
+				pr.setCodigoBarras(rs.getString("codigoBarras"));
 				pr.setNome(rs.getString("nome"));
 				pr.setModelo(rs.getString("modelo"));
 				pr.setDescricao(rs.getString("descricao"));
 				pr.setPreco(rs.getDouble("preco"));
 				pr.setQuantidade(rs.getInt("quantidade"));
-				pr.setDisponivel(rs.getString("disponivel"));
 				pr.setImagem(rs.getString("imagem"));
 				
 				Fabricante fabricante = new Fabricante();
@@ -300,13 +296,12 @@ public class MySQLProdutoDao implements ProdutoDao {
 			while (rs.next()) {
 				Produto pr = new Produto();
 				pr.setId(rs.getLong("id"));
-				pr.setCodigoBarras(rs.getLong("codigoBarras"));
+				pr.setCodigoBarras(rs.getString("codigoBarras"));
 				pr.setNome(rs.getString("nome"));
 				pr.setModelo(rs.getString("modelo"));
 				pr.setDescricao(rs.getString("descricao"));
 				pr.setPreco(rs.getDouble("preco"));
 				pr.setQuantidade(rs.getInt("quantidade"));
-				pr.setDisponivel(rs.getString("disponivel"));
 				pr.setImagem(rs.getString("imagem"));
 				
 				Fabricante fabricante = new Fabricante();
@@ -375,13 +370,12 @@ public class MySQLProdutoDao implements ProdutoDao {
 			rs.next();
 			
 			produtoConsultado.setId(rs.getLong("id"));
-			produtoConsultado.setCodigoBarras(rs.getLong("codigoBarras"));
+			produtoConsultado.setCodigoBarras(rs.getString("codigoBarras"));
 			produtoConsultado.setNome(rs.getString("nome"));
 			produtoConsultado.setModelo(rs.getString("modelo"));
 			produtoConsultado.setDescricao(rs.getString("descricao"));
 			produtoConsultado.setPreco(rs.getDouble("preco"));
 			produtoConsultado.setQuantidade(rs.getInt("quantidade"));
-			produtoConsultado.setDisponivel(rs.getString("disponivel"));
 			produtoConsultado.setImagem(rs.getString("imagem"));
 			
 			fabricante.setId(rs.getLong("id"));

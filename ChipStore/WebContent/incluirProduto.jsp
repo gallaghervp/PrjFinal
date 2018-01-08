@@ -138,14 +138,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" for="idDisponibilidade">Disponibilidade</label>
-                            <div class="col-sm-9 has-feedback">
-                                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op1" id="idSelDisponibilidadeSim" id="txtDisponibilidadeSim" name="disponibilidadeSim"> Sim
-								<INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2" id="idSelDisponibilidadeNao" id="txtDisponibilidadeNao" name="disponibilidadeNao"> Não 
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="idTxtImagem">Imagem</label>
                             <div class="col-sm-9 has-feedback">

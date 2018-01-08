@@ -299,7 +299,7 @@
                     <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login Administrativo</h1>
                 </div>
                 <div class="modal-body">
-                    <form action="incluirFabricante.jsp">
+                    <form action="MontarFabricante">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Cpf</label>
                             <input type="text" class="form-control" id="exampleInputCpf1" placeholder="Digite seu Cpf"  name ="cpfadmin"required autofocus />

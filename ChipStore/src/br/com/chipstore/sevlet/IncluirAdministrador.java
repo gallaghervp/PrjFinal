@@ -36,7 +36,7 @@ public class IncluirAdministrador extends HttpServlet {
 
 		nome = request.getParameter("nomepro");
 		cpf = request.getParameter("cpfpro");
-		telefone = request.getParameter("txtTelPro");
+		telefone = request.getParameter("telpro");
 		email = request.getParameter("emailpro");
 		senha = request.getParameter("senhapro");
 		
@@ -56,7 +56,7 @@ public class IncluirAdministrador extends HttpServlet {
 
 		
 
-			long idGerada = ar.incluir(novoAdministrador);
+			long matriculaGerada = ar.incluir(novoAdministrador);
 
 			RequestDispatcher rd = request.getRequestDispatcher("/registroAdm.jsp");
 			rd.forward(request, response);

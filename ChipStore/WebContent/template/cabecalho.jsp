@@ -268,7 +268,7 @@
                     <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
                 </div>
                 <div class="modal-body">
-                    <form action="index.html">
+                    <form action="ValidaLoginCliente">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" name ="emailcliente" required autofocus />

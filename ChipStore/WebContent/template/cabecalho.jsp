@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="./img/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/letrass.js"></script>
+    <script src="js/letras.js"></script>
     <script src="js/login.js"></script>
     <script src="js/autocontraste.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
@@ -231,11 +231,6 @@
                         <li><a href="main.jsp">INÍCIO</a></li>
                         <li><a href="#sobre" class="scroll">SOBRE</a></li>
                         <li><a href="#contato" class="scroll">CONTATO</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a title="Diminuir Fonte" alt="Diminuir" style="font-size:16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>
-                        <li><a title="Aumentar Fonte" alt="Aumentar" style="font-size:16px;" href="#"><span id="aumentar-fonte" class="glyphicon glyphicon-font"></span>+</a></li>
-                        <li><a style="font-size:16px;" href="#altocontraste" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast"><span class="glyphicon glyphicon-adjust"></span></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 search-col">

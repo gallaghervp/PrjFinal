@@ -1,7 +1,10 @@
 package br.com.chipstore.model;
 
-public  class Administrador{
+import java.io.Serializable;
 
+public class Administrador implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private long matricula;
 	private String nome;
 	private String cpf;

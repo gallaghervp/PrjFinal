@@ -110,13 +110,6 @@
                 </div>
             </div>
         </div>
-        <div class="parallax-container" id="parallaxUser" data-speed="6" data-type="background">
-            <div class="container">
-                <div class="row">
-                    <i class="fa fa-edit"></i>
-                </div>
-            </div>
-        </div>
     </nav>
 </body>
 

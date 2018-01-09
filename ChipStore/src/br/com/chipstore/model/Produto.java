@@ -1,7 +1,10 @@
 package br.com.chipstore.model;
 
-public class Produto {
-	
+import java.io.Serializable;
+
+public class Produto implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String codigoBarras;
 	private String nome;

@@ -1,9 +1,11 @@
 package br.com.chipstore.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Boleto {
-	
+public class Boleto implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private Date dataEmissao;
 	private double valor;

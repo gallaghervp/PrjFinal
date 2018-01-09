@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" 
-    import="java.util.List, br.com.chipstore.model.ItemCarrinho"%>
+    import="java.util.List, br.com.chipstore.model.ItemCarrinho, br.com.chipstore.model.Produto"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +15,6 @@
 	List<ItemCarrinho> carrinho; 
 
 	carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
-	
-	for (ItemCarrinho ic: carrinho) {
-		out.println("Descrição do Produto" + ic.getProduto().getDescricao());
-	}
 
 %>
 
@@ -52,11 +48,12 @@
                     </td>
                     <td data-th="Price"><%=ic.getProduto().getPreco() %></td>
                     <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" value="<%=ic.getQuantidade()%>">
+                        <input type="text" class="form-control text-center" value="<%=ic.getQuantidade()%>" disabled>
                     </td>
                     <td data-th="Subtotal" class="text-center"><%=ic.getPreco()%></td>
                     <td class="actions" data-th="">
-                        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+	                    <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
+	                    <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
                         <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
                     </td>
                 </tr>
@@ -67,7 +64,7 @@
                     <td class="text-center"><strong>Total 1.99</strong></td>
                 </tr>
                 <tr>
-                    <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
+                    <td><a href="index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
                     <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>

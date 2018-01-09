@@ -18,14 +18,11 @@ import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.ProdutoService;
 import br.com.chipstore.util.Utilitarios;
 
-/**
- * Servlet implementation class DesmontarCarrinho
- */
-@WebServlet("/DesmontarCarrinho")
-public class DesmontarCarrinho extends HttpServlet {
+@WebServlet("/RemoverItemCarrinho")
+public class RemoverItemCarrinho extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public DesmontarCarrinho() {
+    public RemoverItemCarrinho() {
         super();
     }
 
@@ -35,31 +32,24 @@ public class DesmontarCarrinho extends HttpServlet {
 		List<ItemCarrinho> carrinho;
 		
 		// verificar se o carrinho esta na sessao
-		carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
-		
-		if (carrinho != null) {
-			
-			long id = Long.parseLong(request.getParameter("id"));
-		
-			try {
+				carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
 				
-				ProdutoService ps = new ProdutoService();
+				if (carrinho != null) {
+					
+					long id = Long.parseLong(request.getParameter("id"));
 				
-				produto = ps.consultarPorId(id);
-				
-				int indiceItemCarrinho = Utilitarios.indiceProdutoCarrinho(carrinho, produto);
-				int quantidadeItemCarrinho = carrinho.get(indiceItemCarrinho).getQuantidade();
-
-				if (quantidadeItemCarrinho <= 0 ) {
-					boolean resultado = Utilitarios.removerProdutoCarrinho(carrinho, produto);
-				} else {
-					carrinho.get(indiceItemCarrinho).decrementaQuantidade();
-				}
-
-				session.setAttribute("carrinho", carrinho);
-				 
-				RequestDispatcher rd = request.getRequestDispatcher("/carrinho2.jsp");
-				rd.forward(request, response);	
+					try {
+						
+						ProdutoService ps = new ProdutoService();
+						
+						produto = ps.consultarPorId(id);
+						
+						boolean resultado = Utilitarios.removerProdutoCarrinho(carrinho, produto);
+						
+						session.setAttribute("carrinho", carrinho);
+						 
+						RequestDispatcher rd = request.getRequestDispatcher("/carrinho2.jsp");
+						rd.forward(request, response);
 				   
 			} catch (ChipstoreException e) {
 				throw new ServletException(e.getMessage(),e.getCause());

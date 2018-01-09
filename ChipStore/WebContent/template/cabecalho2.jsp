@@ -54,8 +54,6 @@
     </div>
     
 
-
-
     <!----------------- LOGIN ADM ------------------->
 
     <div class="modal fade" id="loginadm" role="dialog">
@@ -101,11 +99,6 @@
                         <li><a href="main.jsp">INÍCIO</a></li>
                          <li><a href="main.jsp">SOBRE</a></li>
                         <li><a href="main.jsp">CONTATO</a></li>
-                    </ul>
-                   <ul class="nav navbar-nav navbar-right">
-                        <li><a title="Diminuir Fonte" alt="Diminuir" style="font-size:16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>
-                        <li><a title="Aumentar Fonte" alt="Aumentar" style="font-size:16px;" href="#"><span id="aumentar-fonte" class="glyphicon glyphicon-font"></span>+</a></li>
-                        <li><a style="font-size:16px;" href="#altocontraste" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast"><span class="glyphicon glyphicon-adjust"></span></a></li>
                     </ul>
                 </div>
             </div>

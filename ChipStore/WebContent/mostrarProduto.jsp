@@ -26,7 +26,7 @@
                     <h3>${produto.nome}</h3>    
                     <h5 style="color:#337ab7">vendido por <a href="#">${produto.fabricante.nome}</a> Â· <small style="color:#337ab7">(587 Vendas)</small></h5>
         
-                    <!-- Precios -->
+                    <!-- Precos -->
                     <h6 class="title-price"><small>Pre�o</small></h6>
                     <h3 style="margin-top:0px;">R$ ${produto.preco}</h3>
         

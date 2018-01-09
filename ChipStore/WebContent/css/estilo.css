@@ -40,7 +40,7 @@ body {
 	font-size: 0.85em;
 	letter-spacing: 0.15em;
 	color: white;
-	width:70px; /* O Width comanda espaçamento entre "início sobre e contato" do lado da barra de pesquisa */
+	width:100%; /* O Width comanda espaçamento entre "início sobre e contato" do lado da barra de pesquisa */
 }
 
 .navbar-brand {
@@ -296,76 +296,6 @@ textarea.form-control {
 }
 
 
-/* PARALLAX */
-#parallaxIndex {
-    height:160px;
-    background-color:#004c82;
-    background: url(../img/photo.jpg) 50% 0 fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; 
-}
-
-#parallaxFooter {
-    height:300px;
-    background-color:#004c82;
-    background: url(../img/aurora2.jpg) 50% 0 fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.parallax-content {
-    background-color: rgba(0, 0, 0, 0.2) !important;
-    height:300px;
-}
-
-#parallaxHead {
-    height:240px;
-    background-color:#004c82;
-    background: url(../img/innerhead2.jpg) 50% 0 fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-    position: relative; 
-    padding: 140px 0 50px 0;
-}
-
-#parallaxHead i {
-    float: left;
-    color: white;
-    width: 47px;
-    height: 47px;
-    margin: 7px 20px 0 0;
-    border: 2px solid white;
-    text-align: center;
-    overflow: hidden;
-    font-size: 24px;
-    line-height: 42px;
-}
-
-#parallaxUser{
-    height:190px;
-    background-color:#004c82;
-    background: url(../img/innerhead2.jpg) 50% 0 fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-    position: relative; 
-    padding: 90px 0 50px 0;
-}
-
-#parallaxUser i {
-    float: left;
-    color: white;
-    width: 47px;
-    height: 47px;
-    margin: 7px 20px 0 0;
-    border: 2px solid white;
-    text-align: center;
-    overflow: hidden;
-    font-size: 24px;
-    line-height: 42px;
-}
-
 .breadcrumb {
     padding: 0px;
     list-style: none;
@@ -410,9 +340,9 @@ textarea.form-control {
     display: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: -150px;
     margin-bottom: 20px;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #847BF6;
 }
 
 .form-control {
@@ -881,9 +811,13 @@ footer {
         display: inline-block; width: 8rem;
     }
     
-    
-    
     table#cart tfoot td{display:block; }
     table#cart tfoot td .btn{display:block;}
     
+}
+
+/* Comando da acessibilidade */
+.navbar-right {
+    margin-right:0px;
+    padding-right: 512px;
 }

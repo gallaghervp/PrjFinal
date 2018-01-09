@@ -145,7 +145,7 @@ public class MySQLAdministradorDao implements AdministradorDao{
 
 		// consultar os Administradoress que existem na tabela
 
-		String sql = "SELECT * FROM Administrador  WHERE cpf=" + cpf + ";";
+		String sql = "SELECT * FROM Administrador  WHERE cpf='" + cpf + "';";
 		stmt = conn.createStatement();
 
 		rs = stmt.executeQuery(sql);

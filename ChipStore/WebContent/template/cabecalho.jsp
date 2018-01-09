@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="./img/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/letrass.js"></script>
+    <script src="js/letras.js"></script>
     <script src="js/login.js"></script>
     <script src="js/autocontraste.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
@@ -232,11 +232,6 @@
                         <li><a href="#sobre" class="scroll">SOBRE</a></li>
                         <li><a href="#contato" class="scroll">CONTATO</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a title="Diminuir Fonte" alt="Diminuir" style="font-size:16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>
-                        <li><a title="Aumentar Fonte" alt="Aumentar" style="font-size:16px;" href="#"><span id="aumentar-fonte" class="glyphicon glyphicon-font"></span>+</a></li>
-                        <li><a style="font-size:16px;" href="#altocontraste" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast"><span class="glyphicon glyphicon-adjust"></span></a></li>
-                    </ul>
                 </div>
                 <div class="col-sm-4 search-col">
                     <form class="navbar-form" role="search">
@@ -250,6 +245,8 @@
                         </div>
                     </form>
                 </div>
+         
+                
                 <div class="col-sm-3">
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
                     <a href="MontarCliente" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>                
@@ -259,6 +256,9 @@
         </div>
     </nav>
     
+   
+      
+       
     <!--------------- MODAL LOGIN -------------------->
 
     <div class="modal fade" id="login" role="dialog">
@@ -268,7 +268,7 @@
                     <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
                 </div>
                 <div class="modal-body">
-                    <form action="index.html">
+                    <form action="ValidaLoginCliente" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" name ="emailcliente" required autofocus />
@@ -287,6 +287,7 @@
         </div>
     </div>
     
+  
 
 
 
@@ -299,7 +300,7 @@
                     <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login Administrativo</h1>
                 </div>
                 <div class="modal-body">
-                    <form action="MontarFabricante">
+                    <form action="ValidaLoginAdministrador" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Cpf</label>
                             <input type="text" class="form-control" id="exampleInputCpf1" placeholder="Digite seu Cpf"  name ="cpfadmin"required autofocus />
@@ -317,6 +318,7 @@
             </div>
         </div>
     </div>
+	
 	
 
     <!--------------- CAROUSEL -------------------->
@@ -363,15 +365,14 @@
             %>
             
                 <li><a href="MontarLojaProduto?codigoCategoria=<%=c.getCodigo()%>"> <%=c.getNome()%></a></li>
-                <%
+               
+                <% } %> 
+               
                 
-            	}
-                
-                %>
             </ul>
         </div>
     </nav>
-
+ 
 
 </body>
 </html>

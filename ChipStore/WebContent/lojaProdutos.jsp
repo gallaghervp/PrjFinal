@@ -51,8 +51,7 @@
 	  		<div class="col-md-3 col-sm-6">
 	    		<span class="thumbnail">
 	      		 <a href="CarregarProduto?id=<%=produto.getId() %>"><img src="img/<%=produto.getId()%>.png" alt="Imagem de <%=produto.getModelo() %>"></a> 
-	      			<h4><%=produto.getNome()%></h4>
-	      			
+	      			<h4><%=produto.getNome()%></h4>S
 	      			<p><%=produto.getModelo()%></p>
 	      			<hr class="line">
 	      			<div class="row">

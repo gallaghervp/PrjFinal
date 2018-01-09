@@ -15,9 +15,11 @@
 	List<ItemCarrinho> carrinho; 
 
 	carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
+	
+	Double valorTotal = (Double)session.getAttribute("valorTotal");
 
 %>
-
+	<%="Valor:" + valorTotal%>
     <br>
     <div class="container">
         <table id="cart" class="table table-hover table-condensed">
@@ -52,21 +54,21 @@
                     </td>
                     <td data-th="Subtotal" class="text-center"><%=ic.getPreco()%></td>
                     <td class="actions" data-th="">
-	                    <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
-	                    <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
-                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+	                    <a href="DecrementQuantidade?id=<%=ic.getProduto().getId()%>"><i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i></a>
+	                    <a href="IncrementQuantidade?id=<%=ic.getProduto().getId()%>"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+                        <a href="RemoverItemCarrinho?id=<%=ic.getProduto().getId()%>">Remover</a>
                     </td>
                 </tr>
                 <%} %>
             </tbody>
             <tfoot>
                 <tr class="visible-xs">
-                    <td class="text-center"><strong>Total 1.99</strong></td>
+                    <td class="text-center"><a><%=valorTotal%></a></td>
                 </tr>
                 <tr>
                     <td><a href="index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
                     <td colspan="2" class="hidden-xs"></td>
-                    <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                    <td class="hidden-xs text-center"><a><%=valorTotal%></a></td>
                     <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>
                 </tr>
             </tfoot>

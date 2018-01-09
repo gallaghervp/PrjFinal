@@ -8,6 +8,7 @@ public class ItemCarrinho implements Serializable {
 	private Produto produto;
 	private int quantidade;
 	private double preco;
+	private double valorTotal;
 	
 	public ItemCarrinho() {
 		super();
@@ -44,7 +45,6 @@ public class ItemCarrinho implements Serializable {
 		this.preco = preco;
 	}
 
-
 	public void incrementaQuantidade() {
 		this.quantidade++;
 		atualizarPreco();
@@ -55,8 +55,20 @@ public class ItemCarrinho implements Serializable {
 		atualizarPreco();
 	}
 	
-	private void atualizarPreco() {
+	public void atualizarPreco() {
 		this.preco = this.quantidade * this.produto.getPreco();
+	}
+	
+	public double somarValorTotal() {
+		valorTotal = valorTotal + this.preco;
+		
+		return valorTotal;
+	}
+	
+	public double subtrairValorTotal() {
+		valorTotal = valorTotal - this.preco;
+		
+		return valorTotal;
 	}
 
 }

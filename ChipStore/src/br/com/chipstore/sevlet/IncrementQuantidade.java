@@ -18,11 +18,14 @@ import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.ProdutoService;
 import br.com.chipstore.util.Utilitarios;
 
-@WebServlet("/RemoverItemCarrinho")
-public class RemoverItemCarrinho extends HttpServlet {
+/**
+ * Servlet implementation class DesmontarCarrinho
+ */
+@WebServlet("/IncrementQuantidade")
+public class IncrementQuantidade extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public RemoverItemCarrinho() {
+    public IncrementQuantidade() {
         super();
     }
 
@@ -48,20 +51,20 @@ public class RemoverItemCarrinho extends HttpServlet {
 				int indiceItemCarrinho = Utilitarios.indiceProdutoCarrinho(carrinho, produto);
 				int quantidadeItemCarrinho = carrinho.get(indiceItemCarrinho).getQuantidade();
 
-				if (quantidadeItemCarrinho > 0) {
-					boolean resultado = Utilitarios.removerProdutoCarrinho(carrinho, produto);
+				if (quantidadeItemCarrinho > 0 ) {
+					carrinho.get(indiceItemCarrinho).incrementaQuantidade();
 				} 
 				
 				for(ItemCarrinho i: carrinho){
-					valorTotal += i.subtrairValorTotal();
+					valorTotal += i.somarValorTotal();
 				}
 				
 				session.setAttribute("valorTotal", valorTotal);
-				
+
 				session.setAttribute("carrinho", carrinho);
 				 
 				RequestDispatcher rd = request.getRequestDispatcher("/carrinho2.jsp");
-				rd.forward(request, response);
+				rd.forward(request, response);	
 				   
 			} catch (ChipstoreException e) {
 				throw new ServletException(e.getMessage(),e.getCause());

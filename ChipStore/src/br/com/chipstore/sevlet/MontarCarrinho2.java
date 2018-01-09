@@ -18,9 +18,6 @@ import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.ProdutoService;
 import br.com.chipstore.util.Utilitarios;
 
-/**
- * Servlet implementation class MontarCarrinho2
- */
 @WebServlet("/MontarCarrinho2")
 public class MontarCarrinho2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,9 +30,11 @@ public class MontarCarrinho2 extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Produto produto = new Produto();
 		List<ItemCarrinho> carrinho;
+		Double valorTotal = 0.0d;
 		
 		// verificar se o carrinho esta na sessao
 		carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
+		
 		if (carrinho == null) {
 			carrinho = new ArrayList<>();
 		} 
@@ -51,11 +50,19 @@ public class MontarCarrinho2 extends HttpServlet {
 			int indiceItemCarrinho = Utilitarios.indiceProdutoCarrinho(carrinho, produto);
 			
 			if (indiceItemCarrinho < 0) {
+				
 				ItemCarrinho ic = new ItemCarrinho(produto);
 				carrinho.add(ic);
+				
 			} else {
 				carrinho.get(indiceItemCarrinho).incrementaQuantidade();
+			}	
+				
+			for(ItemCarrinho i: carrinho){
+				valorTotal += i.getPreco();
 			}
+			
+			session.setAttribute("valorTotal", valorTotal);
 			
 			session.setAttribute("carrinho", carrinho);
 			 

@@ -3,6 +3,7 @@ package br.com.chipstore.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class Carrinho implements Serializable {
@@ -10,6 +11,8 @@ public class Carrinho implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Produto produto;
 	private int quantidade;
+	
+	
 	
 	public Produto getProduto() {
 		return produto;

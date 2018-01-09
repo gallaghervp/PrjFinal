@@ -250,6 +250,8 @@
                         </div>
                     </form>
                 </div>
+         
+                
                 <div class="col-sm-3">
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
                     <a href="MontarCliente" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>                
@@ -259,6 +261,9 @@
         </div>
     </nav>
     
+   
+      
+       
     <!--------------- MODAL LOGIN -------------------->
 
     <div class="modal fade" id="login" role="dialog">
@@ -268,7 +273,7 @@
                     <h1 class="text-center"><i class="glyphicon glyphicon-user"></i> Login</h1>
                 </div>
                 <div class="modal-body">
-                    <form action="ValidaLoginCliente">
+                    <form action="ValidaLoginCliente" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu Email" name ="emailcliente" required autofocus />
@@ -287,6 +292,7 @@
         </div>
     </div>
     
+  
 
 
 
@@ -317,6 +323,7 @@
             </div>
         </div>
     </div>
+	
 	
 
     <!--------------- CAROUSEL -------------------->
@@ -363,15 +370,14 @@
             %>
             
                 <li><a href="MontarLojaProduto?codigoCategoria=<%=c.getCodigo()%>"> <%=c.getNome()%></a></li>
-                <%
+               
+                <% } %> 
+               
                 
-            	}
-                
-                %>
             </ul>
         </div>
     </nav>
-
+ 
 
 </body>
 </html>

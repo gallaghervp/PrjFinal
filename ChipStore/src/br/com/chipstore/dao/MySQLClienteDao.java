@@ -19,7 +19,7 @@ public class MySQLClienteDao implements ClienteDao {
 
 	@Override
 	public long incluir(Cliente cliente) throws SQLException {
-		long id = 0;
+		int id = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -82,7 +82,7 @@ public class MySQLClienteDao implements ClienteDao {
 		// Como associar clientes com esse cliente?
 
 		if (rs != null) {
-			clienteConsultado.setId(rs.getLong("id"));
+			clienteConsultado.setId(rs.getInt("id"));
 			clienteConsultado.setCpf(rs.getString("cpf"));
 			clienteConsultado.setNome(rs.getString("nome"));
 			clienteConsultado.setRg(rs.getString("rg"));
@@ -118,7 +118,7 @@ public class MySQLClienteDao implements ClienteDao {
 
 		// consultar os Clientes que existem na tabela
 
-		String sql = "SELECT * FROM Cliente  WHERE email=" + email + ";";
+		String sql = "SELECT * FROM Cliente  WHERE email='" + email + "';";
 		stmt = conn.createStatement();
 
 		rs = stmt.executeQuery(sql);
@@ -127,8 +127,8 @@ public class MySQLClienteDao implements ClienteDao {
 		
 		// Como associar clientes com esse cliente?
 
-		if (rs != null) {
-			clienteConsultado.setId(rs.getLong("id"));
+		if (rs.next()) {
+			clienteConsultado.setId(rs.getInt("id"));
 			clienteConsultado.setCpf(rs.getString("cpf"));
 			clienteConsultado.setNome(rs.getString("nome"));
 			clienteConsultado.setRg(rs.getString("rg"));
@@ -139,6 +139,7 @@ public class MySQLClienteDao implements ClienteDao {
 			clienteConsultado.setComplemento(rs.getString("complemento"));
 			clienteConsultado.setEmail(rs.getString("email"));
 			clienteConsultado.setTelefone(rs.getString("telefone"));
+			clienteConsultado.setSenha(rs.getString("senha"));
 			
 		}
 
@@ -173,7 +174,7 @@ public class MySQLClienteDao implements ClienteDao {
 			listaClientes = new ArrayList<>();
 			while (rs.next()) {
 				Cliente cr = new Cliente();
-				cr.setId(rs.getLong("id"));
+				cr.setId(rs.getInt("id"));
 				cr.setNome(rs.getString("nome"));
 				
 				Cliente cliente = new Cliente();

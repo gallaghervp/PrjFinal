@@ -65,7 +65,6 @@
 					<td></td>
 					<td></td>
 					<td class="actions">
-						<a class="btn btn-success btn-xs" href="#">Visualizar</a>
 						<a class="btn btn-warning btn-xs" href="#">Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>

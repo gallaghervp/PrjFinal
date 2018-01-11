@@ -35,7 +35,6 @@ public class ValidaLoginCliente extends HttpServlet {
 	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String reqEmailCliente;
 		String reqSenhaCliente;
 		String mensagem;

@@ -53,11 +53,6 @@
                         <input type="text" class="form-control text-center" value="<%=ic.getQuantidade()%>" disabled>
                     </td>
                     <td data-th="Subtotal" class="text-center"><%=ic.getPreco()%></td>
-                    <td class="actions" data-th="">
-	                    <a href="DecrementQuantidade?id=<%=ic.getProduto().getId()%>"><i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i></a>
-	                    <a href="IncrementQuantidade?id=<%=ic.getProduto().getId()%>"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
-                        <a href="RemoverItemCarrinho?id=<%=ic.getProduto().getId()%>">Remover</a>
-                    </td>
                 </tr>
                 <%} %>
             </tbody>
@@ -66,10 +61,10 @@
                     <td class="text-center"><a><%=valorTotal%></a></td>
                 </tr>
                 <tr>
-                    <td><a href="index.html" class="btn btn-warning">Escolher mais produtos</a></td>
+                    <td><a href="index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><a><%=valorTotal%></a></td>
-                    <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Continuar</a></td>
+                    <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>
                 </tr>
             </tfoot>
         </table>

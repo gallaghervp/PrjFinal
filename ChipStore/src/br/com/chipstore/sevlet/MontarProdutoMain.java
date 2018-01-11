@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Categoria;
@@ -22,14 +21,14 @@ import br.com.chipstore.service.ProdutoService;
 /**
  * Servlet implementation class MontarProduto
  */
-@WebServlet("/MontarLojaProdutos")
-public class MontarLojaProdutos extends HttpServlet {
+@WebServlet("/MontarProdutoMain")
+public class MontarProdutoMain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MontarLojaProdutos() {
+    public MontarProdutoMain() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,36 +37,33 @@ public class MontarLojaProdutos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			List<Produto> produtos = null;
+		List<Produto> produtos = null;
+		
+		String reqCodigoCategoria = request.getParameter("codigoCategoria");
+		long codigoCategoria = Long.parseLong(reqCodigoCategoria);
+		
+		try {
 			
-			String reqCodigoCategoria = request.getParameter("codigoCategoria");
-			long codigoCategoria = Long.parseLong(reqCodigoCategoria);
+			ProdutoService ps = new ProdutoService();
 			
-			try {
-				
-				ProdutoService ps = new ProdutoService();
-				
-				CategoriaService cs = new CategoriaService();
-				
-				produtos = ps.listarProdutoCategoria(codigoCategoria);
-				
-				List<Categoria> categorias = cs.listar();
-				
-				HttpSession session = (HttpSession) request.getSession();
-				
-				session.setAttribute("categorias", categorias);
-				
-				request.setAttribute("produtos", produtos);
-				
-				RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
-				rd.forward(request, response);
-				
-			} catch (ChipstoreException e) {
-				throw new ServletException(e.getMessage(),e.getCause());
-			}
-
+			CategoriaService cs = new CategoriaService();
+			
+			produtos = ps.listarProdutoCategoria(codigoCategoria);
+			
+			Categoria categoria = cs.consultarPorCodigo(codigoCategoria);
+			
+			request.setAttribute("categoria", categoria.getNome());
+			
+			request.setAttribute("produtos", produtos);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
+			rd.forward(request, response);
+			
+		} catch (ChipstoreException e) {
+			throw new ServletException(e.getMessage(),e.getCause());
 		}
 
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

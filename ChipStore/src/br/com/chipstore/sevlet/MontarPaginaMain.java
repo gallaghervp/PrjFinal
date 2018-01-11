@@ -41,17 +41,26 @@ public class MontarPaginaMain extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Produto> produtos = null;
+		
+		String reqCodigoCategoria = request.getParameter("codigoCategoria");
 		
 		
 		try {
 			
+			ProdutoService ps = new ProdutoService();
+			
 			CategoriaService cs = new CategoriaService();
+			
+			
 			
 			List<Categoria> categorias = cs.listar();
 			
 			HttpSession session = (HttpSession) request.getSession();
 			
 			session.setAttribute("categorias", categorias);
+			
+			request.setAttribute("produtos", produtos);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
 			rd.forward(request, response);

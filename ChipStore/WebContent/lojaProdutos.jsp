@@ -19,6 +19,8 @@
 	
 	List <Produto> produtos = (List <Produto>) request.getAttribute("produtos");
 	
+	String categoria = (String) request.getAttribute("categoria");
+	
 	if (produtos.size() < 4) {
 		quantidadeLinhas = 1;
 		quantidadeProdutoPorLinha = produtos.size();
@@ -29,7 +31,7 @@
 	
 %>
    <div id="acessorios" class="heading-index">
-        <h1>Acessórios</h1>
+        <h1><%=categoria %></h1>
     </div>
     
    <div class="container">

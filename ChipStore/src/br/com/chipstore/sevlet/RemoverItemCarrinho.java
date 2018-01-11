@@ -52,8 +52,9 @@ public class RemoverItemCarrinho extends HttpServlet {
 					boolean resultado = Utilitarios.removerProdutoCarrinho(carrinho, produto);
 				} 
 				
+				
 				for(ItemCarrinho i: carrinho){
-					valorTotal += i.subtrairValorTotal();
+					valorTotal += i.getPreco();
 				}
 				
 				session.setAttribute("valorTotal", valorTotal);

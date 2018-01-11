@@ -67,7 +67,7 @@ public class MySQLCategoriaDao implements CategoriaDao {
 
 	    categoriaConsultada = new Categoria();
 
-	    if (rs != null) {
+	    if (rs.next()) {
 	      categoriaConsultada.setCodigo(rs.getLong("codigo"));
 	      categoriaConsultada.setNome(rs.getString("nome"));
 

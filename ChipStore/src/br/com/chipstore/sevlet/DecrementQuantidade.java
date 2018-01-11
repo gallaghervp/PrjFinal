@@ -56,7 +56,7 @@ public class DecrementQuantidade extends HttpServlet {
 				} 
 				
 				for(ItemCarrinho i: carrinho){
-					valorTotal += i.subtrairValorTotal();
+					valorTotal += i.getPreco();
 				}
 				
 				session.setAttribute("valorTotal", valorTotal);

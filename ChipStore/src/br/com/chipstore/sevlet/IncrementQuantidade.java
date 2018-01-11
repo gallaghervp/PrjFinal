@@ -56,7 +56,8 @@ public class IncrementQuantidade extends HttpServlet {
 				} 
 				
 				for(ItemCarrinho i: carrinho){
-					valorTotal += i.somarValorTotal();
+					
+					   valorTotal += i.getPreco();
 				}
 				
 				session.setAttribute("valorTotal", valorTotal);

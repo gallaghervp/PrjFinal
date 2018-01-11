@@ -33,6 +33,7 @@ public class DesmontarCarrinho extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Produto produto = new Produto();
 		List<ItemCarrinho> carrinho;
+		Double valorTotal = 0.0d;
 		
 		// verificar se o carrinho esta na sessao
 		carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
@@ -54,6 +55,12 @@ public class DesmontarCarrinho extends HttpServlet {
 					boolean resultado = Utilitarios.removerProdutoCarrinho(carrinho, produto);
 				} else {
 					carrinho.get(indiceItemCarrinho).decrementaQuantidade();
+				}
+				
+				for(ItemCarrinho i: carrinho){
+					
+					valorTotal += i.getPreco();
+					
 				}
 
 				session.setAttribute("carrinho", carrinho);

@@ -46,8 +46,13 @@ public class MontarLojaProdutos extends HttpServlet {
 			
 			ProdutoService ps = new ProdutoService();
 			
+			CategoriaService cs = new CategoriaService();
+			
 			produtos = ps.listarProdutoCategoria(codigoCategoria);
-		
+			
+			Categoria categoria = cs.consultarPorCodigo(codigoCategoria);
+			
+			request.setAttribute("categoria", categoria.getNome());
 			
 			request.setAttribute("produtos", produtos);
 			

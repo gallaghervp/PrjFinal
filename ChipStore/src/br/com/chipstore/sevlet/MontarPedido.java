@@ -20,7 +20,7 @@ import br.com.chipstore.service.ClienteService;
 import br.com.chipstore.service.ProdutoService;
 import br.com.chipstore.util.Utilitarios;
 
-@WebServlet("/MontarCarrinho2")
+@WebServlet("/MontarPedido")
 public class MontarPedido extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

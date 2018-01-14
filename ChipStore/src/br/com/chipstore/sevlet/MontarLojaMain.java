@@ -19,11 +19,11 @@ import br.com.chipstore.service.CategoriaService;
 import br.com.chipstore.service.FabricanteService;
 import br.com.chipstore.service.ProdutoService;
 
-@WebServlet("/MontarLojaProduto")
-public class MontarLojaProdutos extends HttpServlet {
+@WebServlet("/MontarLojaMain")
+public class MontarLojaMain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public MontarLojaProdutos() {
+       
+    public MontarLojaMain() {
         super();
     }
 
@@ -37,12 +37,19 @@ public class MontarLojaProdutos extends HttpServlet {
 				
 				ProdutoService ps = new ProdutoService();
 				
+				CategoriaService cs = new CategoriaService();
+				
 				produtos = ps.listarProdutoCategoria(codigoCategoria);
 				
+				List<Categoria> categorias = cs.listar();
+				
+				HttpSession session = (HttpSession) request.getSession();
+				
+				session.setAttribute("categorias", categorias);
 				
 				request.setAttribute("produtos", produtos);
 				
-				RequestDispatcher rd = request.getRequestDispatcher("/lojaProdutos.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
 				rd.forward(request, response);
 				
 			} catch (ChipstoreException e) {

@@ -31,8 +31,11 @@ public class MontarPedido extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		Cliente cliente = new Cliente();
+		List<ItemCarrinho> carrinho;
 		
 		cliente = (Cliente) session.getAttribute("cliente");
+		
+		carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
 		
 		String email = request.getParameter("email");
 		
@@ -51,7 +54,11 @@ public class MontarPedido extends HttpServlet {
 			request.setAttribute("bairro", cliente.getBairro());
 			
 			request.setAttribute("municipio", cliente.getMunicipio());
-			 
+			
+			session.setAttribute("carrinho", carrinho);
+			
+			session.setAttribute("cliente", cliente);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/pedido.jsp");
 			rd.forward(request, response);	
 			   

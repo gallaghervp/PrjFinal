@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
-    import="java.util.List, br.com.chipstore.model.Produto"%>
+    import="java.util.List, br.com.chipstore.model.Produto, br.com.chipstore.model.Categoria"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +19,7 @@
 	
 	List <Produto> produtos = (List <Produto>) request.getAttribute("produtos");
 	
-	String categoria = (String) request.getAttribute("categoria");
+	Categoria categoria = (Categoria) request.getAttribute("categoria");
 	
 	if (produtos.size() < 4) {
 		quantidadeLinhas = 1;
@@ -31,7 +31,7 @@
 	
 %>
    <div id="acessorios" class="heading-index">
-        <h1><%=categoria %></h1>
+        <h1><%=categoria.getNome()%></h1>
     </div>
     
    <div class="container">
@@ -134,9 +134,6 @@
 
 	</div>
 
-   
-	<jsp:include page="template/sobre.jsp" />
 	<jsp:include page="template/footer.jsp" />
-
 </body>
 </html>

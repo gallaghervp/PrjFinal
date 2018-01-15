@@ -29,6 +29,7 @@ public class MontarLojaProdutos extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			List<Produto> produtos = null;
+			Categoria categoria = new Categoria();
 			
 			String reqCodigoCategoria = request.getParameter("codigoCategoria");
 			long codigoCategoria = Long.parseLong(reqCodigoCategoria);
@@ -39,8 +40,13 @@ public class MontarLojaProdutos extends HttpServlet {
 				
 				produtos = ps.listarProdutoCategoria(codigoCategoria);
 				
-				
 				request.setAttribute("produtos", produtos);
+				
+				CategoriaService cs = new CategoriaService();
+				
+				categoria = cs.consultarPorCodigo(codigoCategoria);
+				
+				request.setAttribute("categoria", categoria);
 				
 				RequestDispatcher rd = request.getRequestDispatcher("/lojaProdutos.jsp");
 				rd.forward(request, response);

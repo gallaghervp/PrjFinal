@@ -17,9 +17,11 @@
 	carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
 	
 	Double valorTotal = (Double)session.getAttribute("valorTotal");
-
+	
+	
 %>
 	<%="Valor:" + valorTotal%>
+
     <br>
     <div class="container">
         <table id="cart" class="table table-hover table-condensed">
@@ -69,7 +71,7 @@
                     <td><a href="index.html" class="btn btn-warning">Escolher mais produtos</a></td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><a><%=valorTotal%></a></td>
-                    <td><a href="pedido.jsp" class="btn btn-success btn-block">Continuar</a></td>
+                    <td><a href="MontarPedido" class="btn btn-success btn-block">Continuar</a></td>
                 </tr>
             </tfoot>
         </table>

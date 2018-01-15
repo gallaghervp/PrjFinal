@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" 
-    import="java.util.List, br.com.chipstore.model.ItemCarrinho, br.com.chipstore.model.Produto"%>
+    import="java.util.List, br.com.chipstore.model.ItemCarrinho, br.com.chipstore.model.Produto, br.com.chipstore.model.Cliente"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ChipStore - Carrinho</title>
+    <title>ChipStore - Pedido</title>
 </head>
 
 <body>
@@ -16,11 +16,26 @@
 
 	carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
 	
-	Double valorTotal = (Double)session.getAttribute("valorTotal");
+	Double valorTotal = (Double) session.getAttribute("valorTotal");
+	
+	Cliente cliente = (Cliente) session.getAttribute("cliente");
 
 %>
-	<%="Valor:" + valorTotal%>
-    <br>
+    <div class="container">
+    	<div class="col-sm-6">
+    	<h3>Endereço de Entrega</h3>
+		<p class="media-primary"><%=cliente.getNome()%></p>
+        <p class="media-primary"><%=cliente.getEndereco()%>, <%=cliente.getComplemento()%></p>
+        <p class="media-primary"><%=cliente.getBairro()%></p>
+        <p class="media-primary"><%=cliente.getMunicipio()%></p>
+        <p class="media-primary"><%=cliente.getUf()%></p>
+        </div>
+        <div class="col-sm-6">
+        <h3>Opções de pagamento</h3>
+        <p class="media-primary">Boleto bancário</p>
+        <p class="media-primary">Cartão de crédito</p>
+        </div>
+	</div>
     <div class="container">
         <table id="cart" class="table table-hover table-condensed">
             <thead>

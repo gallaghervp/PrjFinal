@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Cliente;
 import br.com.chipstore.model.ItemCarrinho;
+import br.com.chipstore.model.Pedido;
 import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.ClienteService;
 import br.com.chipstore.service.ProdutoService;
@@ -45,19 +46,10 @@ public class MontarPedido extends HttpServlet {
 			
 			cliente = cs.consultarPorEmail(email);
 			
-			request.setAttribute("nomePedido", cliente.getNome());
+			request.setAttribute("cliente", cliente);
 			
-			request.setAttribute("endereco", cliente.getEndereco());
+			request.setAttribute("carrinho", carrinho);
 			
-			request.setAttribute("complemento", cliente.getComplemento());
-			
-			request.setAttribute("bairro", cliente.getBairro());
-			
-			request.setAttribute("municipio", cliente.getMunicipio());
-			
-			session.setAttribute("carrinho", carrinho);
-			
-			session.setAttribute("cliente", cliente);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/pedido.jsp");
 			rd.forward(request, response);	

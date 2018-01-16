@@ -46,7 +46,7 @@
 			<div class="row">
 				<h3>Social</h3>
 				<div class="footerSocial">
-					<a href="https://www.facebook.com/boladavezbr/"><i
+					<a href="https://www.facebook.com/ChipStore-507113656303453/"><i
 						class="fa fa-facebook fa-2x icon-square" aria-hidden="true"></i></a> <a
 						href="#"><i class="fa fa-google-plus fa-2x icon-square"
 						aria-hidden="true"></i></a> <a href="#"><i

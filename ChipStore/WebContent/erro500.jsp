@@ -184,9 +184,9 @@
 	<div class="main-container">
 		<div class="message-container">
 			<h1 class="title shadow">Sorry... <span>:(</span></h1>
-			<p class="small-shadow"><strong>Error 500:</strong> Exemplo</p>
+			<p class="small-shadow"><strong>Error</strong> 500</p>
 			<p class="small-shadow options">
-				<a href="index.jsp">Página Inicial</a>
+				<a href="main.jsp">Página Inicial</a>
 			</p>
 		</div>
 		<div id="plax-container">

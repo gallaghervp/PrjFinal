@@ -101,6 +101,12 @@
                         <li><a href="main.jsp">CONTATO</a></li>
                     </ul>
                 </div>
+                <div class="col-sm-0 brand-col">
+                	<ul class="nav navbar-nav navbar-left">
+                		<li><a title="Diminuir Fonte" alt="Diminuir" style="font-size: 16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>
+		   				<li><a title="Aumentar Fonte" alt="Aumentar" style="font-size: 16px;" href="#"><span id="aumentar-fonte" class="glyphicon glyphicon-font"></span>+</a></li>
+                	</ul>
+                </div>
             </div>
         </div>
     </nav>

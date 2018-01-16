@@ -22,22 +22,6 @@
     <script src="js/autocontraste.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRex3VjMaJFspx-9LaeW2mkRhc5qZpTM&callback=myMap"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        $window = $(window);
-
-        $('section[data-type="background"]').each(function() {
-            var $scroll = $(this);
-
-            $(window).scroll(function() {
-                var yPos = -($window.scrollTop() / $scroll.data('speed'));
-                var coords = '50% ' + yPos + 'px';
-                $scroll.css({
-                    backgroundPosition: coords
-                });
-            });
-        });
-    });
-
     function init_map() {
         var var_location = new google.maps.LatLng(-22.947115, -43.185613);
 
@@ -233,7 +217,15 @@
                         <li><a href="#contato" class="scroll">CONTATO</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4 search-col">
+                
+                <div class="col-sm-0 brand-col">
+                	<ul class="nav navbar-nav navbar-left">
+                		<li><a title="Diminuir Fonte" alt="Diminuir" style="font-size: 16px;" href="#"><span id="diminuir-fonte" class="glyphicon glyphicon-font"></span>-</a></li>
+		   				<li><a title="Aumentar Fonte" alt="Aumentar" style="font-size: 16px;" href="#"><span id="aumentar-fonte" class="glyphicon glyphicon-font"></span>+</a></li>
+                	</ul>
+                </div>
+                
+                <div class="col-sm-3 search-col">
                     <form class="navbar-form" role="search">
                         <div class="input-group" style="width:93%;">
                             <input type="text" id="busca" class="form-control search-form" placeholder="Buscar">
@@ -244,8 +236,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
-         
+                </div>         
                 
                 <div class="col-sm-3">
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>

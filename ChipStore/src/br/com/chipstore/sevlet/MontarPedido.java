@@ -32,6 +32,7 @@ public class MontarPedido extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		Cliente cliente = new Cliente();
+		Pedido pedido = new Pedido();
 		List<ItemCarrinho> carrinho;
 		
 		cliente = (Cliente) session.getAttribute("cliente");

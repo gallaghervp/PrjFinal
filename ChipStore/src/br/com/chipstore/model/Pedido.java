@@ -2,13 +2,15 @@ package br.com.chipstore.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Pedido implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private long id;
 	private Date dataPedido;
 	private Cliente cliente;
+	private List<ItemPedido> listaItens;
 
 	public Pedido() {
 		super();
@@ -21,11 +23,11 @@ public class Pedido implements Serializable {
 		this.cliente = cliente;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -44,10 +46,22 @@ public class Pedido implements Serializable {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+
+	public List<ItemPedido> getListaItens() {
+		return listaItens;
+	}
+
+	public void setListaItens(List<ItemPedido> listaItens) {
+		this.listaItens = listaItens;
+	}
 
 	@Override
 	public String toString() {
-		return "Pedido [id=" + id + ", dataPedido=" + dataPedido + ", cliente=" + cliente + "]";
+		return "Pedido [id=" + id + ", dataPedido=" + dataPedido + ", cliente=" + cliente + ", listaItens=" + listaItens
+				+ "]";
 	}
+
+
 
 }

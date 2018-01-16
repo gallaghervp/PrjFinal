@@ -191,7 +191,7 @@ DROP TABLE IF EXISTS `projetofinal`.`item_pedido` ;
 CREATE TABLE IF NOT EXISTS `projetofinal`.`item_pedido` (
   `pedido_id` INT NOT NULL,
   `produto_codigo` INT NOT NULL,
-  `valor` DOUBLE NOT NULL,
+  `quantidade` INT NOT NULL,
   PRIMARY KEY (`pedido_id`, `produto_codigo`),
   CONSTRAINT `fk_pedido_has_produto_pedido1`
     FOREIGN KEY (`pedido_id`)

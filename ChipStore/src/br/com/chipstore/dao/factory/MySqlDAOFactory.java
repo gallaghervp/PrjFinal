@@ -9,11 +9,15 @@ import br.com.chipstore.dao.AdministradorDao;
 import br.com.chipstore.dao.CategoriaDao;
 import br.com.chipstore.dao.ClienteDao;
 import br.com.chipstore.dao.FabricanteDao;
+import br.com.chipstore.dao.ItemPedidoDao;
 import br.com.chipstore.dao.MySQLAdministradorDao;
 import br.com.chipstore.dao.MySQLCategoriaDao;
 import br.com.chipstore.dao.MySQLClienteDao;
 import br.com.chipstore.dao.MySQLFabricanteDao;
+import br.com.chipstore.dao.MySQLItemPedidoDao;
+import br.com.chipstore.dao.MySQLPedidoDao;
 import br.com.chipstore.dao.MySQLProdutoDao;
+import br.com.chipstore.dao.PedidoDao;
 import br.com.chipstore.dao.ProdutoDao;
 
 public class MySqlDAOFactory extends DAOFactory {
@@ -65,6 +69,16 @@ public class MySqlDAOFactory extends DAOFactory {
 	@Override
 	public ClienteDao getClienteDao() {
 		return new MySQLClienteDao();
+	}
+	
+	@Override
+	public PedidoDao getPedidoDao() {
+		return new MySQLPedidoDao();
+	}
+	
+	@Override
+	public ItemPedidoDao getItemPedidoDao() {
+		return new MySQLItemPedidoDao();
 	}
 
 

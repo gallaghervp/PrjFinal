@@ -79,7 +79,7 @@
                     <td><a href="index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><a><%=valorTotal%></a></td>
-                    <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>
+                    <td><a href="IncluirPedido" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>
                 </tr>
             </tfoot>
         </table>

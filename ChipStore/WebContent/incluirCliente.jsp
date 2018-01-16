@@ -5,8 +5,8 @@
 <html>
 <head>
 <title>ChipStore - Incluir Cliente</title>
-<script language="javascript" type="text/javascript"
-	src="js/validacao.js">
+<!--  <script language="javascript" type="text/javascript"
+	src="js/validacao.js">-->
 	
 </script>
 </head>

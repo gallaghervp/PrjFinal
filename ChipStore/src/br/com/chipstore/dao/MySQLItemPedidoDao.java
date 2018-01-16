@@ -26,7 +26,7 @@ public class MySQLItemPedidoDao implements ItemPedidoDao{
 
 		// incluir itemPedido
 		 
-		String sql = "INSERT INTO ItemPedido (pedido_id, produto_codigo, quantidade) VALUES (?,?,?);";
+		String sql = "INSERT INTO item_pedido (pedido_id, produto_codigo, quantidade) VALUES (?,?,?);";
 		pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 		pstmt.setLong(1,  idGerado);

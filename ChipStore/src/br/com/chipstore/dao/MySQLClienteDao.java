@@ -137,6 +137,7 @@ public class MySQLClienteDao implements ClienteDao {
 			clienteConsultado.setMunicipio(rs.getString("municipio"));
 			clienteConsultado.setUf(rs.getString("uf"));
 			clienteConsultado.setComplemento(rs.getString("complemento"));
+			clienteConsultado.setBairro(rs.getString("bairro"));
 			clienteConsultado.setEmail(rs.getString("email"));
 			clienteConsultado.setTelefone(rs.getString("telefone"));
 			clienteConsultado.setSenha(rs.getString("senha"));

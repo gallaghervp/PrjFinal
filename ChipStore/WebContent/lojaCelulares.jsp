@@ -92,7 +92,7 @@
 
    
 <%@ include file="../template/sobre.jsp" %>
-<%@ include file="../template/footer.jsp" %>
+<%@ include file="../template/footer2.jsp" %>
 
 </body>
 </html>

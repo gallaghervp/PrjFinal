@@ -45,8 +45,8 @@ public class IncluirCliente extends HttpServlet {
 
 		nome = request.getParameter("nomecli");
 		dataNascimento = request.getParameter("datacli");
-		cpf = request.getParameter("cpfcli");
-		rg = request.getParameter("rgcli");
+		cpf = request.getParameter("cpf");
+		rg = request.getParameter("rg");
 		telefone = request.getParameter("telcli");
 		email = request.getParameter("emailcli");
 		endereco = request.getParameter("enderecocli");
@@ -90,8 +90,5 @@ public class IncluirCliente extends HttpServlet {
 			throw new ServletException(e.getMessage(), e.getCause());
 		}
 		
-	}
-
-	
-	
+	}	
 }

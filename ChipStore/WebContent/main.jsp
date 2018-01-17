@@ -9,6 +9,7 @@
 <%@ include file="../template/cabecalho.jsp" %>
 <%@ include file="../template/lojaPrincipal.jsp" %>
 <%@ include file="../template/sobre.jsp" %>
-<%@ include file="../template/footer.jsp" %>
+<%@ include file="../template/footer.jsp" %>,
+
 </body>
 </html>

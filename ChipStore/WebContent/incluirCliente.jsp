@@ -5,8 +5,8 @@
 <html>
 <head>
 <title>ChipStore - Incluir Cliente</title>
-<!--  <script language="javascript" type="text/javascript"
-	src="js/validacao.js">-->
+<script language="javascript" type="text/javascript"
+	src="js/validacao.js">
 	
 </script>
 </head>
@@ -20,7 +20,7 @@
 	<div class="container form-container">
 		<div class="row">
 			<div class="form-block">
-				<form action="IncluirCliente" method="post" class="form-horizontal"
+				<form action="IncluirCliente" name="form1" method="post" class="form-horizontal"
 					style="margin-right: 40px;">
 					<h2 class="form-heading">Cadastrar</h2>
 					<hr>
@@ -28,7 +28,7 @@
 						<label class="col-sm-3 control-label" for="idTxtNome">Nome</label>
 						<div class="col-sm-9 has-feedback">
 							<input type="text" class="form-control form-page" name="nomecli"
-								id="txtNomeCli" placeholder="Nome"> <i
+								id="txtNomeCli" placeholder="Nome Completo"> <i
 								class="fa fa-pencil form-control-feedback"></i>
 						</div>
 					</div>
@@ -43,18 +43,18 @@
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="idTxtCpf">CPF</label>
 						<div class="col-sm-9 has-feedback">
-							<input type="text" class="form-control form-page" name="cpfcli"
-								id="txtCpfCli" maxlength="11" placeholder="xxx.xxx.xxx-xx"
-								onblur="return verificarCPF(this.value)" required="required">
-							<i class="fa fa-pencil form-control-feedback"></i>
-
+							<input type="text" class="form-control form-page" name="cpf"
+								id="txtCpfCli" onBlur="ValidarCPF(form1.cpf);"
+								onKeyPress="MascaraCPF(form1.cpf);" maxlength="14"
+								placeholder="xxx.xxx.xxx-xx" required="required"> <i
+								class="fa fa-pencil form-control-feedback"></i>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="idTxtRg">RG</label>
 						<div class="col-sm-9 has-feedback">
-							<input type="text" class="form-control form-page" name="rgcli"
-								id="txtRgCli" maxlength="11" placeholder="xxxxxxxx-x"> <i
+							<input name="rg" type="text" id="txtRgCli" size="30" maxlength="12" onKeyPress="MascaraRG(form1.rg);" class="form-control form-page" 
+								placeholder="xxxxxxxx-x" required="required"> <i
 								class="fa fa-pencil form-control-feedback"></i>
 						</div>
 					</div>
@@ -62,7 +62,7 @@
 						<label class="col-sm-3 control-label" for="idTxtTel">Telefone</label>
 						<div class="col-sm-9 has-feedback">
 							<input type="text" class="form-control form-page" name="telcli"
-								id="txtTelCli" maxlength="10" placeholder="(xx) xxxx-xxxx">
+								id="txtTelCli" maxlength="11" placeholder="(xx) xxxx-xxxx">
 							<i class="fa fa-phone form-control-feedback"></i>
 						</div>
 					</div>
@@ -150,7 +150,7 @@
 					<div class="form-group" style="position: relative;">
 						<div class="col-sm-offset-3 col-sm-9">
 							<button type="submit" class="btn btn-block btn-form"
-								onclick="return verificarCPF(c)">ENVIAR</button>
+								>ENVIAR</button>
 						</div>
 					</div>
 				</form>

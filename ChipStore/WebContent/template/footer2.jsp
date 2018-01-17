@@ -27,14 +27,14 @@
 						aria-hidden="true"></i><a href="lojaAcessorios.jsp"
 						class="footer-link"> Acessórios</a></li>
 					<li><i class="fa fa-angle-double-right icon-link"
-						aria-hidden="true"></i><a href="main.jsp" class="footer-link">
-							Sobre</a></li>
+						aria-hidden="true"></i><a href="#sobre" class="scroll"
+						class="footer-link"> Sobre</a></li>
 					<li><i class="fa fa-angle-double-right icon-link"
-						aria-hidden="true"></i><a href="main.jsp" class="footer-link">
-							Contato</a></li>
+						aria-hidden="true"></i><a href="#contato" class="scroll"
+						class="footer-link"> Contato</a></li>
 					<li><i class="fa fa-angle-double-right icon-link"
-						aria-hidden="true"></i><a href="main.jsp" class="footer-link">
-							Pesquisar</a></li>
+						aria-hidden="true"></i><a href="#myCarousel" class="scroll"
+						class="footer-link"> Pesquisar</a></li>
 					<button type="button" class="btn btn-default navbar-btn"
 						data-toggle="modal" data-target="#loginadm" id="nav-btn-login">ADM</button>
 				</ul>

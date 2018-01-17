@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.List, br.com.chipstore.model.Produto"%>
+    pageEncoding="ISO-8859-1" 
+    import="java.util.List, br.com.chipstore.model.Produto"
+    import="br.com.chipstore.service.ProdutoService"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,20 +50,26 @@
 				<th>Quantidade</th>
 				<th>Categoria</th>
 				<th>Fabricante</th>
-				<th>Disponibilidade</th>
-				<th>Imagem</th>
-					<th class="actions">Ações</th>
+				<th class="actions"></th>
 				</tr>
 			</thead>
 			<tbody>
 				
 <%
-	List<Produto> produtos = (List<Produto>)request.getAttribute("listaProduto");
-		for(Produto produto: produtos){
+					ProdutoService ps =  new ProdutoService();
+List<Produto> produtos = ps.listar();
 %>
+		<%for (Produto produto: produtos){ %>
 		
 				<tr>
+					<td><%=produto.getCodigoBarras()%></td>
 					<td><%=produto.getNome()%></td>
+					<td><%=produto.getModelo()%></td>
+					<td><%=produto.getDescricao()%></td>
+					<td><%=produto.getPreco()%></td>
+					<td><%=produto.getQuantidade()%></td>
+					<td><%=produto.getCategoria().getNome()%></td>
+					<td><%=produto.getFabricante().getNome()%></td>
 					<td class="actions">
 						<a class="btn btn-warning btn-xs" href="#">Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>

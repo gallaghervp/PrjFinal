@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" 
+    import="java.util.List, br.com.chipstore.model.Administrador"
+    import="br.com.chipstore.service.AdministradorService"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,22 +45,29 @@
 				<table class="table table-striped" cellspacing="0" cellpadding="0">
 					<thead>
 						<tr>
+							<th>Matricula</th>
 							<th>Nome</th>
 							<th>Telefone</th>
 							<th>Email</th>
-							<th class="actions">Senha</th>
+							<th class="actions"></th>
 						</tr>
 					</thead>
 					<tbody>
+					<%
+					AdministradorService as =  new AdministradorService();
+List<Administrador> administradores = as.listar();
+%>
+		<%for (Administrador administrador: administradores){ %>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><%=administrador.getMatricula()%></td>
+							<td><%=administrador.getNome()%></td>
+							<td><%=administrador.getTelefone()%></td>
+							<td><%=administrador.getEmail()%></td>
 							<td class="actions">
 							<a class="btn btn-warning btn-xs" href="#">Editar</a>
 						    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a></td>
 						</tr>
+						<% } %>
 					</tbody>
 				</table>
 			</div>

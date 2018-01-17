@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.List, br.com.chipstore.model.Categoria"%>
+    pageEncoding="ISO-8859-1" 
+    import="java.util.List, br.com.chipstore.model.Categoria"
+    import="br.com.chipstore.service.CategoriaService"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,16 +44,16 @@
 				<tr>
 					<th>Código</th>
 					<th>Nome</th>
-					<th class="actions">Ações</th>
+					<th class="actions"></th>
 				</tr>
 			</thead>
 			<tbody>
 				
 <%
-	List<Categoria> categorias = (List<Categoria>)request.getAttribute("listaCategoria");
-		for(Categoria categoria: categorias){
+	CategoriaService cs =  new CategoriaService();
+List<Categoria> categorias = cs.listar();
 %>
-		
+		<%for (Categoria categoria: categorias){ %>
 				<tr>
 					<td><%=categoria.getCodigo()%></td>
 					<td><%=categoria.getNome()%></td>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" 
+    import="java.util.List, br.com.chipstore.model.Fabricante"
+    import="br.com.chipstore.service.FabricanteService"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,6 +42,7 @@
 		<table class="table table-striped" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
+					<th>Id</th>
 					<th>Nome</th>
 					<th>CNPJ</th>
 					<th>Endereço</th>
@@ -49,26 +52,34 @@
 					<th>UF</th>
 					<th>Contato</th>
 					<th>Telefone</th>
-					<th class="actions"> Email</th>
+					<th>Email</th>
+					<th class="actions"></th>
 				</tr>
 			</thead>
 			<tbody>
+			<%
+	FabricanteService fs =  new FabricanteService();
+			List<Fabricante> fabricantes = fs.listar();
+%>
+<%for (Fabricante fabricante: fabricantes){ %>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><%=fabricante.getId()%></td>
+					<td><%=fabricante.getNome()%></td>
+					<td><%=fabricante.getCnpj()%></td>
+					<td><%=fabricante.getEndereco()%>
+					<td><%=fabricante.getComplemento()%></td>
+					<td><%=fabricante.getBairro()%></td>
+					<td><%=fabricante.getMunicipio()%></td>
+					<td><%=fabricante.getUf()%></td>
+					<td><%=fabricante.getContato()%></td>
+					<td><%=fabricante.getTelefone()%></td>
+					<td><%=fabricante.getEmail()%></td>
 					<td class="actions">
 						<a class="btn btn-warning btn-xs" href="#">Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>
 				</tr>
+				<% } %>
 			</tbody>
 		</table>
 	</div>

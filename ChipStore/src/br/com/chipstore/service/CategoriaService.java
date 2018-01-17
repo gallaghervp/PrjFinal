@@ -30,8 +30,6 @@ public class CategoriaService {
 	      
     }
 
- 
-
     public boolean atualizar(Categoria categoriaAtualizada) throws ChipstoreException {
     	try {
     		return categoriaDAO.atualizar(categoriaAtualizada);

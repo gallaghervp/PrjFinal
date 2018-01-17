@@ -16,24 +16,14 @@ import br.com.chipstore.model.Fabricante;
 import br.com.chipstore.service.CategoriaService;
 import br.com.chipstore.service.FabricanteService;
 
-/**
- * Servlet implementation class MontarProduto
- */
 @WebServlet("/MontarProduto")
 public class MontarProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public MontarProduto() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Categoria> categorias = null;
 		CategoriaService cs = new CategoriaService();

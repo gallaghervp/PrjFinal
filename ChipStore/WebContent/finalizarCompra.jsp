@@ -16,7 +16,7 @@
             <div class="col-sm-9 col-sm-offset-3 main">
                 <br>
                 <div class="card-dados-container">
-                    <form class="form-horizontal" role="form">
+                    <div class="form-horizontal" role="form">
                         <legend>Pagamento</legend>
                         
                         
@@ -50,12 +50,12 @@
                         
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <a href="#"><button type="button" class="btn btn-success">Finalizar Compra</button></a>
+                                <a href="IncluirPedido" class="btn btn-success btn-block">Finalizar Pedido <i class="fa fa-angle-right"></i></a>
                                 <a href="carrinho.jsp"><button type="button" class="btn btn-success">Carrinho</button></a>
                             </div>
                         </div>
                         
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

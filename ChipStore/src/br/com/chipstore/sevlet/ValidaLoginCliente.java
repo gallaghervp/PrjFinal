@@ -15,25 +15,15 @@ import br.com.chipstore.exception.ChipstoreException;
 import br.com.chipstore.model.Cliente;
 import br.com.chipstore.service.ClienteService;
 import br.com.chipstore.util.Utilitarios;
-/**
- * Servlet implementation class ValidaLoginCliente
- */
+
 @WebServlet("/ValidaLoginCliente")
 public class ValidaLoginCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ValidaLoginCliente() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String reqEmailCliente;
 		String reqSenhaCliente;

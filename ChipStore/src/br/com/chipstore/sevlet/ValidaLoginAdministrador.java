@@ -18,16 +18,10 @@ import br.com.chipstore.service.AdministradorService;
 import br.com.chipstore.service.ClienteService;
 import br.com.chipstore.util.Utilitarios;
 
-/**
- * Servlet implementation class ValidaLoginAdministrador
- */
 @WebServlet("/ValidaLoginAdministrador")
 public class ValidaLoginAdministrador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public ValidaLoginAdministrador() {
 		super();
 	}

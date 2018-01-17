@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" 
-    import="java.util.List, br.com.chipstore.model.ItemCarrinho, br.com.chipstore.model.Produto, br.com.chipstore.model.Cliente"%>
+    import="java.util.List, br.com.chipstore.model.ItemCarrinho, br.com.chipstore.model.Produto, br.com.chipstore.model.Cliente
+    , br.com.chipstore.model.Pedido"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,21 +20,20 @@
 	Double valorTotal = (Double) session.getAttribute("valorTotal");
 	
 	Cliente cliente = (Cliente) session.getAttribute("cliente");
+	
+	Pedido novoPedido = (Pedido) request.getAttribute("novoPedido");
 
 %>
     <div class="container">
+    	<h1>Sua compra foi realizada com sucesso!</h1>
     	<div class="col-sm-6">
+    	<h2>Número do Pedido: <%=novoPedido.getId()%></h2>
     	<h3>Endereço de Entrega</h3>
 		<p class="media-primary"><%=cliente.getNome()%></p>
         <p class="media-primary"><%=cliente.getEndereco()%>, <%=cliente.getComplemento()%></p>
         <p class="media-primary"><%=cliente.getBairro()%></p>
         <p class="media-primary"><%=cliente.getMunicipio()%></p>
         <p class="media-primary"><%=cliente.getUf()%></p>
-        </div>
-        <div class="col-sm-6">
-        <h3>Opções de pagamento</h3>
-        <p class="media-primary">Boleto bancário</p>
-        <p class="media-primary">Cartão de crédito</p>
         </div>
 	</div>
     <div class="container">
@@ -76,10 +76,10 @@
                     <td class="text-center"><a><%=valorTotal%></a></td>
                 </tr>
                 <tr>
-                    <td><a href="index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Comprando</a></td>
+                    <td></td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><a><%=valorTotal%></a></td>
-                    <td><a href="finalizarCompra.jsp" class="btn btn-success btn-block">Pagamento <i class="fa fa-angle-right"></i></a></td>
+                    <td></td>
                 </tr>
             </tfoot>
         </table>

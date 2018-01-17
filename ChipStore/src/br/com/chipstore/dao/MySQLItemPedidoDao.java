@@ -31,7 +31,7 @@ public class MySQLItemPedidoDao implements ItemPedidoDao{
 
 		pstmt.setLong(1,  idGerado);
 		pstmt.setLong(2, itemPedido.getProduto().getId());
-		pstmt.setInt(3, itemPedido.getProduto().getQuantidade());
+		pstmt.setInt(3, itemPedido.getQuantidade());
 		
 		pstmt.execute();
 

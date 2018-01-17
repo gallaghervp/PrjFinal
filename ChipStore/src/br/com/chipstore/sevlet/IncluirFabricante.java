@@ -20,7 +20,6 @@ public class IncluirFabricante extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public IncluirFabricante() {
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

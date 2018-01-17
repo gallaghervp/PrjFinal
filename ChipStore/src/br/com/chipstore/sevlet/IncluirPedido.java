@@ -57,8 +57,13 @@ public class IncluirPedido extends HttpServlet {
 				 ips.incluir(idGerado, i);
 			}
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/finalizarCompra.jsp");
+			request.setAttribute("novoPedido", novoPedido);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/pedidoFinal.jsp");
 			rd.forward(request, response);
+			
+		/**	session.invalidate();  Apaga todos os dados da sessão. Achar uma forma pra apagar apenas o carrinho **/
+		
 	
 			} catch (ChipstoreException e) {
 				throw new ServletException(e.getMessage(), e.getCause());

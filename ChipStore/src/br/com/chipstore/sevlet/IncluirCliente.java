@@ -20,25 +20,14 @@ import br.com.chipstore.service.ClienteService;
 import br.com.chipstore.service.FabricanteService;
 import br.com.chipstore.util.Utilitarios;
 
-/**
- * Servlet implementation class IncluuirCliente
- */
 @WebServlet("/IncluirCliente")
 public class IncluirCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public IncluirCliente() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nome;

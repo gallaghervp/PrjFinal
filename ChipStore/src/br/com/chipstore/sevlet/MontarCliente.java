@@ -13,9 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.chipstore.util.Utilitarios;
 
-/**
- * Servlet implementation class MontarCliente
- */
 @WebServlet("/MontarCliente")
 public class MontarCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;

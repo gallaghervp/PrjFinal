@@ -16,7 +16,9 @@
 
 	carrinho = (List<ItemCarrinho>) session.getAttribute("carrinho");
 	
-	Double valorTotal = (Double)session.getAttribute("valorTotal");
+	Double valorTotal = (Double) session.getAttribute("valorTotal");
+	
+	String mensagem = (String) request.getAttribute("mensagem");
 	
 	
 %>

@@ -18,9 +18,6 @@ import br.com.chipstore.model.Produto;
 import br.com.chipstore.service.ProdutoService;
 import br.com.chipstore.util.Utilitarios;
 
-/**
- * Servlet implementation class DesmontarCarrinho
- */
 @WebServlet("/IncrementQuantidade")
 public class IncrementQuantidade extends HttpServlet {
 	private static final long serialVersionUID = 1L;

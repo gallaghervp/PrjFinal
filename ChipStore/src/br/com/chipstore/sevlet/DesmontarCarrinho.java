@@ -53,16 +53,16 @@ public class DesmontarCarrinho extends HttpServlet {
 
 				if (quantidadeItemCarrinho <= 0 ) {
 					boolean resultado = Utilitarios.removerProdutoCarrinho(carrinho, produto);
+					
 				} else {
 					carrinho.get(indiceItemCarrinho).decrementaQuantidade();
 				}
 				
 				for(ItemCarrinho i: carrinho){
 					
-					valorTotal += i.getPreco();
-					
+					valorTotal += i.getPreco();	
 				}
-
+				
 				session.setAttribute("carrinho", carrinho);
 				 
 				RequestDispatcher rd = request.getRequestDispatcher("/carrinho2.jsp");
@@ -71,7 +71,9 @@ public class DesmontarCarrinho extends HttpServlet {
 			} catch (ChipstoreException e) {
 				throw new ServletException(e.getMessage(),e.getCause());
 			}
-		}		
+		} else {
+			session.invalidate();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

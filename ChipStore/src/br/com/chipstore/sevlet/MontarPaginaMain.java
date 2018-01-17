@@ -22,24 +22,14 @@ import br.com.chipstore.service.CategoriaService;
 import br.com.chipstore.service.FabricanteService;
 import br.com.chipstore.service.ProdutoService;
 
-/**
- * Servlet implementation class MontarProduto
- */
 @WebServlet("/MontarPaginaMain")
 public class MontarPaginaMain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public MontarPaginaMain() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Produto> produtos = null;
 		
@@ -71,11 +61,7 @@ public class MontarPaginaMain extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

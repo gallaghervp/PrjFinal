@@ -96,9 +96,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="col-sm-3">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="main.jsp">INÍCIO</a></li>
-                         <li><a href="main.jsp">SOBRE</a></li>
-                        <li><a href="main.jsp">CONTATO</a></li>
+                        <li><a href="index.html">INÍCIO</a></li>
+                         <li><a href="index.html">SOBRE</a></li>
+                        <li><a href="index.html">CONTATO</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-0 brand-col">

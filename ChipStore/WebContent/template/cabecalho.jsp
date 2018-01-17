@@ -242,7 +242,7 @@
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
                     <a href="MontarCliente" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>
                     <div style="float: right;margin-top: 17px;margin-right: -20px;">                 
-                    	<span style="font-size: 15px;"><a href="carrinho2.jsp" class="glyphicon glyphicon-shopping-cart"></a></span>
+                    	<span style="font-size: 15px;"><a href="MontarCarrinhoVazio" class="glyphicon glyphicon-shopping-cart"></a></span>
                     </div>
                 </div>
             </div>

@@ -17,23 +17,17 @@ import br.com.chipstore.util.Utilitarios;
 public class MontarFabricante extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
     public MontarFabricante() {
         super();
-       
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-List<String> uf = Utilitarios.montarListaUf();		
+		List<String> uf = Utilitarios.montarListaUf();		
 		
 		request.setAttribute("uf", uf);
 		RequestDispatcher rd = request.getRequestDispatcher("incluirFabricante.jsp");
 		rd.forward(request, response);
 	}
-	
-
-	
 	
 }

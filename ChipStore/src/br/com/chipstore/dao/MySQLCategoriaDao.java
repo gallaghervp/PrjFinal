@@ -155,12 +155,56 @@ public class MySQLCategoriaDao implements CategoriaDao {
 
 	@Override
 	public boolean atualizar(Categoria categoria) throws SQLException {
-		return false;
+		Connection conn;
+		Statement stmt;
+		String sql;
+		boolean retorno;
+
+		retorno = false;
+		stmt = null;
+		conn = MySqlDAOFactory.createConnection();
+
+		sql = "UPDATE categoria ";
+		sql = sql + "SET nome = '" + categoria.getNome() + "', ";
+		
+		stmt = conn.createStatement();
+		int qtdRegistros = stmt.executeUpdate(sql);
+		if (qtdRegistros > 0) {
+			retorno = true;
+		}
+
+		stmt.close();
+		conn.close();
+
+		return retorno;
 	}
 
+	
+
 	@Override
-	public boolean remover(long codigo) throws SQLException {
-		return false;
+	public boolean remover(Categoria categoria) throws SQLException {
+		Connection conn = null;
+	    Statement stmt = null;
+	    ResultSet rs = null;
+	    
+	    conn = MySqlDAOFactory.createConnection();
+	    
+	    String sql ="Delete from Categoria where codigo = ? ";
+	    stmt = conn.createStatement();
+	    
+
+	    rs = stmt.executeQuery(sql);
+	    
+	    ((PreparedStatement) rs).setLong(1, categoria.getCodigo());
+	    
+	    
+	    rs.close();
+	    
+	    stmt.close();
+
+	    conn.close();
+
+	    return false;
 	}
 
 }

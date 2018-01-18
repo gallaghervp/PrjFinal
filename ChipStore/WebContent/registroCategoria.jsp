@@ -58,8 +58,8 @@ List<Categoria> categorias = cs.listar();
 					<td><%=categoria.getCodigo()%></td>
 					<td><%=categoria.getNome()%></td>
 					<td class="actions">
-						<a class="btn btn-warning btn-xs" href="#">Editar</a>
-						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" href="alterarCategoria.jsp">Editar</a>
+						<a class="btn btn-danger btn-xs"  href="ControleCategoria?acao=ex&codigo=<%=categoria.getCodigo()%>" data-toggle="modal" >Excluir</a>
 					</td>
 				</tr>
 <% } %>

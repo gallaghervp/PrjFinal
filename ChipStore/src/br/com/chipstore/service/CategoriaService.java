@@ -73,5 +73,15 @@ public class CategoriaService {
 		}
         
     }
+    
+    public boolean remover(Categoria categoriaRemovida) throws ChipstoreException {
+    	try {
+    		return categoriaDAO.remover(categoriaRemovida);
+    	} catch (SQLException e) {
+    		throw new ChipstoreException("Houve erro na remoção da categoria", e);
+    	}
+    	
+    	
+    }
 
 }

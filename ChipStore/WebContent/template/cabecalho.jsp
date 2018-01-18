@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.List, br.com.chipstore.model.Categoria"%>
+    <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -237,16 +238,24 @@
                         </div>
                     </form>
                 </div>         
-                
+               <c:if test="${sessionScope.cliente != null}">
+               
+              <li>  
+	               	<a href="/apolice-web/logout"><span class="glyphicon glyphicon-log-out"></span> Sair</a>
+                </li>
+            </c:if>
+                <c:if test="${sessionScope.usuario == null}">
                 <div class="col-sm-3">
                     <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login" id="nav-btn-login">LOGIN</button>
                     <a href="MontarCliente" class="btn btn-default navbar-btn" id="nav-btn-login">CADASTRE-SE</a>
                     <div style="float: right;margin-top: 17px;margin-right: -20px;">                 
                     	<span style="font-size: 15px;"><a href="MontarCarrinhoVazio" class="glyphicon glyphicon-shopping-cart"></a></span>
                     </div>
+                   </c:if>
                 </div>
             </div>
         </div>
+        
     </nav>
     
    
